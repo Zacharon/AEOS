@@ -1,2 +1,3 @@
-# This manifested revision must retain exact bytes on checkout, including Windows.
+* -text
+# Preserve the existing byte policy; recognize CRLF as valid in this new revision.
 /distribution/agentic-engineering-os-2026.10.09-public.2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
