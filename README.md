@@ -22,3 +22,9 @@ To view the site locally, run `python -m http.server 4396 --bind 127.0.0.1 --dir
 The tools prepare and check files; assistant handoffs are manual. No autonomous team, model runtime, provider authentication, native sandbox or hosted service is installed. Mechanical verification, independent review, owner acceptance and release remain distinct.
 
 This is a public source preview, not a paid product release. Pricing, commercial license/distribution terms and support are unset. No open-source license or support commitment is asserted. See the package TERMS-DRAFT.md and SOURCES.md. The repository publication does not deploy the website.
+
+## Authorship and rights
+
+Created by Zachary Hatch. Copyright (c) 2026 Zachary Hatch. All rights reserved.
+
+See [LICENSE](LICENSE) for the copyright and rights notice. Source credits identify influences and separately installed third-party dependencies; they do not transfer authorship of AEOS or imply endorsement.
