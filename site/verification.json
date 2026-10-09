@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-10-08",
+  "result": "LOCAL_PUBLIC_PACKAGE_CHECK_PASSED",
+  "scope": "Independent local verification of a staged public source preview, its downloadable package and website. Synthetic example only.",
+  "archive": {
+    "file": "downloads/agentic-engineering-os-2026.10.08-public.1.zip",
+    "sha256": "fd336a7623ff2b68e1b77f27e48194a86f782104826ca1f9ce45476900075fd8",
+    "bytes": 77314,
+    "manifest_sha256": "1b4d4bea2820a58e5d4f12bde8230e450206e360ad72f74aab83ae0f1dd94906",
+    "file_count": 37,
+    "manifest_payload_entries": 36,
+    "distribution_and_site_copies_identical": true,
+    "exact_file_set_and_all_payload_hashes_verified": true,
+    "fresh_extraction": true
+  },
+  "environment": {
+    "os": "Windows",
+    "python": "3.14.5",
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.26.0",
+    "independent_check": "Reused the isolated environment with the documented requirements already installed; extracted the final ZIP into a new absent directory."
+  },
+  "demo": {
+    "result": "DEMO_LOCAL_PASSED",
+    "source_count_done": 2,
+    "owner_decision": "pending",
+    "gold_applied": false,
+    "ai_worker_invoked": false,
+    "demo_h3_verdict": null,
+    "stale_and_missing_sources_refused": true,
+    "fresh_process_review": "candidate_valid; source_state current; independent review remains required",
+    "evidence_basis": "Rerun from a new clean extraction of revision 2026.10.08-public.1; manifest check and fresh-process demo passed."
+  },
+  "tests": {
+    "total_passed": 60,
+    "handoff_and_rationale": 40,
+    "packet_no_overwrite": 1,
+    "librarian": 19,
+    "windows_fixture_note": "The deeply nested isolated test directory initially exceeded Git filename limits. All final suites passed with core.longpaths=true supplied only to the test processes. No global Git configuration was changed.",
+    "evidence_basis": "Inherited from the 60 passing tests on byte-identical Python code and test files in the previously audited preview; not rerun for this documentation-only revision.",
+    "unchanged_python_files": 13,
+    "changed_package_payload_files": [
+      "README.md",
+      "TERMS-DRAFT.md"
+    ]
+  },
+  "privacy": {
+    "result": "bounded_scan_and_review_passed",
+    "scope": "Every staged Git blob outside binary archives and every ZIP member was scanned for owner identifiers, personal project context, machine paths, private links and credential patterns. Archive path safety, payload hashes, exact file set and staged/working byte agreement were checked.",
+    "personal_context_hits_remaining": 0,
+    "reviewed_synthetic_matches": "A reserved example.invalid test identity, a deliberately rejected synthetic Windows path in a test, and a generic platform-directory blocklist entry in safety code. No owner-specific value was found.",
+    "limit": "A bounded content scan and file review is not a universal guarantee about future changes.",
+    "staged_file_count": 50
+  },
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.34",
+    "page_count": 4,
+    "viewport_widths": [
+      1440,
+      390,
+      320
+    ],
+    "page_viewport_checks": 12,
+    "horizontal_page_overflow": false,
+    "tab_transitions_passed": 27,
+    "tab_keys": [
+      "ArrowRight",
+      "ArrowLeft",
+      "Home",
+      "End"
+    ],
+    "faq_open_close_checks": 15,
+    "faq_keyboard_checks": 3,
+    "runtime_errors": 0,
+    "download_sha256_matches_final_archive": true,
+    "local_link_entries_checked_per_viewport": 31,
+    "all_local_links_and_receipt_endpoint_returned_200": true,
+    "visual_review": "Desktop and mobile screenshots inspected; code blocks intentionally scroll horizontally within their container.",
+    "evidence_basis": "Rerun against the revised website and actual renamed download. The receipt endpoint returned HTTP 200; final receipt bytes were checked after updating this record."
+  },
+  "site_files": [
+    {
+      "path": "downloads/agentic-engineering-os-2026.10.08-public.1.zip",
+      "bytes": 77314,
+      "sha256": "fd336a7623ff2b68e1b77f27e48194a86f782104826ca1f9ce45476900075fd8"
+    },
+    {
+      "path": "first-run.html",
+      "bytes": 2912,
+      "sha256": "0e93f6fea70eaff179c39391585f81a2bcb800c9213762154ce4f64a5ac259a2"
+    },
+    {
+      "path": "index.html",
+      "bytes": 9075,
+      "sha256": "b7561f2745b6fff22380da6d08f63870b3da78ddab5db0d4dec3b82a0dedcd47"
+    },
+    {
+      "path": "preview.js",
+      "bytes": 895,
+      "sha256": "8d3feda5338d3ea2eadef496072069ff9eb94309c97801b76599d1e86ff28ed1"
+    },
+    {
+      "path": "sources.html",
+      "bytes": 2193,
+      "sha256": "7a1118cc9ed4b8b2649e8c457d383385cf61d20db695ecb4cc72650de3d8705f"
+    },
+    {
+      "path": "style.css",
+      "bytes": 8664,
+      "sha256": "5962756727754432ffaa60639d9acffcaff6745ae0ee0c6da8a4a33e2b4ed9f3"
+    },
+    {
+      "path": "verification.html",
+      "bytes": 2906,
+      "sha256": "1bac8b4a49e93bb8cdf110db4c7a7ef1891df50f0c2aeaba468e49a25f912248"
+    }
+  ],
+  "limits": [
+    "Website checked as a local browser preview only. Public source repository hosting does not deploy the website.",
+    "Other operating systems and browsers were not tested.",
+    "No live model/provider invocation, native worker confinement, unattended execution or customer outcome is certified.",
+    "Mechanical checks and this independent package review do not supply owner acceptance, knowledge promotion or release authorization.",
+    "External attribution links were inspected as public references; their destination availability is outside these browser checks."
+  ],
+  "release_status": "Public source preview. Pricing, commercial license/distribution terms and support remain unset. No open-source license, paid product release or website deployment is asserted.",
+  "revision": "2026.10.08-public.1"
+}

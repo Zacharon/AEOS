@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "package": "Agentic Engineering OS setup preview",
+  "version": "2026.10.08-public.1",
+  "scope": "portable local Runner and Librarian; manual assistant handoff; synthetic demo",
+  "files": [
+    {
+      "path": "FIRST_RUN.md",
+      "sha256": "6cfd278b280e8d8645018951d741a04f37684a644f8be601801a129aa90f462b",
+      "bytes": 3665,
+      "source": "setup-template/FIRST_RUN.md"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f636d0cc8bc0b951f28b9394cfca40eb82a9cd2b22abee44c6ba7eaf0c20931d",
+      "bytes": 2783,
+      "source": "setup-template/README.md"
+    },
+    {
+      "path": "SOURCES.md",
+      "sha256": "e8cc96653a3ca41167d5dc5e97926928726da6e5e1dbdda3a021920497a37ec0",
+      "bytes": 2255,
+      "source": "setup-template/SOURCES.md"
+    },
+    {
+      "path": "TERMS-DRAFT.md",
+      "sha256": "963cb1cce78a6f6f1dc7f6e6637fabbe6f173a0ab0a6a8fc7fede50387d81954",
+      "bytes": 730,
+      "source": "setup-template/TERMS-DRAFT.md"
+    },
+    {
+      "path": "config/adapters.json",
+      "sha256": "1fd41356aebd5f8f15098090ecd944b80826483b3d0509b4af4423b3c5bc111b",
+      "bytes": 929,
+      "source": "setup-template/config/adapters.json"
+    },
+    {
+      "path": "examples/candidate.md",
+      "sha256": "cd0d6f0413085d53a1e5bb617eab0ae60a07c3317ee4b5d69659eb65b6ac9720",
+      "bytes": 221,
+      "source": "setup-template/examples/candidate.md"
+    },
+    {
+      "path": "examples/source.md",
+      "sha256": "0cae16b8993b32bb36753bcb158b5408f932e952dc1c8f804112fd8bfdf9b1b6",
+      "bytes": 287,
+      "source": "setup-template/examples/source.md"
+    },
+    {
+      "path": "examples/task_packet.md",
+      "sha256": "e6daa840a28d3560a2cc8e87fb2f07bd26a99c480dec1ef3872f3cb86e51380c",
+      "bytes": 2476,
+      "source": "setup-template/examples/task_packet.md"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "0b0709dc3105d98b29f4fc6a870c15c0cf42191498384ef8a2a32d3fcf5f34ed",
+      "bytes": 33,
+      "source": "setup-template/requirements.txt"
+    },
+    {
+      "path": "scripts/check_package.py",
+      "sha256": "9c55234694d0bc29bc2020c42165be685897ed4c7d42c9dc6bdc8f51f508400f",
+      "bytes": 1174,
+      "source": "setup-package/check_package.py"
+    },
+    {
+      "path": "scripts/demo.py",
+      "sha256": "d6f842aaf5f7313f111f276c741bd2ed7f1abd4d391cb4ee459e84464e63b105",
+      "bytes": 7572,
+      "source": "setup-package/demo.py"
+    },
+    {
+      "path": "vault/00_SYSTEM/AGENTIC_LIBRARIAN/README.md",
+      "sha256": "86dc88f5d816e76902ad3cd12b62a63634c6f70220f749228443a01f41b170f9",
+      "bytes": 1766,
+      "source": "setup-template/vault/00_SYSTEM/AGENTIC_LIBRARIAN/README.md"
+    },
+    {
+      "path": "vault/00_SYSTEM/AGENTIC_LIBRARIAN/librarian.py",
+      "sha256": "83a8625c680d5340098517460d1941b6e03c66c2e01e5016609056a10fc3e469",
+      "bytes": 59739,
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/librarian.py"
+    },
+    {
+      "path": "vault/00_SYSTEM/AGENTIC_LIBRARIAN/schemas/proposal.schema.json",
+      "sha256": "64e20ba8b899dba230d97af27fdcd11edb44affbc72e13a3ef5855c9bc7dce66",
+      "bytes": 3823,
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/schemas/proposal.schema.json"
+    },
+    {
+      "path": "vault/00_SYSTEM/AGENTIC_LIBRARIAN/schemas/source.schema.json",
+      "sha256": "27aa28ac24fd9efe5eed8912a2a4b28a81edd8790e21aaf61d80afe017624b96",
+      "bytes": 1775,
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/schemas/source.schema.json"
+    },
+    {
+      "path": "vault/00_SYSTEM/AGENTIC_LIBRARIAN/tests/test_librarian_cli.py",
+      "sha256": "0858640ef5b30ff72619de0133e73c4b8e0913c28ccecd78bf518175c7a53288",
+      "bytes": 38857,
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/tests/test_librarian_cli.py"
+    },
+    {
+      "path": "vault/00_SYSTEM/GLOBAL_NEXT_ACTION_QUEUE.md",
+      "sha256": "f68bf9d9d9d9a8f50e71fa657063510fd21058843984ee741f15270c151187cd",
+      "bytes": 334,
+      "source": "setup-template/vault/00_SYSTEM/GLOBAL_NEXT_ACTION_QUEUE.md"
+    },
+    {
+      "path": "vault/00_SYSTEM/SESSION_START_ROUTER.md",
+      "sha256": "4f1a6d8b878d32d22341d41cb31ddc7434b45d182ca21651a65546637074ba49",
+      "bytes": 1037,
+      "source": "setup-template/vault/00_SYSTEM/SESSION_START_ROUTER.md"
+    },
+    {
+      "path": "vault/00_SYSTEM/VAULT_INDEX.md",
+      "sha256": "636cc816a6c6716da309f8074ba5321d08d9f492778ae2288350c677002b6911",
+      "bytes": 589,
+      "source": "setup-template/vault/00_SYSTEM/VAULT_INDEX.md"
+    },
+    {
+      "path": "vault/01_PROJECTS/Sample/NEXT_ACTIONS.md",
+      "sha256": "b8fed3197aeb02d2c59c7d3804d27e3c151b7d8a9e876a1460aee26fa8f19ba8",
+      "bytes": 359,
+      "source": "setup-template/vault/01_PROJECTS/Sample/NEXT_ACTIONS.md"
+    },
+    {
+      "path": "vault/01_PROJECTS/Sample/PROJECT_INDEX.md",
+      "sha256": "04b1540096cd61da8b7d1f7e6eb667e9af3c2a8409c2b2e56f4dd24453b81479",
+      "bytes": 264,
+      "source": "setup-template/vault/01_PROJECTS/Sample/PROJECT_INDEX.md"
+    },
+    {
+      "path": "vault/01_PROJECTS/Sample/PROJECT_STATE.md",
+      "sha256": "237ab1fc9461f773c6fca32fad82cc3696711c62d66f7047fbd9d024a026197e",
+      "bytes": 398,
+      "source": "setup-template/vault/01_PROJECTS/Sample/PROJECT_STATE.md"
+    },
+    {
+      "path": "vault/08_TEMPLATES/PROJECT.md",
+      "sha256": "065668959971130ff7058dce3038725d64be754145708ef79ac7d638b04c6d48",
+      "bytes": 586,
+      "source": "setup-template/vault/08_TEMPLATES/PROJECT.md"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/runbook.md",
+      "sha256": "c2478eaf52d99b54ddaec9063b1e5cb16805aed6a853b15b788d6c022a08baa9",
+      "bytes": 1098,
+      "source": "setup-template/vault/09_TOOLS/agent_runner_v1/runbook.md"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/scripts/build_task_packet.py",
+      "sha256": "157a69fef18a1e062c8b650146ba80665280a250adfcb7d2091e2c671d8f61ec",
+      "bytes": 12198,
+      "source": "09_TOOLS/agent_runner_v1/scripts/build_task_packet.py"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/scripts/tests/test_packet_no_overwrite.py",
+      "sha256": "e5192c80a5a9615973f870bf89bd2203f420dc9f51fc464dd3e33e8e25df60c1",
+      "bytes": 1325,
+      "source": "09_TOOLS/agent_runner_v1/scripts/tests/test_packet_no_overwrite.py"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/unified_handoff/CODE_RATIONALE.md",
+      "sha256": "59c939a31bb9c18c82f093598f0824dd2075ef3f83785e49736f06c5f2d08d9d",
+      "bytes": 4324,
+      "source": "09_TOOLS/agent_runner_v1/unified_handoff/CODE_RATIONALE.md"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/unified_handoff/code_rationale.py",
+      "sha256": "bab8ea0e41ae5e1e615ced058a60d772dac42d8bcea69eaaec7ff6558aa50110",
+      "bytes": 10508,
+      "source": "09_TOOLS/agent_runner_v1/unified_handoff/code_rationale.py"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py",
+      "sha256": "64d10bf9d412c1edd5305faaf9f6036cdc5c912f13d3c06ce3f79b8830517f26",
+      "bytes": 34616,
+      "source": "09_TOOLS/agent_runner_v1/unified_handoff/handoff.py"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/unified_handoff/test_code_rationale.py",
+      "sha256": "517c4fc0ba46ecd390aaa4c24e1587b0f653c9a3362b875ffc4e7302232f40b6",
+      "bytes": 10735,
+      "source": "09_TOOLS/agent_runner_v1/unified_handoff/test_code_rationale.py"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/unified_handoff/test_handoff.py",
+      "sha256": "3e611619df70dd42ea196f27f35f760d52e44799975d62b0dbb43d6359694bfc",
+      "bytes": 14654,
+      "source": "09_TOOLS/agent_runner_v1/unified_handoff/test_handoff.py"
+    },
+    {
+      "path": "vault/09_TOOLS/agent_runner_v1/unified_handoff/test_review.py",
+      "sha256": "0101929cd410d438890510c8d922d33dee18bc11136a6f3a429d78c47347e858",
+      "bytes": 2481,
+      "source": "09_TOOLS/agent_runner_v1/unified_handoff/test_review.py"
+    },
+    {
+      "path": "vault/AGENTS.md",
+      "sha256": "07e57c0ce542b3a46f8af5cd90f19ee8c1522be3b4e2b871a7e99a73001a0d7f",
+      "bytes": 1109,
+      "source": "setup-template/vault/AGENTS.md"
+    },
+    {
+      "path": "vault/CONTEXT.md",
+      "sha256": "1f40a54338f25ef3a8bb2b7016070eeb616fb791879c667b31f89cbe9d2b5fac",
+      "bytes": 267,
+      "source": "setup-template/vault/CONTEXT.md"
+    },
+    {
+      "path": "vault/kernel/artifact_ledger.py",
+      "sha256": "5a5a35f2c3af61f296039c4cec37bc16d56fd620f2d4d4ac9ee98d6304b0bf22",
+      "bytes": 9751,
+      "source": "kernel/artifact_ledger.py"
+    },
+    {
+      "path": "vault/kernel/execution_contract.py",
+      "sha256": "2247bcfadcfc7c58f43c6242ee55ee9ee9a1cc248baf5d1bba312ace14889963",
+      "bytes": 3843,
+      "source": "kernel/execution_contract.py"
+    }
+  ]
+}
