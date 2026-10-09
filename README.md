@@ -12,7 +12,11 @@ CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the p
 
 ## Explore the system
 
+![AEOS architecture: implemented file operations and manual handoffs](docs/diagrams/aeos-architecture.svg)
+
 - [Architecture and usage flow](docs/ARCHITECTURE.md) — real file contracts, commands and manual handoffs
+- [Designed system preview](site/architecture.html) — offline architecture and workflow diagrams
+- [Ecosystem analysis and benchmarks](docs/ECOSYSTEM.md) — inclusion decisions, sources and proposed experiments
 - [First run](site/first-run.html)
 - [Capabilities and verification](site/verification.html)
 - [Source credits](site/sources.html)

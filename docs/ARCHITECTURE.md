@@ -94,3 +94,7 @@ For real work, scaffold a packet in your own new vault using the first-run instr
 **ICM** means Interpretable Context Methodology in the recorded [source credits](../distribution/agentic-engineering-os-2026.10.09-public.2/SOURCES.md). It informs layered files and selective context. It is not a separate runtime between retrieval and execution. Karpathy's **LLM Wiki** informs source-backed notes and compiled knowledge; the local Librarian implements the explicit Bronze/Silver/owner/Gold workflow. It does not install Karpathy's gist or a Wiki connector.
 
 The public preview includes a queue and project templates, but no Operator Dashboard application, MAPS view, general Resume/Restore engine, native sandbox, hosted service, automatic model dispatch or authenticated owner-approval service. Do not infer those features from the creator's personal OS or a conceptual diagram. Refer to the [security repair evidence](SECURITY-REPAIRS.md) for the current candidate's checks and remaining limits; historical acceptance and an archive's existence are not proof a future installation is safe.
+
+## Designed companion and research
+
+Open the [offline HTML/SVG system preview](../site/architecture.html) or the [architecture SVG](diagrams/aeos-architecture.svg). The [ecosystem assessment](ECOSYSTEM.md) explains selective integration, sources and proposed measurements. These repository companions are separate from the frozen public.2 archive and do not add runtime integrations.
