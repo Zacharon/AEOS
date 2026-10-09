@@ -1,0 +1,119 @@
+{
+  "schema_version": 2,
+  "verified_date": "2026-10-09",
+  "result": "PUBLIC_REPAIR_CANDIDATE_LOCAL_CHECKS_PASSED",
+  "archive": {
+    "file": "downloads/agentic-engineering-os-2026.10.09-public.2.zip",
+    "sha256": "cd67157da17a1bbdd738fa185755fad398e9c314bb4b816fd28ee7827ff1f807",
+    "manifest_sha256": "5fb40043afdc13984c1d04f9c7b0e3397af38c5f21b896a8a9dcc4558e745a7f",
+    "bytes": 95573,
+    "file_count": 42,
+    "manifest_payload_entries": 41,
+    "copies_identical": true,
+    "fresh_extraction": true,
+    "all_bytes_and_file_set_verified": true
+  },
+  "environment": {
+    "os": "Windows",
+    "python": "3.14.5",
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.26.0",
+    "git": "git version 2.54.0.windows.1",
+    "prerequisite_basis": "Existing installed documented dependencies; no fresh virtual environment or dependency resolution in this revision."
+  },
+  "tests": {
+    "librarian": 38,
+    "handoff_and_rationale": 40,
+    "packet": 1,
+    "package_integrity": 7,
+    "distinct_passed": 86,
+    "skips": 0,
+    "basis": "All four suites freshly rerun from final ZIP extraction; optimize checks and native Windows junction cases passed."
+  },
+  "demo": {
+    "result": "DEMO_LOCAL_PASSED",
+    "owner_decision": "pending",
+    "gold_applied": false,
+    "ai_worker_invoked": false,
+    "h3_verdict": null,
+    "source_count_done": 2,
+    "stale_and_missing_refused": true
+  },
+  "privacy": {
+    "result": "BOUNDED_SCAN_AND_REVIEW_PASSED",
+    "files_scanned": 94,
+    "approved_attribution": "Root authorship notice and exact package LICENSE only; no private operating context.",
+    "limit": "Bounded file review and pattern scan; not a comprehensive credential detector."
+  },
+  "browser": {
+    "result": "NOT_RUN_FOR_THIS_REVISION",
+    "basis": "Layout/JS unchanged; prior receipt is historical. Local link checks recorded separately."
+  },
+  "independent_review": {
+    "status": "VERIFIED",
+    "basis": "Independent read-only review reproduced 19 public integrity regressions and relevant package checks, inspected final ZIP and all 86 fresh suite results, and checked current architecture/manual boundaries and local links. Both additional candidate findings were reproduced, fixed and independently retested."
+  },
+  "history": {
+    "public_1": "Frozen original source, ZIPs and verification.json retained; those bytes retain the reported defects.",
+    "receipt_commit": "cedcb0ea968f8d1f49c546b43f91d2ad1a5dc391"
+  },
+  "limits": [
+    "No hostile same-user filesystem-race or power-loss proof",
+    "No Linux/macOS run, provider dispatch or deployment",
+    "No automatic migration of old approved/applied records",
+    "No real operating-vault Gold action"
+  ],
+  "checks": [
+    {
+      "name": "package",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    },
+    {
+      "name": "package-O",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    },
+    {
+      "name": "package-env",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": "1"
+    },
+    {
+      "name": "librarian",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    },
+    {
+      "name": "handoff",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    },
+    {
+      "name": "packet",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    },
+    {
+      "name": "integrity",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    },
+    {
+      "name": "demo",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": "1"
+    },
+    {
+      "name": "fresh-review",
+      "exit_code": 0,
+      "PYTHONOPTIMIZE": null
+    }
+  ],
+  "local_http": {
+    "result": "LOCAL_SITE_HTTP_ASSETS_PASSED",
+    "assets": 9,
+    "download_sha256": "cd67157da17a1bbdd738fa185755fad398e9c314bb4b816fd28ee7827ff1f807",
+    "limit": "HTTP/file/link checks only; browser layout and interactions not rerun for this revision."
+  }
+}
