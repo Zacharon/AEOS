@@ -20,4 +20,10 @@ jobs:
         with:
           python-version: '3.14.5'
       - name: Extracted package, documented first run, 86 regressions and boundaries
-        run: python -B scripts/validate_candidate.py
+        run: |
+          # Hosted TEMP can use an 8.3 alias; keep fixture roots canonical.
+          $runnerTemp = python -B -c "import os; from pathlib import Path; print(Path(os.environ['RUNNER_TEMP']).resolve(strict=True))"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $env:TEMP = $runnerTemp
+          $env:TMP = $runnerTemp
+          python -B scripts/validate_candidate.py
