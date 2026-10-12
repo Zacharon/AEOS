@@ -33,3 +33,17 @@ This is a public source preview, not a paid product release. Pricing, commercial
 Created by Zachary Hatch. Copyright (c) 2026 Zachary Hatch. All rights reserved.
 
 See [LICENSE](LICENSE) for the copyright and rights notice. Source credits identify influences and separately installed third-party dependencies; they do not transfer authorship of AEOS or imply endorsement.
+
+## Unpublished first-run repair candidate
+
+The historical download above remains public.2. Its bundled FIRST_RUN has a known relative-output defect. A new [candidate archive](distribution/agentic-engineering-os-2026.10.12-public.4-candidate.1.zip) and [instructions](distribution/agentic-engineering-os-2026.10.12-public.4-candidate.1/FIRST_RUN.md) are prepared for review; publication remains owner-controlled. Extract the candidate into a new folder and run:
+
+```powershell
+python -m venv ../aeos-env
+../aeos-env/Scripts/python -m pip install -r requirements.txt
+../aeos-env/Scripts/python -B scripts/check_package.py .
+$demoOutput = [System.IO.Path]::GetFullPath((Join-Path $PWD.Path '../aeos-first-run'))
+../aeos-env/Scripts/python -B scripts/demo.py --output $demoOutput
+```
+
+The same absolute-output workaround works with public.2. See [candidate verification and CI](docs/PACKAGE-CANDIDATE.md) for exact checks, preserved histories and remaining gates.
