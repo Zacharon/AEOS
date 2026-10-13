@@ -1,0 +1,29 @@
+name: Windows package validation
+on:
+  push:
+    branches: [main, 'fix/audit-20261012-aeos*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: aeos-package-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  package:
+    name: Package validation (Windows CPython 3.14.5)
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.14.5'
+      - name: Extracted package, documented first run, 86 regressions and boundaries
+        run: |
+          # Hosted TEMP can use an 8.3 alias; keep fixture roots canonical.
+          $runnerTemp = python -B -c "import os; from pathlib import Path; print(Path(os.environ['RUNNER_TEMP']).resolve(strict=True))"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $env:TEMP = $runnerTemp
+          $env:TMP = $runnerTemp
+          python -B scripts/validate_candidate.py

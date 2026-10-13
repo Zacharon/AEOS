@@ -1,0 +1,9 @@
+{
+  "version": "2026.10.12-public.4-candidate.1",
+  "status": "UNPUBLISHED_REVIEW_CANDIDATE",
+  "archive": "agentic-engineering-os-2026.10.12-public.4-candidate.1.zip",
+  "sha256": "ac884a1173a75e36e5f419abf6c788c502d86048223a8a4127b3faf5c75b6c56",
+  "bytes": 95878,
+  "manifest_sha256": "72a98770d3ab014058bd6b636225b17ff41816c5be50cf431a756823b905e815",
+  "payload_files": 41
+}
