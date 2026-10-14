@@ -6,7 +6,7 @@ This repository contains neutral templates, reusable tools and an authored synth
 
 ## Try it
 
-Download the [setup archive](site/downloads/agentic-engineering-os-2026.10.09-public.2.zip), or use the [unpacked package](distribution/agentic-engineering-os-2026.10.09-public.2/README.md). Follow its FIRST_RUN.md. The demo ingests a source, creates a pending knowledge proposal, prepares a handoff, checks a sample result and rejects stale or missing context. It makes no model calls and does not apply Gold knowledge.
+Download the [setup archive](site/downloads/agentic-engineering-os-2026.10.09-public.2.zip), or use the [unpacked package](distribution/agentic-engineering-os-2026.10.09-public.2/README.md). Follow the [corrected first-run guide](site/first-run.html): public.2's bundled FIRST_RUN.md has a known relative-output defect. The guide resolves the output path absolutely while preserving the traversal guard. The demo ingests a source, creates a pending knowledge proposal, prepares a handoff, checks a sample result and rejects stale or missing context. It makes no model calls and does not apply Gold knowledge.
 
 CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the package's documented requirements into a fresh virtual environment. Git is needed for the Librarian's approved apply/rollback path. Other platforms and provider handoffs are unverified.
 
@@ -46,4 +46,4 @@ $demoOutput = [System.IO.Path]::GetFullPath((Join-Path $PWD.Path '../aeos-first-
 ../aeos-env/Scripts/python -B scripts/demo.py --output $demoOutput
 ```
 
-The same absolute-output workaround works with public.2. See [candidate verification and CI](docs/PACKAGE-CANDIDATE.md) for exact checks, preserved histories and remaining gates.
+The same absolute-output workaround works with public.2. See [candidate verification and CI](docs/PACKAGE-CANDIDATE.md) and the [release-readiness reconciliation](docs/RELEASE-READINESS-public.4.md) for exact checks, preserved histories and remaining gates.
