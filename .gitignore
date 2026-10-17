@@ -2,3 +2,15 @@ __pycache__/
 *.pyc
 .venv/
 node_modules/
+# Never commit secrets, local environments or run outputs.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+aeos-env/
+aeos-first-run/

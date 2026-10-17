@@ -12,9 +12,10 @@ Start with the repository [AGENTS.md](../AGENTS.md). Its boundary rules outrank 
 | [aeos-knowledge-librarian](skills/aeos-knowledge-librarian/SKILL.md) | Ingesting a source or proposing new knowledge (Bronze, Silver, Gold) |
 | [aeos-independent-review](skills/aeos-independent-review/SKILL.md) | Reviewing someone else's result as an independent (H3) verifier |
 | [aeos-close-session](skills/aeos-close-session/SKILL.md) | Ending a session: authorized writeback and an honest report |
+| [aeos-data-handling](skills/aeos-data-handling/SKILL.md) | Before passing business records, customer data or datasets to an assistant |
 | [aeos-repo-maintenance](skills/aeos-repo-maintenance/SKILL.md) | Changing this public repository: boundary, validation and owner-only decisions |
 
-The first six describe the workflow shipped in the package `vault/`. Paths in them are relative to that vault unless they say otherwise. The last one is about this repository itself.
+The first seven describe the workflow shipped in the package `vault/`. Paths in them are relative to that vault unless they say otherwise. The last one is about this repository itself.
 
 ## Using these with a specific tool
 
