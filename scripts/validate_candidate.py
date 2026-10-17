@@ -77,10 +77,16 @@ class Links(HTMLParser):
 def validate_links_and_privacy():
     checked = 0
     files = list((ROOT / "site").rglob("*.html"))
-    files += [ROOT / "README.md", ROOT / "docs/PACKAGE-CANDIDATE.md",
-              ROOT / "docs/RELEASE-READINESS-public.4.md"]
+    files += [ROOT / "README.md", ROOT / "docs/ARCHITECTURE.md",
+              ROOT / "docs/PACKAGE-CANDIDATE.md",
+              ROOT / "docs/RELEASE-READINESS-public.4.md",
+              ROOT / "site/verification-public.3.json",
+              ROOT / "site/verification-public.4.json"]
     candidate = ROOT / "distribution" / NAME
     files += [p for p in candidate.rglob("*") if p.is_file()]
+    for version in ("agentic-engineering-os-2026.10.09-public.3",
+                    "agentic-engineering-os-2026.10.17-public.4"):
+        files += [p for p in (ROOT / "distribution" / version).rglob("*") if p.is_file()]
     for path in files:
         try:
             text = path.read_text(encoding="utf8")
@@ -128,12 +134,10 @@ def run(command, cwd, records, expected=0, timeout=300):
 def journey(extracted, records):
     doc = (extracted / "FIRST_RUN.md").read_text(encoding="utf8")
     block = first_block(doc)
-    if block != COMMANDS or first_block((ROOT / "README.md").read_text(encoding="utf8")) != block:
-        raise ValueError("README/FIRST_RUN command drift")
-    site = (ROOT / "site/first-run.html").read_text(encoding="utf8")
-    site_block = html.unescape(re.search(r"<pre><code>(.*?)</code></pre>", site, re.S).group(1)).replace("\r\n", "\n")
-    if site_block != block:
-        raise ValueError("Website/FIRST_RUN command drift")
+    if block != COMMANDS:
+        raise ValueError("Candidate FIRST_RUN command drift")
+    # Current README and website now guide the public.3-derived public.4
+    # release. This unpublished public.2-lineage candidate keeps its own guide.
     # Execute verbatim published steps, only bind 'python' to the selected 3.14.5.
     lines = block.splitlines()
     lines[0] = "& '" + sys.executable.replace("'", "''") + "'" + lines[0][len("python"):]

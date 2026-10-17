@@ -6,9 +6,13 @@ This repository contains neutral templates, reusable tools and an authored synth
 
 ## Try it
 
-Download the [setup archive](site/downloads/agentic-engineering-os-2026.10.09-public.2.zip), or use the [unpacked package](distribution/agentic-engineering-os-2026.10.09-public.2/README.md). Follow the [corrected first-run guide](site/first-run.html): public.2's bundled FIRST_RUN.md has a known relative-output defect. The guide resolves the output path absolutely while preserving the traversal guard. The demo ingests a source, creates a pending knowledge proposal, prepares a handoff, checks a sample result and rejects stale or missing context. It makes no model calls and does not apply Gold knowledge.
+Download the current [public.4 setup archive](site/downloads/agentic-engineering-os-2026.10.17-public.4.zip), or use the [unpacked package](distribution/agentic-engineering-os-2026.10.17-public.4/README.md). Follow its [FIRST_RUN.md](distribution/agentic-engineering-os-2026.10.17-public.4/FIRST_RUN.md). The demo ingests a source, creates a pending knowledge proposal, prepares a handoff, checks a sample result and rejects stale or missing context. It makes no model calls and does not apply Gold knowledge.
 
-CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the package's documented requirements into a fresh virtual environment. Git is needed for the Librarian's approved apply/rollback path. Other platforms and provider handoffs are unverified.
+Requires Python 3.11+ (tested on 3.11.15 and 3.14.5 on Windows). Install the package's documented requirements into a fresh virtual environment. Git is needed for the Librarian's approved apply/rollback path. Other platforms and provider handoffs are unverified.
+
+## How research becomes trusted knowledge
+
+**Bronze** keeps raw source material and where it came from. An agent can collect it, but source text is evidence, not instructions. **Silver** is a proposed knowledge note drafted from Bronze with its source, diff and checks; it remains unapproved. The **owner decision** is a human accepting, editing or rejecting that exact proposal. **Gold** is the approved note applied to the project's trusted knowledge after the required fresh checks and Git checkpoint. Agents can prepare Bronze and Silver; only the owner can authorize Gold. The synthetic demo stops at pending Silver.
 
 ## Explore the system
 
@@ -20,9 +24,11 @@ CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the p
 - [First run](site/first-run.html)
 - [Capabilities and verification](site/verification.html)
 - [Source credits](site/sources.html)
-- [Public-safe verification receipt](site/verification-public.2.json)
+- [Current public.4 verification receipt](site/verification-public.4.json)
 
 To view the site locally, run `python -m http.server 4396 --bind 127.0.0.1 --directory site` from this repository and open http://127.0.0.1:4396. Serve only site/, never a personal workspace. The HTML files also open locally.
+
+An owner-private guided walkthrough Site also exists. It requires owner access, so its login-gated URL is omitted from this public README.
 
 The tools prepare and check files; assistant handoffs are manual. No autonomous team, model runtime, provider authentication, native sandbox or hosted service is installed. Mechanical verification, independent review, owner acceptance and release remain distinct.
 
@@ -34,16 +40,9 @@ Created by Zachary Hatch. Copyright (c) 2026 Zachary Hatch. All rights reserved.
 
 See [LICENSE](LICENSE) for the copyright and rights notice. Source credits identify influences and separately installed third-party dependencies; they do not transfer authorship of AEOS or imply endorsement.
 
-## Unpublished first-run repair candidate
+## Historical records
 
-The historical download above remains public.2. Its bundled FIRST_RUN has a known relative-output defect. A new [candidate archive](distribution/agentic-engineering-os-2026.10.12-public.4-candidate.1.zip) and [instructions](distribution/agentic-engineering-os-2026.10.12-public.4-candidate.1/FIRST_RUN.md) are prepared for review; publication remains owner-controlled. Extract the candidate into a new folder and run:
-
-```powershell
-python -m venv ../aeos-env
-../aeos-env/Scripts/python -m pip install -r requirements.txt
-../aeos-env/Scripts/python -B scripts/check_package.py .
-$demoOutput = [System.IO.Path]::GetFullPath((Join-Path $PWD.Path '../aeos-first-run'))
-../aeos-env/Scripts/python -B scripts/demo.py --output $demoOutput
-```
-
-The same absolute-output workaround works with public.2. See [candidate verification and CI](docs/PACKAGE-CANDIDATE.md) and the [release-readiness reconciliation](docs/RELEASE-READINESS-public.4.md) for exact checks, preserved histories and remaining gates.
+- [Public.3 archive](distribution/agentic-engineering-os-2026.10.09-public.3.zip), [first-run guide](distribution/agentic-engineering-os-2026.10.09-public.3/FIRST_RUN.md) and [historical receipt](site/verification-public.3.json) are frozen. Its guide pins CPython 3.14.5; public.4 carries the tested 3.11 compatibility update.
+- [Public.2 archive](distribution/agentic-engineering-os-2026.10.09-public.2.zip) and [historical receipt](site/verification-public.2.json) remain unchanged. Its bundled FIRST_RUN has a known relative-output defect.
+- [Public.1 archive](distribution/agentic-engineering-os-2026.10.08-public.1.zip) and [historical receipt](site/verification.json) remain unchanged.
+- The [public.4-candidate.1 archive](distribution/agentic-engineering-os-2026.10.12-public.4-candidate.1.zip) is a separate, unpublished public.2-lineage repair candidate. Its [candidate record](docs/PACKAGE-CANDIDATE.md) and [October 14 readiness reconciliation](docs/RELEASE-READINESS-public.4.md) are historical and do not describe the current public.3-derived release.

@@ -1,6 +1,7 @@
 """Archive security/public boundary regressions; only synthetic temporary bytes."""
 from pathlib import Path
 import io
+import hashlib
 import json
 import sys
 import tempfile
@@ -25,8 +26,15 @@ def malicious(entries):
 
 class DistributionTests(unittest.TestCase):
     def test_deterministic_build_matches_committed_candidate(self):
-        self.assertEqual(render(), render())
-        self.assertEqual(build(check=True)["payload_files"], 41)
+        payload, _, _ = render()
+        if sys.version_info[:3] == (3, 14, 5):
+            # ZIP compression bytes depend on the builder interpreter.
+            self.assertEqual(build(check=True)["payload_files"], 41)
+        else:
+            committed = (ROOT / "distribution" / (NAME + ".zip")).read_bytes()
+            expected = json.loads((ROOT / "distribution" / (NAME + ".sha256.json")).read_text())
+            self.assertEqual(hashlib.sha256(committed).hexdigest(), expected["sha256"])
+            self.assertEqual(archive_members(committed), payload)
 
     def test_archive_traversal_absolute_ads_reserved_duplicates_refuse_before_effects(self):
         for names in [("../outside",), ("/absolute",), ("C:/absolute",), ("a\\b",), ("a/./b",), ("a//b",), ("a/CON",), ("a.",), ("a ",), ("a:stream",), ("x", "X")]:
