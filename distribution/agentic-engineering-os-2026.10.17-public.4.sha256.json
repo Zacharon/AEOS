@@ -1,0 +1,10 @@
+{
+  "version": "2026.10.17-public.4",
+  "based_on": "agentic-engineering-os-2026.10.09-public.3",
+  "status": "PUBLIC_SOURCE_PREVIEW",
+  "archive": "agentic-engineering-os-2026.10.17-public.4.zip",
+  "sha256": "00567ec22a85971f588d6837f9acffd3b875af53b15dff0328e102c827e9ed14",
+  "bytes": 97966,
+  "manifest_sha256": "5b5e35eb510aaf19d14cf8d8e5081d901b1b8debb5ffe50ed0eeae5594cdc404",
+  "payload_files": 42
+}

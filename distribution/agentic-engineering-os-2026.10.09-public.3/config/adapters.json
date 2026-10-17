@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "transport": "manual",
+  "dispatch_enabled": false,
+  "vault_root": "<absolute path to your new vault>",
+  "project": "<project name>",
+  "adapters": [
+    {"executor": "codex", "worker_tool": "Codex", "handoff": "Open local packet and selected files in a file-capable assistant."},
+    {"executor": "grok-build", "worker_tool": "Grok", "handoff": "Manually copy the bounded brief and return evidence."},
+    {"executor": "grok-fleet", "worker_tool": "Grok", "handoff": "Manual format only; fleet operation is not verified."},
+    {"executor": "hermes", "worker_tool": "PowerShell", "handoff": "Manual format only; install and review a runtime separately."},
+    {"executor": "human", "worker_tool": "Human", "handoff": "Read the packet, perform authorized work and return evidence."}
+  ],
+  "credentials": "Do not store credentials in this file. No credential configuration is needed for the demo."
+}

@@ -1,4 +1,7 @@
 * -text
 # Preserve the existing byte policy; recognize CRLF as valid in this new revision.
 /distribution/agentic-engineering-os-2026.10.09-public.2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/distribution/agentic-engineering-os-2026.10.09-public.3/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /distribution/agentic-engineering-os-2026.10.12-public.4-candidate.1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/distribution/agentic-engineering-os-2026.10.17-public.4/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/site/architecture.html -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

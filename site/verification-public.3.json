@@ -1,0 +1,318 @@
+{
+  "schema_version": 3,
+  "verified_date": "2026-10-09",
+  "result": "PUBLIC_FIRST_RUN_CANDIDATE_LOCAL_CHECKS_PASSED",
+  "archive": {
+    "file": "downloads/agentic-engineering-os-2026.10.09-public.3.zip",
+    "sha256": "5fd48062e579e4f15c712e82b4abbf3592cac81566c7a1550102babca836d079",
+    "manifest_sha256": "81710bf2478a1ca8db6774a069d045b5fb9a8b00f8f9eac5f61d2708061ff2fe",
+    "bytes": 97714,
+    "file_count": 43,
+    "manifest_payload_entries": 42,
+    "copies_identical": true,
+    "fresh_extraction": true,
+    "all_bytes_and_file_set_verified": true
+  },
+  "environment": {
+    "os": "Windows",
+    "shell": "Windows PowerShell fresh -NoProfile process",
+    "python": "3.14.5",
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.26.0",
+    "prerequisite_basis": "New virtual environment outside payload; documented pinned prerequisites installed through pip",
+    "windows_powershell_startup": {
+      "shell": "Windows PowerShell",
+      "shell_version": "5.1.19041.7725",
+      "startup_exit_code": 0,
+      "fresh_environment": true,
+      "validated_final_zip_before_extraction": true,
+      "same_literal_guide_block": true,
+      "spaces_in_environment_and_output": true,
+      "demo_result": "DEMO_LOCAL_PASSED",
+      "gold_applied": false,
+      "owner_decision": "pending"
+    },
+    "initial_full_suite_shell": "PowerShell 7.6.5; same guide startup separately passed Windows PowerShell 5.1"
+  },
+  "tests": {
+    "new_package": 91,
+    "old_public_2": 86,
+    "builder": 12,
+    "skips": 0,
+    "evidence_basis": "91 new-package and 86 old-package cases are historical captured results for the unchanged final ZIP; 12 builder/tool cases freshly rerun after the retained-log repair. No full qualification replay claimed."
+  },
+  "first_run": {
+    "shared_literal_commands_executed": true,
+    "paths_with_spaces": true,
+    "fresh_shell_exact_interpreter": true,
+    "old_literal_parent_output_refused": true,
+    "stale_and_missing_refused": true,
+    "demo_result": "DEMO_LOCAL_PASSED",
+    "owner_decision": "pending",
+    "gold_applied": false,
+    "ai_worker_invoked": false,
+    "h3_verdict": null,
+    "archive_verified_before_extraction": true
+  },
+  "privacy": {
+    "result": "BOUNDED_SCAN_AND_LINK_CHECK_PASSED",
+    "files_scanned": 63,
+    "links_checked": 112,
+    "raw_logs": "Retained outside repository and payload",
+    "limit": "Bounded patterns and exact file-set review; not comprehensive credential detection"
+  },
+  "ci": {
+    "status": "NOT_RUN",
+    "defined_surface": "Windows PowerShell / CPython 3.14.5",
+    "linux": "NOT_DEFINED_NOT_RUN",
+    "limits": "Synthetic-only; pinned actions, contents read permission, 20-minute timeout, no uploads, deployment, provider credentials or release"
+  },
+  "browser": {
+    "status": "LOCAL_DESKTOP_MOBILE_CHECKED",
+    "pages": [
+      "first-run.html",
+      "architecture.html"
+    ],
+    "viewports": [
+      {
+        "width": 1365,
+        "height": 900
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "first_run_document_widths": [
+      1365,
+      390
+    ],
+    "architecture_mobile_document_width": 390,
+    "long_code_blocks": "Horizontal scrolling contained within pre blocks",
+    "captures": "Four local full-page browser screenshots retained outside public payload",
+    "limit": "In-app browser emulation, not physical-device or production evidence"
+  },
+  "independent_review": {
+    "status": "NOT_INCLUDED_IN_WORKER_QUALIFICATION",
+    "basis": "Separate independent H3 review required; worker receipt supplies local H1/H2 evidence only"
+  },
+  "history": {
+    "public_1_and_2": "Frozen folders, archives and receipts preserved byte-for-byte; old literal first-run failure reproduced",
+    "old_asset_byte_checks": 86
+  },
+  "checks": [
+    {
+      "name": "runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "repeat-build",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "package",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "package-optimized",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "package-env-optimized",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "new-handoff",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "be52928ea140aef0b9c6f44f5dc8cb72112e5b2d0331f90019204f14b4ca496b",
+      "tests": 40,
+      "skips": 0,
+      "duration_seconds": 10.464
+    },
+    {
+      "name": "new-packet",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "fe31d13bbe443d8626d210394f67c88b8d3087f93035a6469097fcebd4ffa92f",
+      "tests": 1,
+      "skips": 0,
+      "duration_seconds": 0.479
+    },
+    {
+      "name": "new-librarian",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "522d5ddf9f06d78915bb37f5d58b0caa538227d9538e54af720e992cef5c1e98",
+      "tests": 38,
+      "skips": 0,
+      "duration_seconds": 127.297
+    },
+    {
+      "name": "new-integrity-and-first-run",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "e0ef180066ef8f4de0b0a1589ce45bf81ff844d694862b45ff70b8cda4ff2ce0",
+      "tests": 12,
+      "skips": 0,
+      "duration_seconds": 16.688
+    },
+    {
+      "name": "builder-tests",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Fresh focused builder/tool suite rerun after removing retained-log qualification; earlier11-case run was a separate post-link-context repair run, not part of the pre-link-failure suite.",
+      "log_sha256": "e761e6d0de3fc586fa018902541ea54c9a932f4a8ac0a3d02182f6f217925697",
+      "tests": 12,
+      "skips": 0,
+      "duration_seconds": 14.925
+    },
+    {
+      "name": "old-package",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "old-literal-output-refusal",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "name": "old-handoff",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "c8aa9f8bb8d0cc56d390a087ec2fa705c211b70d68007c5cf34c2b4cca805cd1",
+      "tests": 40,
+      "skips": 0,
+      "duration_seconds": 8.346
+    },
+    {
+      "name": "old-packet",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "8f27ab79c60d427a6e5012da80db3b5aaa7f83847482ccd6d1208f875a7d0a3a",
+      "tests": 1,
+      "skips": 0,
+      "duration_seconds": 0.698
+    },
+    {
+      "name": "old-librarian",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "7654150ef1363ca51fd81b347b5d33402815757dbb61b252d9227236a6ca942d",
+      "tests": 38,
+      "skips": 0,
+      "duration_seconds": 139.807
+    },
+    {
+      "name": "old-integrity-and-first-run",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "basis": "Historical captured successful final-ZIP suite before tool-only repair; retained as one-off external evidence. Not imported by the current public qualifier and not claimed as newly executed.",
+      "log_sha256": "b95823dc650cb31825ce2c09f6a0438091b511d27f9f3920915597962c8b8ddc",
+      "tests": 7,
+      "skips": 0,
+      "duration_seconds": 15.197
+    },
+    {
+      "name": "fresh-shell-continuation",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "package-after-startup-and-tests",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ],
+  "limits": [
+    "No hosted CI run or push",
+    "Linux/macOS unverified",
+    "No live model/provider, native confinement, owner acceptance, production or Gold action"
+  ],
+  "qualification_basis": "Final ZIP startup and 91+86 package tests were captured before subsequent tool-only repairs. Those results remain historical one-off external evidence for unchanged archive/runtime bytes. An earlier 11-case builder/surface run followed the link-context repair. Current 12-case builder/tool tests were freshly rerun after removing the unsafe retained-log qualification mode; final source/metadata/privacy/link/archive checks were rerun. No unchanged package tests or full qualification pipeline are claimed as rerun after this tool-only repair.",
+  "site_identity": [
+    {
+      "file": "index.html",
+      "sha256": "d44d3b882f2413940d01829da7a9424640823c3d3ef9248bdfc854ea15b725a8",
+      "bytes": 9064
+    },
+    {
+      "file": "first-run.html",
+      "sha256": "3b68393ccd7ddafe0cdf15944719b82f7d5e00cb4fe6698de0ed8e5b45033f63",
+      "bytes": 4661
+    },
+    {
+      "file": "verification.html",
+      "sha256": "f57ff1c713513e8104aa73bf6398c7554d8f75018fc16f5ceab290a9eeabd34d",
+      "bytes": 3663
+    },
+    {
+      "file": "architecture.html",
+      "sha256": "8ef4cae08589c689db0d05a3dc358ecd0a96ef71aeba42ef31a6806a2ffc9ee7",
+      "bytes": 30688
+    },
+    {
+      "file": "style.css",
+      "sha256": "5962756727754432ffaa60639d9acffcaff6745ae0ee0c6da8a4a33e2b4ed9f3",
+      "bytes": 8664
+    },
+    {
+      "file": "preview.js",
+      "sha256": "8d3feda5338d3ea2eadef496072069ff9eb94309c97801b76599d1e86ff28ed1",
+      "bytes": 895
+    }
+  ],
+  "tool_repair": {
+    "issue": "Saved summaries could substitute for command execution without run identity binding",
+    "resolution": "Removed reusable resume mode entirely; public qualification always executes its commands and refuses prior step evidence before starting. Saved OK text or a stale receipt cannot be promoted.",
+    "focused_tests": 12,
+    "new_regression": "Removed resume CLI rejects unrelated OK log and stale receipt; direct qualifier refusal occurs before subprocess execution and preserves prior evidence bytes.",
+    "unchanged_archive": true,
+    "full_package_suites_rerun": false
+  },
+  "tool_identity": [
+    {
+      "file": "tools/qualify_public.py",
+      "sha256": "d0c1334c2b6b703ad3033799f939eb30976fdc3ed0864637e134074d3ccc6211",
+      "bytes": 12473
+    },
+    {
+      "file": "tests/test_public_build.py",
+      "sha256": "c9b6b73229ced3b572eb74c45742b4b43ae47e5d897b0664d036dcb1f7678c22",
+      "bytes": 8481
+    },
+    {
+      "file": "tools/build_public.py",
+      "sha256": "07ccc6dfa5decf4a850ed353492aba9753481def254351b20b66197bef42f07f",
+      "bytes": 5555
+    },
+    {
+      "file": "tools/qualify_public.ps1",
+      "sha256": "36f241a6c98cd176e57b1b588194bb67c90debf2d666dc03f90814cdc75c9352",
+      "bytes": 1128
+    },
+    {
+      "file": "tools/first_run_commands.ps1",
+      "sha256": "ab0442deadcd05efd9567b778280e6faba88bbddde4da926ac703fedad243465",
+      "bytes": 1143
+    },
+    {
+      "file": ".github/workflows/public-first-run.yml",
+      "sha256": "25eb7d2d706343667e355556b8bdcfd7af59d900c301b30667d6f4b202e45705",
+      "bytes": 1297
+    }
+  ]
+}

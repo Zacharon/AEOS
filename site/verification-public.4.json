@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-10-17",
+  "result": "PUBLIC_4_LOCAL_COMPATIBILITY_CHECKS_PASSED",
+  "archive": {
+    "file": "downloads/agentic-engineering-os-2026.10.17-public.4.zip",
+    "sha256": "00567ec22a85971f588d6837f9acffd3b875af53b15dff0328e102c827e9ed14",
+    "manifest_sha256": "5b5e35eb510aaf19d14cf8d8e5081d901b1b8debb5ffe50ed0eeae5594cdc404",
+    "bytes": 97966,
+    "file_count": 43,
+    "manifest_payload_entries": 42,
+    "based_on": "2026.10.09-public.3",
+    "frozen_public_3_sha256": "5fd48062e579e4f15c712e82b4abbf3592cac81566c7a1550102babca836d079"
+  },
+  "environment": {
+    "os": "Windows",
+    "python_versions": ["3.11.15", "3.14.5"],
+    "prerequisites": "Fresh virtual environment for each version; pinned PyYAML 6.0.3 and jsonschema 4.26.0 installed from requirements.txt"
+  },
+  "per_python": [
+    {
+      "python": "3.11.15",
+      "manifest": "PASS",
+      "synthetic_demo": "DEMO_LOCAL_PASSED",
+      "fresh_process_continuation": "PASS",
+      "repository_tests": 8,
+      "tests": {"integrity_and_first_run": 12, "librarian": 38, "handoff": 40, "packet": 1, "total": 91, "skips": 0}
+    },
+    {
+      "python": "3.14.5",
+      "manifest": "PASS",
+      "synthetic_demo": "DEMO_LOCAL_PASSED",
+      "fresh_process_continuation": "PASS",
+      "repository_tests": 8,
+      "tests": {"integrity_and_first_run": 12, "librarian": 38, "handoff": 40, "packet": 1, "total": 91, "skips": 0}
+    }
+  ],
+  "changes_from_public_3": [
+    "Python requirement and first-run version check accept CPython 3.11 or newer",
+    "Python 3.11 reserved Windows name fallback uses PureWindowsPath.is_reserved",
+    "Librarian test cleanup uses shutil.rmtree onerror and the junction assertion reads the Windows reparse flag"
+  ],
+  "archive_reproducibility": "Exact compressed ZIP bytes checked with the CPython 3.14.5 builder. CPython 3.11.15 verified all committed archive members and the recorded archive digest; compression output is interpreter-dependent.",
+  "boundaries": {
+    "bronze_silver": "Synthetic demo creates source evidence and a verified pending proposal",
+    "owner_decision": "pending",
+    "gold_applied": false,
+    "ai_worker_invoked": false,
+    "h3_verdict": null,
+    "hosted_ci": "NOT_RUN_FOR_PUBLIC_4",
+    "other_platforms": "UNVERIFIED",
+    "live_provider_or_customer_use": "UNVERIFIED"
+  },
+  "history": "Public.1, public.2 and public.3 archives and receipts remain historical. The separate 2026.10.12-public.4-candidate.1 descends from public.2 and remains unpublished."
+}
