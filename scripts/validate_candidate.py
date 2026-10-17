@@ -77,7 +77,8 @@ class Links(HTMLParser):
 def validate_links_and_privacy():
     checked = 0
     files = list((ROOT / "site").rglob("*.html"))
-    files += [ROOT / "README.md", ROOT / "docs/PACKAGE-CANDIDATE.md"]
+    files += [ROOT / "README.md", ROOT / "docs/PACKAGE-CANDIDATE.md",
+              ROOT / "docs/RELEASE-READINESS-public.4.md"]
     candidate = ROOT / "distribution" / NAME
     files += [p for p in candidate.rglob("*") if p.is_file()]
     for path in files:
