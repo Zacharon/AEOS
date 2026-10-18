@@ -24,7 +24,7 @@ Do not make or imply any of these; open them as questions for the owner:
 
 ## Distribution folders
 
-`distribution/*-public.1` and `*-public.2` are frozen. The current candidate is built deterministically by `scripts/build_candidate.py` and must match its committed bytes; do not hand-edit files inside it. Read `docs/PACKAGE-CANDIDATE.md` before touching packaging.
+The current source-preview package is `2026.10.17-public.4`, derived from frozen public.3; `scripts/build_public4.py` builds it. Preserve all committed package/archive bytes during documentation work. Public.1, public.2 and public.3 archives and receipts are historical. The separate `2026.10.12-public.4-candidate.1` is an unpublished public.2-lineage repair candidate, built by `scripts/build_candidate.py`; its candidate/readiness documents are historical, not the current onboarding route. Do not hand-edit generated distribution content. Read the relevant builder and package records before packaging changes.
 
 ## Validate before proposing a change
 
@@ -35,7 +35,16 @@ python -B scripts/validate_candidate.py
 python -B -m unittest discover -s tests -p "test_*.py"
 ```
 
-These check the extracted package, the documented first run, regressions, and that local links resolve and no private path or credential marker appears in the scanned files. CI runs the same validation on Windows for every pull request.
+The Windows validator executes the unpublished repair candidate's extracted package and first run, not the current public.4 journey. Its link/privacy scan also inspects current public.4 files. Current public.4 has separate local Windows 3.11.15/3.14.5 evidence in `site/verification-public.4.json`; do not describe candidate CI as a current-release Python matrix.
+
+For the repository-wide bounded marker/name scanner (separate Ubuntu CI):
+
+```powershell
+python -B -m unittest discover -s scripts -p "test_check_public_boundary.py"
+python -B scripts/check_public_boundary.py
+```
+
+These checks are not exhaustive security verification, authenticated approval or independent H3. Report the actual environment, skips and unrun checks. Keep independent review and owner-controlled integration separate from implementer verification.
 
 ## How to change it
 
