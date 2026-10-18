@@ -26,6 +26,12 @@ class SetupInstructionsTests(unittest.TestCase):
         self.assertIn(archive, primary)
         self.assertIn(archive, site)
         self.assertTrue((ROOT / "site/downloads" / archive).is_file())
+        # Team onboarding must reach the same immutable release as Try it.
+        adoption = (ROOT / "docs/ADOPTING-AEOS.md").read_text(encoding="utf8")
+        adoption_guide = re.search(r"\[FIRST_RUN\.md\]\(([^)]+)\)", adoption)
+        self.assertIsNotNone(adoption_guide, "Team setup must link to first-run instructions")
+        self.assertEqual((ROOT / "docs" / adoption_guide.group(1)).resolve(), guide)
+        self.assertIn(archive, adoption)
 
 
 if __name__ == "__main__":

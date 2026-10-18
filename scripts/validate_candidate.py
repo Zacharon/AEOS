@@ -78,10 +78,12 @@ def validate_links_and_privacy():
     checked = 0
     files = list((ROOT / "site").rglob("*.html"))
     files += [ROOT / "README.md", ROOT / "docs/ARCHITECTURE.md",
+              ROOT / "docs/ADOPTING-AEOS.md",
               ROOT / "docs/PACKAGE-CANDIDATE.md",
               ROOT / "docs/RELEASE-READINESS-public.4.md",
               ROOT / "site/verification-public.3.json",
               ROOT / "site/verification-public.4.json"]
+    files += list((ROOT / ".agent").rglob("*.md"))
     candidate = ROOT / "distribution" / NAME
     files += [p for p in candidate.rglob("*") if p.is_file()]
     for version in ("agentic-engineering-os-2026.10.09-public.3",
