@@ -16,8 +16,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0 # full history for the --history scan
       # Standard library only; the runner's own Python 3 is enough.
       - name: Scanner regressions
         run: python3 -B -m unittest discover -s scripts -p "test_check_public_boundary.py"
       - name: Scan every tracked file and archive member
         run: python3 -B scripts/check_public_boundary.py
+      - name: Scan every file version reachable from this commit
+        run: python3 -B scripts/check_public_boundary.py --history

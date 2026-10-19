@@ -11,7 +11,7 @@ import unittest
 import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from check_public_boundary import scan, scan_bytes, scan_name
+from check_public_boundary import scan, scan_bytes, scan_history, scan_name
 
 FAKE = {
     "private key block": "-----BEGIN " + "RSA PRIVATE KEY-----",
@@ -21,6 +21,10 @@ FAKE = {
     "model provider API key": "sk-" + "ant-api03-" + "x" * 24,
     "Google API key": "AIza" + "B" * 35,
     "live payment key": "sk_" + "live_" + "c" * 24,
+    "test payment key": "sk_" + "test_" + "d" * 24,
+    "JSON web token": "eyJ" + "hbGciOiJIUzI1NiJ9" + ".eyJ" + "zdWIiOiIxMjM0In0" + "." + "e" * 43,
+    "Azure storage key": "Account" + "Key=" + "f" * 86 + "==",
+    "credential in URL": "postgres" + "://admin:" + "g" * 16 + "@db.example.com/app",
     "credential assignment": "api_key" + " = " + "s3cr3tvalue99",
     "Windows user path": "C:" + "\\Users\\" + "someone\\vault",
     "macOS user path": "/Users/" + "someone/vault",
@@ -39,6 +43,11 @@ class BoundaryScanTests(unittest.TestCase):
             with self.subTest(marker=marker):
                 self.assertIn(marker, markers("doc.md", "context\n" + sample + " context"))
 
+    def test_named_secret_assignments(self):
+        for line in ("DB_" + "SECRET = 'h1ddenvalue99'", "export GITHUB_" + "TOKEN=abcdefgh1234"):
+            with self.subTest(line=line):
+                self.assertIn("credential assignment", markers("app.py", line))
+
     def test_placeholders_and_neutral_text_pass(self):
         neutral = "\n".join([
             "vault_root: <absolute path to your new vault>",
@@ -46,6 +55,8 @@ class BoundaryScanTests(unittest.TestCase):
             "api_key = ${API_KEY}",
             "C:\\Users\\<you>\\Workspace and C:\\Users\\Public",
             "/Users/<you>/vault",
+            "postgres://<user>:<password>@localhost/app and https://example.com/a:b@c",
+            "DB_SECRET = ${DB_SECRET}",
             "Do not store credentials in this file.",
         ])
         self.assertEqual(markers("README.md", neutral), set())
@@ -83,6 +94,22 @@ class BoundaryScanTests(unittest.TestCase):
             result = scan(root)
         self.assertEqual(result["files_scanned"], 2)
         self.assertEqual(result["findings"], [{"path": "leak.md", "marker": "AWS access key id"}])
+
+    def test_history_finds_deleted_secret(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            git = ["git", "-c", "user.name=t", "-c", "user.email=t@example.invalid", "-c", "commit.gpgsign=false"]
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            (root / "notes.md").write_text("token " + FAKE["GitHub token"], encoding="utf8")
+            subprocess.run(git + ["add", "notes.md"], cwd=root, check=True)
+            subprocess.run(git + ["commit", "-qm", "add"], cwd=root, check=True)
+            (root / "notes.md").write_text("clean", encoding="utf8")
+            subprocess.run(git + ["commit", "-qam", "remove"], cwd=root, check=True)
+            self.assertEqual(scan(root)["findings"], [])
+            result = scan_history(root)
+        self.assertEqual(result["blobs_scanned"], 2)
+        self.assertFalse(result["shallow"])
+        self.assertEqual([(f["path"], f["marker"]) for f in result["findings"]], [("notes.md", "GitHub token")])
 
     def test_current_repository_is_clean(self):
         self.assertEqual(scan()["findings"], [])
