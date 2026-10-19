@@ -3,7 +3,9 @@
 Complements validate_candidate.py (Windows, candidate-scoped) with a fast check
 that runs on any OS: credential markers, private paths and secret-bearing file
 names anywhere in the repository, including inside committed ZIP archives.
-Bounded pattern scan, not an exhaustive secret audit.
+With --history it scans every file version reachable from HEAD, so a secret
+committed and later deleted is still found. Bounded pattern scan, not an
+exhaustive secret audit.
 """
 from pathlib import Path, PurePosixPath
 import argparse
@@ -24,7 +26,11 @@ CONTENT_MARKERS = {
     "model provider API key": r"\bsk-(?:proj-|ant-[a-z0-9]+-)?[A-Za-z0-9_-]{20,}",
     "Google API key": r"\bAIza[0-9A-Za-z_-]{35}\b",
     "live payment key": r"\b[rs]k_live_[0-9A-Za-z]{20,}",
-    "credential assignment": r"(?im)^\s*(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*['\"]?[^\s'\"<{$]{8,}",
+    "test payment key": r"\b[rs]k_test_[0-9A-Za-z]{20,}",
+    "JSON web token": r"\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}",
+    "Azure storage key": r"(?i)\bAccountKey=[A-Za-z0-9+/]{40,}",
+    "credential in URL": r"(?i)\b[a-z][a-z0-9+.-]*://[^\s/:@'\"<>]+:[^\s/@'\"<>{$%]{6,}@",
+    "credential assignment": r"(?im)^\s*(?:export\s+)?(?:api[_-]?key|access[_-]?token|client[_-]?secret|password|[a-z0-9_]*_(?:secret|token|password|api_key))\s*[:=]\s*['\"]?[^\s'\"<{$]{8,}",
     "Windows user path": r"(?i)\b[a-z]:[/\\]+users[/\\]+(?!<|%|\{|\$|public\b|default\b)[^/\\\s]+",
     "macOS user path": r"/Users/(?!<|\{|\$|Shared\b)[A-Za-z0-9._-]+/",
     "synced personal folder": r"(?i)onedrive|dropbox[/\\]|google drive[/\\]",
@@ -83,14 +89,55 @@ def tracked_files(root):
     return [p for p in out.decode("utf8").split("\0") if p]
 
 
+def history_blobs(root):
+    """Yield (label, bytes) for every blob reachable from HEAD, once per blob."""
+    listing = subprocess.run(["git", "rev-list", "--objects", "HEAD"], cwd=root,
+                             capture_output=True, check=True).stdout.decode("utf8").splitlines()
+    paths = {}
+    for line in listing:
+        sha, _, rel = line.partition(" ")
+        if rel:
+            paths.setdefault(sha, rel)
+    shas = list(paths)
+    kinds = subprocess.run(["git", "cat-file", "--batch-check=%(objectname) %(objecttype)"], cwd=root,
+                           input="\n".join(shas).encode(), capture_output=True, check=True).stdout.decode().split()
+    blobs = [kinds[i] for i in range(0, len(kinds), 2) if kinds[i + 1] == "blob"]
+    out = subprocess.run(["git", "cat-file", "--batch"], cwd=root, input="\n".join(blobs).encode(),
+                         capture_output=True, check=True).stdout
+    pos = 0
+    for sha in blobs:
+        end = out.index(b"\n", pos)
+        size = int(out[pos:end].split()[2])
+        yield paths[sha], sha[:12], out[end + 1:end + 1 + size]
+        pos = end + 1 + size + 1
+
+
+def is_shallow(root):
+    out = subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=root, capture_output=True, check=True)
+    return out.stdout.strip() == b"true"
+
+
+def exempt(rel, finding):
+    return rel in PATTERN_SOURCES and finding["marker"] in PATTERN_SOURCE_MARKERS
+
+
+def scan_history(root=ROOT):
+    findings, count = [], 0
+    for rel, short, raw in history_blobs(root):
+        count += 1
+        findings += [dict(f, blob=short) for f in scan_bytes(rel, raw) if not exempt(rel, f)]
+    return {"blobs_scanned": count, "shallow": is_shallow(root), "findings": findings,
+            "limit": "Bounded marker/name scan of every blob reachable from HEAD (one path shown per blob), "
+                     "not an exhaustive secret audit; a shallow clone covers only its fetched history"}
+
+
 def scan(root=ROOT, paths=None):
     paths = tracked_files(root) if paths is None else paths
     findings = []
     for rel in paths:
         path = root / rel
         if path.is_file():
-            findings += [f for f in scan_bytes(rel, path.read_bytes())
-                         if not (rel in PATTERN_SOURCES and f["marker"] in PATTERN_SOURCE_MARKERS)]
+            findings += [f for f in scan_bytes(rel, path.read_bytes()) if not exempt(rel, f)]
     return {"files_scanned": len(paths), "findings": findings,
             "limit": "Bounded marker/name scan of tracked files and ZIP members, not an exhaustive secret audit"}
 
@@ -98,7 +145,10 @@ def scan(root=ROOT, paths=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("paths", nargs="*", help="Repository-relative files (default: all tracked files)")
+    parser.add_argument("--history", action="store_true", help="Scan every file version reachable from HEAD")
     args = parser.parse_args()
-    result = scan(paths=args.paths or None)
+    if args.history and args.paths:
+        parser.error("--history scans all reachable history; it takes no paths")
+    result = scan_history() if args.history else scan(paths=args.paths or None)
     print(json.dumps(result, indent=2))
     sys.exit(1 if result["findings"] else 0)
