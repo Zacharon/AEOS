@@ -81,7 +81,9 @@ def scan_archive(label, raw):
                 return [{"path": label, "marker": "archive exceeds scan bounds"}]
             findings = []
             for info in infos:
-                findings += scan_bytes(label + "!" + info.filename, z.read(info))
+                # Check the member's own basename before adding its display prefix.
+                findings += [dict(f, path=label + "!" + f["path"])
+                             for f in scan_bytes(info.filename, z.read(info))]
             return findings
     except zipfile.BadZipFile:
         return [{"path": label, "marker": "unreadable archive"}]

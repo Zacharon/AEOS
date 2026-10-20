@@ -199,7 +199,7 @@ class HistoryFilenameTests(unittest.TestCase):
     def test_zip_aliases_and_archive_rename_keep_member_checks_and_bounds(self):
         buffer = io.BytesIO()
         with zipfile.ZipFile(buffer, "w") as archive:
-            archive.writestr("pkg/.env", "harmless")
+            archive.writestr(".env", "harmless")
             archive.writestr("token.txt", FAKE["GitHub token"])
         raw = buffer.getvalue()
         self.commit({"data.bin": raw, "one.zip": raw, "two.ZIP": raw})
@@ -208,7 +208,7 @@ class HistoryFilenameTests(unittest.TestCase):
             result = scan_history(self.root)
         self.assertEqual(archive_scan.call_count, 1)
         self.assertEqual(result["blobs_scanned"], 1)
-        self.assertEqual(self.names(result), {"one.zip!pkg/.env", "two.ZIP!pkg/.env"})
+        self.assertEqual(self.names(result), {"one.zip!.env", "two.ZIP!.env"})
         self.assertEqual({f["path"] for f in result["findings"] if f["marker"] == "GitHub token"},
                          {"one.zip!token.txt", "two.ZIP!token.txt"})
         for bound in ("MAX_ARCHIVE_MEMBERS", "MAX_ARCHIVE_BYTES"):
