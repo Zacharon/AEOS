@@ -60,14 +60,17 @@ def scan_name(label):
 
 
 def scan_bytes(label, raw):
-    findings = scan_name(label)
+    return scan_name(label) + scan_content(label, raw)
+
+
+def scan_content(label, raw):
     if label.lower().endswith(".zip"):
-        return findings + scan_archive(label, raw)
+        return scan_archive(label, raw)
     try:
         text = raw.decode("utf8")
     except UnicodeDecodeError:
-        return findings  # Binary payloads are out of scope for this text scan.
-    return findings + scan_text(label, text)
+        return []  # Binary payloads are out of scope for this text scan.
+    return scan_text(label, text)
 
 
 def scan_archive(label, raw):
@@ -78,7 +81,9 @@ def scan_archive(label, raw):
                 return [{"path": label, "marker": "archive exceeds scan bounds"}]
             findings = []
             for info in infos:
-                findings += scan_bytes(label + "!" + info.filename, z.read(info))
+                # Check the member's own basename before adding its display prefix.
+                findings += [dict(f, path=label + "!" + f["path"])
+                             for f in scan_bytes(info.filename, z.read(info))]
             return findings
     except zipfile.BadZipFile:
         return [{"path": label, "marker": "unreadable archive"}]
@@ -90,26 +95,41 @@ def tracked_files(root):
 
 
 def history_blobs(root):
-    """Yield (label, bytes) for every blob reachable from HEAD, once per blob."""
-    listing = subprocess.run(["git", "rev-list", "--objects", "HEAD"], cwd=root,
-                             capture_output=True, check=True).stdout.decode("utf8").splitlines()
+    """Yield (paths, short SHA, bytes), reading each reachable blob once.
+
+    Raw, NUL-delimited diffs retain every blob/path association, including
+    deleted names, merge parents and renames (represented as delete/add).
+    rev-list --objects supplies only one name for a shared object.
+    """
+    listing = subprocess.run(
+        ["git", "log", "--format=", "--raw", "-r", "-z", "--no-abbrev",
+         "--no-renames", "--root", "-m", "HEAD"], cwd=root,
+        capture_output=True, check=True).stdout.split(b"\0")
     paths = {}
-    for line in listing:
-        sha, _, rel = line.partition(" ")
-        if rel:
-            paths.setdefault(sha, rel)
-    shas = list(paths)
-    kinds = subprocess.run(["git", "cat-file", "--batch-check=%(objectname) %(objecttype)"], cwd=root,
-                           input="\n".join(shas).encode(), capture_output=True, check=True).stdout.decode().split()
-    blobs = [kinds[i] for i in range(0, len(kinds), 2) if kinds[i + 1] == "blob"]
-    out = subprocess.run(["git", "cat-file", "--batch"], cwd=root, input="\n".join(blobs).encode(),
-                         capture_output=True, check=True).stdout
-    pos = 0
-    for sha in blobs:
-        end = out.index(b"\n", pos)
-        size = int(out[pos:end].split()[2])
-        yield paths[sha], sha[:12], out[end + 1:end + 1 + size]
-        pos = end + 1 + size + 1
+    for index in range(0, len(listing) - 1, 2):
+        old_mode, new_mode, old_sha, new_sha, _ = listing[index].lstrip(b"\n:").split()
+        rel = listing[index + 1].decode("utf8", errors="surrogateescape")
+        for mode, sha in ((old_mode, old_sha), (new_mode, new_sha)):
+            # Regular files and symlinks are blobs; gitlinks are commits.
+            if mode.startswith((b"100", b"120")):
+                paths.setdefault(sha.decode("ascii"), {})[rel] = None
+    # Keep one blob's bytes at a time, rather than buffering all payloads.
+    with subprocess.Popen(["git", "cat-file", "--batch"], cwd=root,
+                          stdin=subprocess.PIPE, stdout=subprocess.PIPE) as batch:
+        for sha in paths:
+            batch.stdin.write((sha + "\n").encode("ascii"))
+            batch.stdin.flush()
+            header = batch.stdout.readline().split()
+            if len(header) != 3 or header[:2] != [sha.encode("ascii"), b"blob"]:
+                raise ValueError("Unexpected Git blob response")
+            size = int(header[2])
+            raw = batch.stdout.read(size)
+            if len(raw) != size or batch.stdout.read(1) != b"\n":
+                raise ValueError("Incomplete Git blob response")
+            yield list(paths[sha]), sha[:12], raw
+        batch.stdin.close()
+        if batch.wait():
+            raise subprocess.CalledProcessError(batch.returncode, batch.args)
 
 
 def is_shallow(root):
@@ -123,11 +143,23 @@ def exempt(rel, finding):
 
 def scan_history(root=ROOT):
     findings, count = [], 0
-    for rel, short, raw in history_blobs(root):
+    for paths, short, raw in history_blobs(root):
         count += 1
-        findings += [dict(f, blob=short) for f in scan_bytes(rel, raw) if not exempt(rel, f)]
+        content = {}
+        for rel in paths:
+            findings += [dict(f, blob=short) for f in scan_name(rel)]
+            # A blob can occur under both ZIP and ordinary names. Scan each
+            # interpretation once, then apply labels and exemptions per path.
+            archive = rel.lower().endswith(".zip")
+            if archive not in content:
+                content[archive] = (rel, scan_content(rel, raw))
+            source, matches = content[archive]
+            for match in matches:
+                finding = dict(match, path=rel + match["path"][len(source):], blob=short)
+                if not exempt(rel, finding):
+                    findings.append(finding)
     return {"blobs_scanned": count, "shallow": is_shallow(root), "findings": findings,
-            "limit": "Bounded marker/name scan of every blob reachable from HEAD (one path shown per blob), "
+            "limit": "Bounded marker/name scan of every blob/path association reachable from HEAD, "
                      "not an exhaustive secret audit; a shallow clone covers only its fetched history"}
 
 
