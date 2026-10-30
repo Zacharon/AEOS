@@ -216,7 +216,9 @@ python -B scripts/validate_candidate.py
 Stop on any failure. The existing validator is Windows/3.14.5-specific; a Linux
 refusal is not a passed package check. It tests an older unpublished candidate;
 the new workflow separately runs this prototype's synthetic tests on Windows and
-Ubuntu with Python 3.11 and 3.14.5. Planned CI is not evidence until its run passes.
+Ubuntu 24.04 with Python 3.11 and 3.14.5. Ubuntu is pinned because the first
+Ubuntu 26.04 attempt could not install Python 3.14.5; it stopped before tests.
+Planned CI is not evidence until its run passes.
 The full-history scan needs a normal full-history checkout. A reconstructed
 snapshot cannot establish upstream history safety.
 

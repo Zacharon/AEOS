@@ -118,8 +118,8 @@
     "prototypes/issue_handoff/issue_handoff.py": "92f0a9425ae1ba0d3b28c72fc9a9045bf9c44aafa680955f1cdbec2e9f08f256",
     "prototypes/issue_handoff/test_issue_handoff.py": "33ac129ef25c422d4ae560c00e3c5dc98feae53f764ebee6b89588f4b89bcddc",
     "prototypes/issue_handoff/synthetic_issue.json": "4287929f15935fb396f3af78af2e1be953293d64ff3b105ed374dfcc26174597",
-    "prototypes/issue_handoff/README.md": "8ce85cfcf24fd6b55bada6be7be1abfcb58b8ced91eeca4e0ef495c6bfa783c1",
-    ".github/workflows/issue-handoff.yml": "da844909dc3440b4c8cd3c5d1b5a8b8b835028ab3f29909a2dfe8582ee8af41c"
+    "prototypes/issue_handoff/README.md": "02d6d735dd7070d2004a1d5b4b6a4c3ddc9c8b41586680eacd1504d58487708b",
+    ".github/workflows/issue-handoff.yml": "7433ef185b5e01139c719658bab31b75b43b2c837dd43aa369f7ece90b185381"
   },
   "reused_tools": {
     "distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/scripts/build_task_packet.py": "157a69fef18a1e062c8b650146ba80665280a250adfcb7d2091e2c671d8f61ec",
@@ -134,5 +134,18 @@
     "human_acceptance_integration": "PENDING",
     "production_autonomous_factory": "NOT_IMPLEMENTED"
   },
-  "scope": "Neutral synthetic fixture and public source only; no private vault content or actual issue data is included."
+  "scope": "Neutral synthetic fixture and public source only; no private vault content or actual issue data is included.",
+  "hosted_attempts": [
+    {
+      "commit": "106d7478aefb9fe505a47f485989983ca1e03afd",
+      "workflow_url": "https://github.com/Zacharon/AEOS/actions/runs/41136216665",
+      "results_observed": {
+        "windows-latest Python 3.11": "success",
+        "ubuntu-latest Python 3.11": "success",
+        "ubuntu-latest Python 3.14.5": "setup failure: version unavailable on Ubuntu 26.04; tests did not run",
+        "windows-latest Python 3.14.5": "pending at receipt update"
+      },
+      "correction": "New workflow pins Ubuntu 24.04; official actions/python-versions manifest lists 3.14.5 x64 for Ubuntu 24.04."
+    }
+  ]
 }
