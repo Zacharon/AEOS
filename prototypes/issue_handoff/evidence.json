@@ -1,0 +1,138 @@
+{
+  "schema": "public-safe-prototype-evidence-1",
+  "date": "2026-10-30",
+  "source": {
+    "repository": "https://github.com/Zacharon/AEOS",
+    "base_commit": "f8b6258af5ed421c5c6803473ac92233378e701c",
+    "base_tree": "e8c16c0ab018a979c3ca5711b08c42c60e0e2ca4",
+    "retrieval": "GitHub connector; all 264 file blobs matched Git SHA-1; reconstructed local base tree exactly matched upstream tree",
+    "history": "Upstream Git history not available in local snapshot"
+  },
+  "environment": {
+    "os": "linux",
+    "python": "3.12.14"
+  },
+  "tests": [
+    {
+      "command": "python -B -m unittest discover -s prototypes/issue_handoff -p 'test_*.py' -v",
+      "exit_code": 0,
+      "tests": 20,
+      "result": "OK",
+      "skipped": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s tests -p 'test_*.py' -v",
+      "exit_code": 0,
+      "tests": 8,
+      "result": "OK",
+      "skipped": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s scripts -p 'test_check_public_boundary.py' -v",
+      "exit_code": 0,
+      "tests": 20,
+      "result": "OK",
+      "skipped": 0
+    }
+  ],
+  "synthetic_execution": {
+    "status": "candidate_needs_independent_H3",
+    "synthetic": true,
+    "ai_worker_invoked": false,
+    "gate_a": "fixture_only_not_human_approval",
+    "h3_verdict": null,
+    "owner_acceptance": "pending",
+    "external_actions": false,
+    "repair_cycles_used": 0,
+    "result_sha256": "b7a19e0accbab806cd908ea17a00d00682eb6314b81b46a682ffd1f23964cdd1",
+    "manifest_sha256": "4c7df06e24544edaadbe670d8ab458fe9ef0d09906815b89a88d5fcb6cca2af8",
+    "verified_inventory": {
+      "issue_number": 900001,
+      "label_count": 2,
+      "source_sha256": "285fd39ae7c1b1224bb7d4ec3f109a6e5d608e3c88dc0aafdc14cd2ea2c90c22"
+    }
+  },
+  "audit_summary": [
+    {
+      "step": 1,
+      "program": "git",
+      "command": "local Git fixture setup",
+      "exit_code": 0
+    },
+    {
+      "step": 2,
+      "program": "git",
+      "command": "local Git fixture setup",
+      "exit_code": 0
+    },
+    {
+      "step": 3,
+      "program": "git",
+      "command": "local Git fixture setup",
+      "exit_code": 0
+    },
+    {
+      "step": 4,
+      "program": "git",
+      "command": "local Git fixture setup",
+      "exit_code": 0
+    },
+    {
+      "step": 5,
+      "program": "python",
+      "command": "build_task_packet.py",
+      "exit_code": 0
+    },
+    {
+      "step": 6,
+      "program": "python",
+      "command": "handoff.py build",
+      "exit_code": 0
+    },
+    {
+      "step": 7,
+      "program": "python",
+      "command": "handoff.py check",
+      "exit_code": 0
+    },
+    {
+      "step": 8,
+      "program": "python",
+      "command": "handoff.py check",
+      "exit_code": 0
+    },
+    {
+      "step": 9,
+      "program": "python",
+      "command": "handoff.py validate-result",
+      "exit_code": 0
+    },
+    {
+      "step": 10,
+      "program": "python",
+      "command": "handoff.py review",
+      "exit_code": 0
+    }
+  ],
+  "content_fingerprints": {
+    "prototypes/issue_handoff/issue_handoff.py": "92f0a9425ae1ba0d3b28c72fc9a9045bf9c44aafa680955f1cdbec2e9f08f256",
+    "prototypes/issue_handoff/test_issue_handoff.py": "33ac129ef25c422d4ae560c00e3c5dc98feae53f764ebee6b89588f4b89bcddc",
+    "prototypes/issue_handoff/synthetic_issue.json": "4287929f15935fb396f3af78af2e1be953293d64ff3b105ed374dfcc26174597",
+    "prototypes/issue_handoff/README.md": "8ce85cfcf24fd6b55bada6be7be1abfcb58b8ced91eeca4e0ef495c6bfa783c1",
+    ".github/workflows/issue-handoff.yml": "da844909dc3440b4c8cd3c5d1b5a8b8b835028ab3f29909a2dfe8582ee8af41c"
+  },
+  "reused_tools": {
+    "distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/scripts/build_task_packet.py": "157a69fef18a1e062c8b650146ba80665280a250adfcb7d2091e2c671d8f61ec",
+    "distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py": "64d10bf9d412c1edd5305faaf9f6036cdc5c912f13d3c06ce3f79b8830517f26"
+  },
+  "not_verified": {
+    "native_windows_prototype_execution": "NOT_RUN_LOCALLY; CI configured separately",
+    "existing_package_validator": "Attempted; exit 1: Intended validation requires Windows CPython 3.14.5",
+    "live_github_issue_acquisition": "NOT_RUN; local authored GitHub-shape fixture only",
+    "T3_Code_agent_transport": "MANUAL_NOT_RUN",
+    "independent_H3": "PENDING; implementer checks do not supply H3",
+    "human_acceptance_integration": "PENDING",
+    "production_autonomous_factory": "NOT_IMPLEMENTED"
+  },
+  "scope": "Neutral synthetic fixture and public source only; no private vault content or actual issue data is included."
+}
