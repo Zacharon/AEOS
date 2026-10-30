@@ -1,0 +1,95 @@
+{
+  "kind": "public-safe synthetic implementer verification; not independent H3",
+  "date": "2026-10-30",
+  "upstream_commit": "f8b6258af5ed421c5c6803473ac92233378e701c",
+  "environment": {
+    "platform": "linux",
+    "python": "3.12.14"
+  },
+  "source_sha256": {
+    "prototypes/issue_handoff/issue_handoff.py": "8ba8a1c368d6bdbf27554f947ea6941feea8057d40949cc8702d403c5de1184a",
+    "tests/test_issue_handoff.py": "82d3fb3c8e45266b167d3aeb03c4a5d8376052322424b5a14701b62c7c14b469",
+    "prototypes/issue_handoff/synthetic-issue.json": "ba9eeb4004cfde6975f00b0f5fb57b58395b3ce08838941a946ab08004c58371"
+  },
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s tests -p 'test_*.py' -v",
+      "status": "passed",
+      "tests": 24,
+      "prototype_tests_included": 16,
+      "skipped": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/unified_handoff -p 'test_*.py' -v",
+      "status": "passed",
+      "tests": 40,
+      "skipped": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s scripts -p test_check_public_boundary.py -v",
+      "status": "passed",
+      "tests": 20,
+      "skipped": 0
+    },
+    {
+      "command": "python -B distribution/agentic-engineering-os-2026.10.17-public.4/scripts/check_package.py",
+      "status": "passed",
+      "manifested_payload_files": 42
+    },
+    {
+      "command": "python -B scripts/validate_candidate.py",
+      "status": "environment_refused",
+      "observed": "Intended validation requires Windows CPython 3.14.5"
+    }
+  ],
+  "demonstration": {
+    "state": "candidate_checks_passed_awaiting_independent_h3",
+    "synthetic": true,
+    "task_id": "TASK-SYNTHETIC-ISSUE-001",
+    "manifest_sha256": "f790c48a2f907b7695ae0a7f7ffb7de4623baff2da24f41c64779a5099211a4f",
+    "result_sha256": "03f3e5b4481e104e0376a15fd4b57b48f2158a6534f068ca13dc738064a36a3d",
+    "patch_sha256": "c59c2b0f88f6e91f0a8bb3ae88ab022236c8655a3ed8da34feb65da35a3bff3f",
+    "actual_changes": [
+      {
+        "after": "ce5cb3f8be665ee1ae3a48c645ada5180921730d2f0f1bd175033fdf8b4e891c",
+        "before": null,
+        "kind": "added",
+        "path": "01_PROJECTS/IssueDemo/output.md"
+      }
+    ],
+    "fresh_acceptance": {
+      "check": "fixed_synthetic_output_bytes",
+      "outcome": "passed",
+      "sha256": "ce5cb3f8be665ee1ae3a48c645ada5180921730d2f0f1bd175033fdf8b4e891c"
+    },
+    "review": "continuation_read",
+    "completion": "candidate_completion_checked",
+    "h3_verdict": null,
+    "owner_acceptance": "not_recorded",
+    "pr_created": false
+  },
+  "boundary_scans": {
+    "tracked_worktree": {
+      "status": "passed",
+      "files_scanned": 269,
+      "findings": []
+    },
+    "available_history": {
+      "status": "passed",
+      "shallow": true,
+      "scope": "upstream snapshot reachable from HEAD before the implementation commit",
+      "findings": []
+    },
+    "full_history": "not_available_in_local_shallow_checkout"
+  },
+  "unverified": [
+    "Windows execution of this adapter",
+    "live GitHub issue fetching",
+    "manual T3 Code/provider transport",
+    "OS sandboxing",
+    "independent H3",
+    "owner integration acceptance"
+  ],
+  "consequential_actions_by_prototype": false,
+  "note": "The fixture uses a separate disposable repository and worktree. Command logs and absolute local paths remain local. No private vault was inspected or copied. Package/archive/site bytes are preserved."
+}
