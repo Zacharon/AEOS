@@ -1,0 +1,107 @@
+{
+  "kind": "public-safe synthetic implementer verification; not independent H3",
+  "date": "2026-10-31",
+  "upstream_commit": "f8b6258af5ed421c5c6803473ac92233378e701c",
+  "environment": {
+    "platform": "linux",
+    "python": "3.12.14"
+  },
+  "source_sha256": {
+    "prototypes/issue_handoff/issue_handoff.py": "ce0c45689a1aaccaeab73aa0c1c31205276c30bd2ccd505fd8f9e51493beb242",
+    "prototypes/issue_handoff/synthetic-issue.json": "8b1a1823ad66d17bcfd1048e13bccac890f2dccb0212f2387d9b64d8d5ca1227",
+    "tests/test_issue_handoff.py": "bc05ee8ac5a7cf9ce6d3c2f4efdea561cd42df6229735b4a368cf1825424162d",
+    ".github/workflows/issue-handoff.yml": "662a62e9054d691bcec1bacf7a1bf7a52c2b086e120d0eaaa6530dc69d1c155c"
+  },
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s tests -p 'test_*.py' -v",
+      "status": "passed",
+      "tests": 34,
+      "prototype_tests_included": 26,
+      "skipped": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/unified_handoff -p 'test_*.py' -v",
+      "status": "passed",
+      "tests": 40,
+      "skipped": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s scripts -p 'test_check_public_boundary.py' -v",
+      "status": "passed",
+      "tests": 20,
+      "skipped": 0
+    },
+    {
+      "command": "python -B distribution/agentic-engineering-os-2026.10.17-public.4/scripts/check_package.py",
+      "status": "passed",
+      "manifested_payload_files": 42
+    },
+    {
+      "command": "python -B scripts/validate_candidate.py",
+      "status": "environment_refused",
+      "observed": "Intended validation requires Windows CPython 3.14.5"
+    }
+  ],
+  "demonstration": {
+    "actual_changes": [
+      {
+        "after": "ce5cb3f8be665ee1ae3a48c645ada5180921730d2f0f1bd175033fdf8b4e891c",
+        "before": null,
+        "kind": "added",
+        "path": "01_PROJECTS/IssueDemo/output.md"
+      }
+    ],
+    "base_commit": "89a1331b5a2def965c653a2e6c6e414f0126d6e3",
+    "completion": "candidate_completion_checked",
+    "fresh_acceptance": {
+      "check": "fixed_synthetic_output_bytes",
+      "outcome": "passed",
+      "sha256": "ce5cb3f8be665ee1ae3a48c645ada5180921730d2f0f1bd175033fdf8b4e891c"
+    },
+    "h3_verdict": null,
+    "limits": "Mechanical evidence only; no autonomous factory, native sandbox, live issue fetch, model dispatch or authenticated approval.",
+    "manifest_sha256": "aff66afa4d39b2e1d6342337e97704d72ae4bcee7364d077fcda0014526f478f",
+    "owner_acceptance": "not_recorded",
+    "patch": "candidate-0000.patch",
+    "patch_apply_check": "passed_against_seed",
+    "patch_sha256": "c59c2b0f88f6e91f0a8bb3ae88ab022236c8655a3ed8da34feb65da35a3bff3f",
+    "platform": "linux",
+    "pr_created": false,
+    "python": "3.12.14",
+    "result_sha256": "611a031315e3ab9d627eb4189d8ab77518145dc530624d817a96c0f674e72ab0",
+    "review": "continuation_read",
+    "state": "candidate_checks_passed_awaiting_independent_h3",
+    "synthetic": true,
+    "task_id": "TASK-SYNTHETIC-ISSUE-001",
+    "verified_inventory": {
+      "issue_number": 1,
+      "label_count": 2,
+      "source_sha256": "f2683363514a3a7b4ea2cc35f3a54a514b8639a64f11ead302c6a3e959bc179c"
+    }
+  },
+  "boundary_scans": {
+    "tracked_worktree": {
+      "status": "passed",
+      "files_scanned": 271,
+      "findings": []
+    },
+    "available_history": {
+      "status": "passed",
+      "shallow": true,
+      "blobs_scanned": 125,
+      "findings": [],
+      "scope": "retained main snapshot and original PR10 implementation before consolidation commit"
+    },
+    "full_history": "pending hosted CI for consolidation head"
+  },
+  "test_execution_note": "The first concurrent repository/public.4 test run encountered temporary package fixture interference; sequential reruns passed. CI runs these suites sequentially.",
+  "unverified": [
+    "Target Windows 10 execution",
+    "Manual T3/provider handoff",
+    "Independent H3 of consolidated head",
+    "Owner integration acceptance"
+  ],
+  "consequential_actions_by_prototype": false,
+  "note": "No private vault was inspected. Logs/absolute paths remain local. No package/archive/site bytes changed. Original hosted checks do not establish consolidated-code acceptance."
+}
