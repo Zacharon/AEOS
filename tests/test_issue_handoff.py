@@ -2,6 +2,7 @@
 import hashlib
 import json
 import os
+import stat
 from pathlib import Path
 import subprocess
 import sys
@@ -186,7 +187,11 @@ class IssueHandoffTests(unittest.TestCase):
 
     def test_git_locator_tampering_is_rejected_before_git(self):
         self.handoff()
-        (self.run / "worktree/.git").write_text("gitdir: missing\n")
+        locator = self.run / "worktree/.git"
+        # Git for Windows marks this fixture read-only. Deliberately make it
+        # writable so the test exercises controller refusal after tampering.
+        locator.chmod(locator.stat().st_mode | stat.S_IWRITE)
+        locator.write_text("gitdir: missing\n")
         stopped = self.cli("synthetic-worker", "--run", self.run, expected=2)
         self.assertIn("Git locator changed", stopped["reason"])
 

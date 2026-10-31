@@ -42,6 +42,8 @@ Actual consolidated test/scan results, source hashes and environment are recorde
 
 The initial broader matrix also ran the entire repository suite. Ubuntu/Python 3.14.5 passed all 26 prototype tests but failed the historical candidate ZIP's deterministic-byte comparison ([run](https://github.com/Zacharon/AEOS/actions/runs/41248192681)). That archive, builder and test are unchanged from main. This indicates an existing archive/toolchain portability limit, not a demonstrated prototype failure. The dedicated matrix now runs the prototype and public.4 contracts; full repository regression coverage stays in the existing Windows package workflow, with Linux 3.12 local evidence recorded separately. The archive failure is retained as a known uncorrected limitation; no frozen archive is rebuilt or test removed.
 
+Initial Windows jobs also exposed a test-fixture permission difference: Git for Windows makes the worktree `.git` locator read-only. The new tampering regression now explicitly makes its disposable locator writable before corrupting it, so Windows exercises the controller's digest refusal rather than failing while arranging the test. The production safeguard is unchanged.
+
 ## Remaining acceptance and original PR disposition
 
 Deliver the consolidation as one draft PR targeting main. Supersede and close #10/#11 without merging, preserving their branches/history and linking this review from the consolidation. Closing originals is housekeeping, not acceptance of the replacement. No merge, release, archive rebuild, site deployment or provider action is authorized by this document.

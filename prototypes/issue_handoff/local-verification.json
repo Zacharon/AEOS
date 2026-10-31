@@ -9,7 +9,7 @@
   "source_sha256": {
     "prototypes/issue_handoff/issue_handoff.py": "02d6efbaa741c725aefdac31eb9f4248cd244fa27e8d04c755f376c86782c5d2",
     "prototypes/issue_handoff/synthetic-issue.json": "8b1a1823ad66d17bcfd1048e13bccac890f2dccb0212f2387d9b64d8d5ca1227",
-    "tests/test_issue_handoff.py": "4ffe14f2094900b3c1cf99ac2f031df80dfabf157f49f7a1387af6aa322ab950",
+    "tests/test_issue_handoff.py": "ef5653fa1dc78e53f8700a94639fd086c255759b231b8472ab62d91fa0cc7c7b",
     ".github/workflows/issue-handoff.yml": "9b97eb42b12b01b4471ca4debe2b6a829625398a4e5ffda698696a9e699dc5b7"
   },
   "checks": [
@@ -95,7 +95,7 @@
     },
     "full_history": "pending hosted CI for consolidation head"
   },
-  "test_execution_note": "The first concurrent repository/public.4 test run encountered temporary package fixture interference; sequential reruns passed. CI runs these suites sequentially.",
+  "test_execution_note": "The first concurrent repository/public.4 test run encountered temporary package fixture interference; sequential reruns passed. CI runs these suites sequentially. Initial hosted Windows tamper regression needed its disposable Git locator made writable; the targeted Linux rerun passed after this test-fixture-only correction.",
   "unverified": [
     "Target Windows 10 execution",
     "Manual T3/provider handoff",
