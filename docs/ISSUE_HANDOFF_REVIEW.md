@@ -40,6 +40,8 @@ Hosted source evidence was rechecked, separately from consolidated-code evidence
 
 Actual consolidated test/scan results, source hashes and environment are recorded in [local-verification.json](../prototypes/issue_handoff/local-verification.json). New hosted CI applies only to the new PR head; consult that PR's checks. The Windows-only package validator cannot be locally completed on Linux. It validates the older unpublished candidate separately from the frozen public.4 contract suite.
 
+The initial broader matrix also ran the entire repository suite. Ubuntu/Python 3.14.5 passed all 26 prototype tests but failed the historical candidate ZIP's deterministic-byte comparison ([run](https://github.com/Zacharon/AEOS/actions/runs/41248192681)). That archive, builder and test are unchanged from main. This indicates an existing archive/toolchain portability limit, not a demonstrated prototype failure. The dedicated matrix now runs the prototype and public.4 contracts; full repository regression coverage stays in the existing Windows package workflow, with Linux 3.12 local evidence recorded separately. The archive failure is retained as a known uncorrected limitation; no frozen archive is rebuilt or test removed.
+
 ## Remaining acceptance and original PR disposition
 
 Deliver the consolidation as one draft PR targeting main. Supersede and close #10/#11 without merging, preserving their branches/history and linking this review from the consolidation. Closing originals is housekeeping, not acceptance of the replacement. No merge, release, archive rebuild, site deployment or provider action is authorized by this document.

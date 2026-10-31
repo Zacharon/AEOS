@@ -10,7 +10,7 @@
     "prototypes/issue_handoff/issue_handoff.py": "02d6efbaa741c725aefdac31eb9f4248cd244fa27e8d04c755f376c86782c5d2",
     "prototypes/issue_handoff/synthetic-issue.json": "8b1a1823ad66d17bcfd1048e13bccac890f2dccb0212f2387d9b64d8d5ca1227",
     "tests/test_issue_handoff.py": "4ffe14f2094900b3c1cf99ac2f031df80dfabf157f49f7a1387af6aa322ab950",
-    ".github/workflows/issue-handoff.yml": "662a62e9054d691bcec1bacf7a1bf7a52c2b086e120d0eaaa6530dc69d1c155c"
+    ".github/workflows/issue-handoff.yml": "9b97eb42b12b01b4471ca4debe2b6a829625398a4e5ffda698696a9e699dc5b7"
   },
   "checks": [
     {
@@ -103,5 +103,14 @@
     "Owner integration acceptance"
   ],
   "consequential_actions_by_prototype": false,
-  "note": "No private vault was inspected. Logs/absolute paths remain local. No package/archive/site bytes changed. Original hosted checks do not establish consolidated-code acceptance."
+  "note": "No private vault was inspected. Logs/absolute paths remain local. No package/archive/site bytes changed. Original hosted checks do not establish consolidated-code acceptance.",
+  "known_limits": [
+    {
+      "environment": "Hosted Ubuntu 24.04 / CPython 3.14.5",
+      "check": "Full repository historical candidate ZIP deterministic-byte comparison",
+      "status": "failed in initial broader matrix; archive/builder/test unchanged from main",
+      "prototype_tests": "26 passed in the same job",
+      "disposition": "Dedicated matrix covers prototype/public.4; full repository remains in existing Windows package validation. Frozen archive portability issue left uncorrected."
+    }
+  ]
 }
