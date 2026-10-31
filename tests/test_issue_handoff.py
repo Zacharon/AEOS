@@ -127,6 +127,8 @@ class IssueHandoffTests(unittest.TestCase):
                         {"url": "file:unexpected"}, {"url": base["url"] + "0"},
                         {"labels": [{"name": 5}]}, {"labels": [{"name": "bad\0name"}]},
                         {"labels": [{"name": "ok"}] * 31},
+                        {"labels": [{"name": "ok", "commands": ["unexpected"]}]},
+                        {"labels": [{"name": "ok", "description": "api_key: synthetic-credential-marker"}]},
                         {"labels": [{"name": "api_key: synthetic-credential-marker"}]}):
             path = self.base / "invalid.json"
             path.write_text(json.dumps(dict(base, **changed)))

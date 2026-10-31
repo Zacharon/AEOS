@@ -7,9 +7,9 @@
     "python": "3.12.14"
   },
   "source_sha256": {
-    "prototypes/issue_handoff/issue_handoff.py": "ce0c45689a1aaccaeab73aa0c1c31205276c30bd2ccd505fd8f9e51493beb242",
+    "prototypes/issue_handoff/issue_handoff.py": "02d6efbaa741c725aefdac31eb9f4248cd244fa27e8d04c755f376c86782c5d2",
     "prototypes/issue_handoff/synthetic-issue.json": "8b1a1823ad66d17bcfd1048e13bccac890f2dccb0212f2387d9b64d8d5ca1227",
-    "tests/test_issue_handoff.py": "bc05ee8ac5a7cf9ce6d3c2f4efdea561cd42df6229735b4a368cf1825424162d",
+    "tests/test_issue_handoff.py": "4ffe14f2094900b3c1cf99ac2f031df80dfabf157f49f7a1387af6aa322ab950",
     ".github/workflows/issue-handoff.yml": "662a62e9054d691bcec1bacf7a1bf7a52c2b086e120d0eaaa6530dc69d1c155c"
   },
   "checks": [
@@ -52,7 +52,7 @@
         "path": "01_PROJECTS/IssueDemo/output.md"
       }
     ],
-    "base_commit": "89a1331b5a2def965c653a2e6c6e414f0126d6e3",
+    "base_commit": "b7ac547e39b641ac40129f4494f95581be49040c",
     "completion": "candidate_completion_checked",
     "fresh_acceptance": {
       "check": "fixed_synthetic_output_bytes",
@@ -61,7 +61,7 @@
     },
     "h3_verdict": null,
     "limits": "Mechanical evidence only; no autonomous factory, native sandbox, live issue fetch, model dispatch or authenticated approval.",
-    "manifest_sha256": "aff66afa4d39b2e1d6342337e97704d72ae4bcee7364d077fcda0014526f478f",
+    "manifest_sha256": "e403e3e927744c3fca65a22003bbcdec7c7c95866d50072aa3567a7b189080b1",
     "owner_acceptance": "not_recorded",
     "patch": "candidate-0000.patch",
     "patch_apply_check": "passed_against_seed",
@@ -69,7 +69,7 @@
     "platform": "linux",
     "pr_created": false,
     "python": "3.12.14",
-    "result_sha256": "611a031315e3ab9d627eb4189d8ab77518145dc530624d817a96c0f674e72ab0",
+    "result_sha256": "11cd2d395137f07fcbbb0d625c3b4e7543b3098bb01a861bc3e2b4f86761b6e9",
     "review": "continuation_read",
     "state": "candidate_checks_passed_awaiting_independent_h3",
     "synthetic": true,

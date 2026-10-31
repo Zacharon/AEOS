@@ -146,6 +146,13 @@ def issue_data(issue_path, *, synthetic=True):
     for label in issue["labels"]:
         h.require(isinstance(label, dict) and isinstance(label.get("name"), str)
                   and 0 < len(label["name"]) <= 100 and "\0" not in label["name"], "Invalid label name")
+        h.require(set(label) <= {"name", "id", "description", "color"} and
+                  all(v is None or (isinstance(v, str) and len(v) <= 1024 and "\0" not in v)
+                      for v in label.values()), "Invalid label metadata")
+        # Raw export bytes are retained locally. Screen metadata before dropping
+        # it from normalized context, so ignored fields cannot hide a marker.
+        h.require(not any(h.SECRET_VALUE.search(v) for v in label.values() if isinstance(v, str)),
+                  "Possible secret in label metadata; do not import")
     issue["labels"] = [{"name": x["name"]} for x in issue["labels"]]
     strings = [issue[k] for k in ("title", "body", "url")] + [x["name"] for x in issue["labels"]]
     h.require(not any(h.SECRET_VALUE.search(s) for s in strings), "Possible secret in issue; do not import")
