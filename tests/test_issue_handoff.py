@@ -188,10 +188,12 @@ class IssueHandoffTests(unittest.TestCase):
     def test_git_locator_tampering_is_rejected_before_git(self):
         self.handoff()
         locator = self.run / "worktree/.git"
-        # Git for Windows marks this fixture read-only. Deliberately make it
-        # writable so the test exercises controller refusal after tampering.
+        # Windows Git locators can carry hidden/read-only attributes. Open the
+        # existing file: create/truncate mode can refuse hidden Windows files.
         locator.chmod(locator.stat().st_mode | stat.S_IWRITE)
-        locator.write_text("gitdir: missing\n")
+        with locator.open("r+b") as stream:
+            stream.write(b"gitdir: missing\n")
+            stream.truncate()
         stopped = self.cli("synthetic-worker", "--run", self.run, expected=2)
         self.assertIn("Git locator changed", stopped["reason"])
 
