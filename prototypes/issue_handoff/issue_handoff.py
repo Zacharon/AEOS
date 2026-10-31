@@ -130,7 +130,13 @@ def issue_data(issue_path, *, synthetic=True):
     """Strict local export parsing, adapted from PR #11. No link acquisition."""
     issue_path = h.no_links(Path(issue_path))
     h.require(issue_path.stat().st_nlink == 1, "Hardlinked issue refused")
-    issue = h.read_json(issue_path, 32 * 1024)
+    # Capture once: selected context, archived bytes and both hashes must refer
+    # to the same snapshot even if the operator's export changes during intake.
+    raw_issue = h.read_bytes(issue_path, 32 * 1024)
+    try:
+        issue = json.loads(raw_issue, object_pairs_hook=h.no_duplicate_pairs)
+    except (UnicodeError, json.JSONDecodeError, RecursionError) as exc:
+        raise ValueError("Invalid or excessively nested issue JSON") from exc
     fields = {"number", "title", "body", "url", "labels"}
     h.exact_keys(issue, fields | ({"synthetic"} if synthetic else set()), "Issue export")
     if synthetic:
@@ -159,7 +165,7 @@ def issue_data(issue_path, *, synthetic=True):
     serialized = json.dumps(issue, ensure_ascii=True, sort_keys=True)
     for char in "`<>":
         serialized = serialized.replace(char, f"\\u{ord(char):04x}")
-    return issue, serialized
+    return issue, serialized, raw_issue
 
 
 def issue_inventory(run):
@@ -179,8 +185,7 @@ def section(packet, number, title, body):
 
 
 def prepare(issue_path, destination):
-    issue, serialized = issue_data(issue_path)
-    raw_issue = h.read_bytes(Path(issue_path), 32 * 1024)
+    issue, serialized, raw_issue = issue_data(issue_path)
     destination = Path(destination)
     h.require(".." not in destination.parts, "Parent traversal is forbidden")
     run = h.no_links(destination)
@@ -403,10 +408,10 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         if args.command == "inspect-export":
-            issue, _ = issue_data(args.issue, synthetic=False)
+            issue, _, raw_issue = issue_data(args.issue, synthetic=False)
             result = {"state": "local_export_inspected_no_task_authorized", "issue_number": issue["number"],
                       "label_count": len(issue["labels"]), "normalized_sha256": h.digest(h.json_bytes(issue)),
-                      "input_sha256": h.digest(h.read_bytes(Path(args.issue), 32 * 1024)), "h3_verdict": None}
+                      "input_sha256": h.digest(raw_issue), "h3_verdict": None}
         elif args.command == "prepare":
             result = prepare(args.issue, args.output)
         else:

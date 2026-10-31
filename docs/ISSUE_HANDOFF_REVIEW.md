@@ -44,6 +44,12 @@ The initial broader matrix also ran the entire repository suite. Ubuntu/Python 3
 
 Initial Windows jobs also exposed a test-fixture attribute difference. Making the locator writable alone did not resolve Windows hidden-file create/truncate behavior. The regression now opens its disposable locator in existing-file update mode before corrupting it, so Windows exercises controller digest refusal rather than failing while arranging the test. The production safeguard is unchanged. [Microsoft documents the existing hidden-file creation restriction](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew).
 
+## Follow-up intake evidence correction
+
+A separate review of the consolidated draft found that `prepare` and `inspect-export` read the selected export twice. If the file changes between parsing and evidence capture, archived bytes and the reported input hash can refer to a different snapshot from the selected context. Intake now captures bounded bytes once, applies duplicate-key/schema/secret checks to those bytes, and reuses them for archival and hashing. A regression changes the export immediately after its first read and verifies one capture, matching selected context and archived evidence.
+
+The follow-up passed 35 repository tests (27 prototype), 40 public.4 contract tests and 20 scanner tests on Linux CPython 3.12.14 with no skips. Fresh hosted CI must verify the follow-up head; preceding green runs do not cover this source change. Because the follow-up reviewer implemented this correction, its independent H3 remains pending.
+
 ## Remaining acceptance and original PR disposition
 
 Deliver the consolidation as one draft PR targeting main. Supersede and close #10/#11 without merging, preserving their branches/history and linking this review from the consolidation. Closing originals is housekeeping, not acceptance of the replacement. No merge, release, archive rebuild, site deployment or provider action is authorized by this document.

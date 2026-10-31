@@ -7,17 +7,17 @@
     "python": "3.12.14"
   },
   "source_sha256": {
-    "prototypes/issue_handoff/issue_handoff.py": "02d6efbaa741c725aefdac31eb9f4248cd244fa27e8d04c755f376c86782c5d2",
+    "prototypes/issue_handoff/issue_handoff.py": "df7e5e885389c0187930910b78a1f7c5774af8d8cb90ef595fb3876601de0f91",
     "prototypes/issue_handoff/synthetic-issue.json": "8b1a1823ad66d17bcfd1048e13bccac890f2dccb0212f2387d9b64d8d5ca1227",
-    "tests/test_issue_handoff.py": "f46eaaa1252547ff6e697641389137615b20c22b9fa63b6d3413cdfe1059fa12",
+    "tests/test_issue_handoff.py": "b9e8d933ac89fdb6d93cce798490738a9c1221ad940ce28ad285dd85bbb5a9cd",
     ".github/workflows/issue-handoff.yml": "9b97eb42b12b01b4471ca4debe2b6a829625398a4e5ffda698696a9e699dc5b7"
   },
   "checks": [
     {
       "command": "python -B -m unittest discover -s tests -p 'test_*.py' -v",
       "status": "passed",
-      "tests": 34,
-      "prototype_tests_included": 26,
+      "tests": 35,
+      "prototype_tests_included": 27,
       "skipped": 0
     },
     {
@@ -52,7 +52,7 @@
         "path": "01_PROJECTS/IssueDemo/output.md"
       }
     ],
-    "base_commit": "b7ac547e39b641ac40129f4494f95581be49040c",
+    "base_commit": "167a40297e27cc2ab6ff117be14378861ddcdb9a",
     "completion": "candidate_completion_checked",
     "fresh_acceptance": {
       "check": "fixed_synthetic_output_bytes",
@@ -61,7 +61,7 @@
     },
     "h3_verdict": null,
     "limits": "Mechanical evidence only; no autonomous factory, native sandbox, live issue fetch, model dispatch or authenticated approval.",
-    "manifest_sha256": "e403e3e927744c3fca65a22003bbcdec7c7c95866d50072aa3567a7b189080b1",
+    "manifest_sha256": "f71a2df8ff9d40c96ba37b54a5da372d9d0c12bd2062cc503893b6a1e749d3e0",
     "owner_acceptance": "not_recorded",
     "patch": "candidate-0000.patch",
     "patch_apply_check": "passed_against_seed",
@@ -69,7 +69,7 @@
     "platform": "linux",
     "pr_created": false,
     "python": "3.12.14",
-    "result_sha256": "11cd2d395137f07fcbbb0d625c3b4e7543b3098bb01a861bc3e2b4f86761b6e9",
+    "result_sha256": "9ea54d5c3d2eaa14467dfb0e3bc40adea0116f06fa4a0a9b1dc5d1b46b1bf24e",
     "review": "continuation_read",
     "state": "candidate_checks_passed_awaiting_independent_h3",
     "synthetic": true,
@@ -112,5 +112,12 @@
       "prototype_tests": "26 passed in the same job",
       "disposition": "Dedicated matrix covers prototype/public.4; full repository remains in existing Windows package validation. Frozen archive portability issue left uncorrected."
     }
-  ]
+  ],
+  "followup_review": {
+    "reviewed_head": "493458c1eb0896095450350a01bfd3894bde9c1b",
+    "correction": "Capture and parse one issue byte snapshot for selected context, archived evidence and both prepare/inspect-export hashes",
+    "regression": "Changing the export immediately after capture cannot split selected context and archived evidence",
+    "independent_h3_for_correction": null,
+    "hosted_checks": "Fresh CI required for follow-up head"
+  }
 }

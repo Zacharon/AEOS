@@ -1,5 +1,6 @@
 """Exercise the issue adapter against real public.4 CLIs and disposable Git worktrees."""
 import hashlib
+import importlib.util
 import json
 import os
 import stat
@@ -8,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "prototypes/issue_handoff/issue_handoff.py"
@@ -147,6 +149,34 @@ class IssueHandoffTests(unittest.TestCase):
         self.assertEqual(2, result["label_count"])
         self.assertEqual(sorted(p.name for p in self.base.iterdir()), ["export.json"])
         self.cli("prepare", "--issue", path, "--output", self.run, expected=2)
+
+    def test_changing_export_cannot_split_selected_context_and_archived_bytes(self):
+        spec = importlib.util.spec_from_file_location("reviewed_issue_controller", CLI)
+        controller = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(controller)
+        source = self.base / "changing-export.json"
+        original = FIXTURE.read_bytes()
+        source.write_bytes(original)
+        reads = []
+        read_bytes = controller.h.read_bytes
+
+        def capture_then_change(path, limit):
+            data = read_bytes(path, limit)
+            if Path(path) == source:
+                reads.append(data)
+                changed = json.loads(original)
+                changed["title"] = "Changed after the captured snapshot"
+                source.write_text(json.dumps(changed))
+            return data
+
+        with mock.patch.object(controller.h, "read_bytes", side_effect=capture_then_change):
+            controller.prepare(source, self.run)
+        self.assertEqual([original], reads)
+        self.assertEqual(original, (self.run / "controller/issue-export.json").read_bytes())
+        selected = json.loads((self.run / "controller/issue.json").read_text())
+        self.assertEqual(json.loads(original)["title"], selected["title"])
+        prepared = json.loads((self.run / "controller/prepare.json").read_text())
+        self.assertEqual(hashlib.sha256(original).hexdigest(), prepared["issue_input_sha256"])
 
     def test_issue_markup_is_escaped_without_losing_data(self):
         issue = json.loads(FIXTURE.read_text())
