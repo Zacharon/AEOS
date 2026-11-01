@@ -86,4 +86,6 @@ The public preview includes a queue and project templates, but no Operator Dashb
 
 ## Designed companion and research
 
+The separate [bounded synthetic issue-handoff prototype](../prototypes/issue_handoff/README.md) exercises issue-shaped fixture intake, a disposable Git worktree and the existing public.4 packet/handoff/rationale CLIs. It stops at a mechanically checked candidate awaiting independent H3. It is outside the frozen package and adds no live issue listener, model runtime, provider authentication, scheduler or native sandbox. Its own verification summary distinguishes tested behavior from manual transitions and proposed integrations.
+
 Open the [offline HTML/SVG system preview](../site/architecture.html) or the [architecture SVG](diagrams/aeos-architecture.svg). The SVG retains its historical public.2 revision label. The [ecosystem assessment](ECOSYSTEM.md) explains selective integration, sources and proposed measurements. These repository companions are separate from the frozen public.4 archive and do not add runtime integrations.

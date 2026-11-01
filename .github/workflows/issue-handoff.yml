@@ -1,0 +1,31 @@
+name: Bounded issue handoff prototype
+on:
+  pull_request:
+    paths:
+      - 'prototypes/issue_handoff/**'
+      - 'tests/**'
+      - 'distribution/agentic-engineering-os-2026.10.17-public.4/**'
+      - '.github/workflows/issue-handoff.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest]
+        python: ['3.11', '3.14.5']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Synthetic round trip and refusal tests (no model or paid API)
+        run: python -B -m unittest discover -s tests -p 'test_issue_handoff.py' -v
+      - name: Frozen public.4 handoff and rationale contracts
+        run: python -B -m unittest discover -s distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/unified_handoff -p 'test_*.py' -v
+      - name: Frozen public.4 manifest
+        run: python -B distribution/agentic-engineering-os-2026.10.17-public.4/scripts/check_package.py

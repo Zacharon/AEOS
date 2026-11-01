@@ -1,0 +1,8 @@
+{
+  "number": 1,
+  "title": "Exercise one bounded issue-to-handoff candidate",
+  "body": "Synthetic request: create the fixed local demonstration document. This is fixture data, not a real GitHub issue or execution authority.",
+  "url": "https://github.com/example/synthetic/issues/1",
+  "labels": [{"name": "synthetic"}, {"name": "inventory"}],
+  "synthetic": true
+}
