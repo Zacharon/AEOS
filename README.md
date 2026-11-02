@@ -1,5 +1,13 @@
 # AEOS — Agentic Engineering OS
 
+<!-- public-floorplan:start -->
+## Explore the architecture
+
+[**Open the interactive Floorplan**](https://zacharon.github.io/Zacharon/floorplans/AEOS.html) · [Standalone HTML file](site/floorplan.html)
+
+A map of this repository’s public source at `88e8aea5`. Public-source map; retained file set from the reviewed local map, refreshed against the public revision.
+<!-- public-floorplan:end -->
+
 A source preview for independent builders coordinating ongoing work with AI. Keep current project facts in files, prepare bounded context, inspect the returned evidence and continue in a fresh session.
 
 This repository contains neutral templates, reusable tools and an authored synthetic sample. It contains no personal operating vault, private project context, account configuration or user history.
