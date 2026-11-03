@@ -74,6 +74,10 @@ class Links(HTMLParser):
         self.links.extend(value for key, value in attrs if key in {"href", "src"} and value)
 
 
+# Raster-only: SVG and other data: types can carry script or markup, so they stay rejected.
+SAFE_INLINE_IMAGE = re.compile(r"(?i)image/(?:png|jpeg|gif|webp);base64,[A-Za-z0-9+/=\s]*\Z")
+
+
 def validate_links_and_privacy():
     checked = 0
     files = list((ROOT / "site").rglob("*.html"))
@@ -106,6 +110,8 @@ def validate_links_and_privacy():
             continue
         for value in links:
             url = urlsplit(html.unescape(value))
+            if url.scheme == "data" and SAFE_INLINE_IMAGE.match(url.path):
+                continue  # Inline raster image (e.g. the standalone Floorplan's icon); nothing to fetch.
             if url.scheme or url.netloc:
                 if url.scheme not in {"http", "https"} or not url.hostname or url.username or url.password:
                     raise ValueError("Unsafe public link in " + str(path.relative_to(ROOT)))

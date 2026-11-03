@@ -10,7 +10,7 @@ import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from build_candidate import ROOT, NAME, render, build
-from validate_candidate import archive_members, extract, validate_links_and_privacy
+from validate_candidate import SAFE_INLINE_IMAGE, archive_members, extract, validate_links_and_privacy
 
 
 def malicious(entries):
@@ -73,6 +73,13 @@ class DistributionTests(unittest.TestCase):
 
     def test_public_safe_links_and_payload(self):
         self.assertGreater(validate_links_and_privacy()["local_links_checked"], 0)
+
+    def test_only_inline_raster_images_pass_the_link_check(self):
+        self.assertTrue(SAFE_INLINE_IMAGE.match("image/png;base64,iVBORw0KGgo="))
+        self.assertTrue(SAFE_INLINE_IMAGE.match("image/webp;base64,UklGRg=="))
+        for path in ("image/svg+xml;base64,PHN2Zz4=", "text/html;base64,PHNjcmlwdD4=",
+                     "image/png,<script>", "image/png;base64,iVBOR\"onload=x"):
+            self.assertIsNone(SAFE_INLINE_IMAGE.match(path), path)
 
 
 if __name__ == "__main__":
