@@ -1,6 +1,8 @@
 """Bounded Windows validation of the actual candidate ZIP and published journey."""
 from pathlib import Path
 import argparse
+import base64
+import binascii
 import html
 from html.parser import HTMLParser
 import importlib.metadata
@@ -71,11 +73,36 @@ class Links(HTMLParser):
         super().__init__()
         self.links = []
     def handle_starttag(self, tag, attrs):
-        self.links.extend(value for key, value in attrs if key in {"href", "src"} and value)
+        self.links.extend((value, tag, key, attrs) for key, value in attrs
+                          if key in {"href", "src"} and value)
 
 
-# Raster-only: SVG and other data: types can carry script or markup, so they stay rejected.
-SAFE_INLINE_IMAGE = re.compile(r"(?i)image/(?:png|jpeg|gif|webp);base64,[A-Za-z0-9+/=\s]*\Z")
+# Bounded exception for the two reviewed PNGs in the standalone Floorplan.
+# A MIME label or magic header alone does not establish safe image content.
+FLOORPLAN_INLINE_PNGS = {
+    ("link", "href"): "91485d6e067e25f742939ee7903d97096e560bfebdb32b71b428294ef2c781d9",
+    ("img", "src"): "308b79d1680314b80350eaae04b8ad0c655bfb7a1fa2a2ef64b79e286469cc9b",
+}
+
+
+def is_safe_floorplan_image(value, source, tag, attribute, attrs):
+    if source != ROOT / "site/floorplan.html" or len(value) > 8192:
+        return False
+    expected = FLOORPLAN_INLINE_PNGS.get((tag, attribute))
+    if expected is None or len({key for key, _ in attrs}) != len(attrs):
+        return False
+    attributes = dict(attrs)
+    if tag == "link" and (attributes.get("rel") != "icon" or attributes.get("type") != "image/png"):
+        return False
+    prefix = "data:image/png;base64,"
+    if not value.startswith(prefix):
+        return False
+    encoded = value[len(prefix):]
+    try:
+        payload = base64.b64decode(encoded, validate=True)
+    except (ValueError, binascii.Error):
+        return False
+    return base64.b64encode(payload).decode("ascii") == encoded and sha(payload) == expected
 
 
 def validate_links_and_privacy():
@@ -105,13 +132,14 @@ def validate_links_and_privacy():
             parser.feed(text)
             links = parser.links
         elif path.suffix == ".md":
-            links = re.findall(r"(?<!!)\[[^\]]+\]\(([^)]+)\)", text)
+            links = [(value, None, None, []) for value in
+                     re.findall(r"(?<!!)\[[^\]]+\]\(([^)]+)\)", text)]
         else:
             continue
-        for value in links:
+        for value, tag, attribute, attrs in links:
             url = urlsplit(html.unescape(value))
-            if url.scheme == "data" and SAFE_INLINE_IMAGE.match(url.path):
-                continue  # Inline raster image (e.g. the standalone Floorplan's icon); nothing to fetch.
+            if url.scheme == "data" and is_safe_floorplan_image(value, path, tag, attribute, attrs):
+                continue  # Exact reviewed bytes in an image context; nothing to fetch.
             if url.scheme or url.netloc:
                 if url.scheme not in {"http", "https"} or not url.hostname or url.username or url.password:
                     raise ValueError("Unsafe public link in " + str(path.relative_to(ROOT)))
