@@ -21,8 +21,10 @@ PROJECT = "01_PROJECTS/IssueDemo"
 DRAFT = "runs/issue/task_packet.draft.md"
 PACKET = "runs/issue/task_packet.md"
 WRITES = [PROJECT + "/output.md"]
+CONTRACT = "00_SYSTEM/WORKER_CONTRACT.md"
+CONTRACT_SOURCE = Path(__file__).with_name("WORKER_CONTRACT.md")
 READS = [PROJECT + "/" + name for name in
-         ("PROJECT_INDEX.md", "PROJECT_STATE.md", "NEXT_ACTIONS.md", "ISSUE_DATA.md")]
+         ("PROJECT_INDEX.md", "PROJECT_STATE.md", "NEXT_ACTIONS.md", "ISSUE_DATA.md")] + [CONTRACT]
 TASK = "TASK-SYNTHETIC-ISSUE-001"
 OUTPUT = b"# Synthetic issue handoff\n\nThe bounded local handoff produced this candidate.\n"
 HAND = [sys.executable, "-B", str(TOOLS / "unified_handoff/handoff.py")]
@@ -186,6 +188,7 @@ def section(packet, number, title, body):
 
 def prepare(issue_path, destination):
     issue, serialized, raw_issue = issue_data(issue_path)
+    contract = h.markdown_bytes(CONTRACT_SOURCE)
     destination = Path(destination)
     h.require(".." not in destination.parts, "Parent traversal is forbidden")
     run = h.no_links(destination)
@@ -198,6 +201,10 @@ def prepare(issue_path, destination):
     seed.mkdir()
     write(seed / ".gitattributes", "* text eol=lf\n")
     write(seed / "00_SYSTEM/VAULT_INDEX.md", "# Synthetic issue evaluation vault\n\nNo personal vault is used.\n")
+    # WHY: prototypes/issue_handoff/WORKER_CONTRACT.md#worker-input-and-return-contract
+    # Freeze the full return contract with context; an external README link
+    # cannot supply a missing schema to a bounded worker.
+    write(seed / CONTRACT, contract)
     for name, text in {
         "PROJECT_INDEX.md": "# IssueDemo\n\nDisposable local fixture. Fixed scope is set by the controller, never issue content.\n",
         "PROJECT_STATE.md": "# State\n\nNo implementation or independent review has run.\n",
@@ -248,6 +255,7 @@ def prepare(issue_path, destination):
          "prepared_files": whole_inventory(worktree),
          "git_locator_sha256": h.digest(h.read_bytes(worktree / ".git", 4096)),
          "controller_sha256": h.digest(h.read_bytes(Path(__file__), h.MAX_ARTIFACT_BYTES)),
+         "contract_sha256": h.digest(contract),
          "seed_head": git(run, "rev-parse", "HEAD", cwd=seed),
          "state": "draft_requires_explicit_local_authority", "h3_verdict": None})
     return {"state": "draft_requires_explicit_local_authority", "run": str(run), "h3_verdict": None}
@@ -259,6 +267,8 @@ def handoff(run, allow):
               "Handoff already attempted; preserve evidence and reconcile")
     package_check(run)
     prepared = load(run / "controller/prepare.json")
+    h.require(h.digest(h.markdown_bytes(CONTRACT_SOURCE)) == prepared["contract_sha256"],
+              "Worker contract changed; reconcile and prepare a fresh run")
     worktree = run / "worktree"
     h.require(h.digest(h.read_bytes(worktree / ".git", 4096)) == prepared["git_locator_sha256"], "Git locator changed")
     h.require(whole_inventory(worktree) == prepared["prepared_files"], "Prepared worktree changed; use a fresh run")
@@ -279,6 +289,7 @@ def handoff(run, allow):
         build += ["--read", path]
     built = json.loads(run_command(run, build))
     run_command(run, HAND + ["check", "--bundle", run / "bundle", "--vault-root", worktree])
+    check_contract(run)
     raw = run_command(run, RATIONALE + ["snapshot", "--root", worktree, "--task-id", TASK,
                                       "--scope", WRITES[0]])
     write(run / "controller/rationale-baseline.json", raw)
@@ -290,6 +301,16 @@ def handoff(run, allow):
     write(run / "HANDOFF.md", "# Manual handoff\n\nRead the prototype README and bundle/execution_brief.md. Run check immediately before transport. Give only approved context and the disposable worktree to your chosen T3 Code or assistant session. Use the existing worker_result.template.json; return artifacts/report.md with code-rationale and captured checks. Do not edit controller records, commit, push, merge, deploy, send, spend, apply Gold or claim H3. Alternatively invoke synthetic-worker for the labelled deterministic fixture. A worktree isolates changes, not process access.\n")
     return {"state": "awaiting_manual_worker_or_synthetic_worker", "h3_verdict": None,
             "manifest_sha256": built["manifest_sha256"]}
+
+
+def check_contract(run):
+    """Require the exact complete contract as a selected, live-checked source."""
+    _, manifest, _ = h.verified_bundle(run / "bundle", run / "worktree")
+    records = [s for s in manifest["sources"] if s["source"] == CONTRACT]
+    h.require(len(records) == 1, "Missing selected worker return/rationale contract")
+    expected = h.digest(h.markdown_bytes(CONTRACT_SOURCE))
+    h.require(records[0]["sha256"] == expected == load(run / "controller/prepare.json")["contract_sha256"],
+              "Worker contract changed; reconcile and prepare a fresh run")
 
 
 def checked_handoff(run):
@@ -305,6 +326,7 @@ def checked_handoff(run):
     h.require(git(run, "rev-parse", "HEAD") == record["head"] and
               git(run, "branch", "--show-current") == record["branch"], "Frozen HEAD/branch changed")
     run_command(run, HAND + ["check", "--bundle", run / "bundle", "--vault-root", run / "worktree"])
+    check_contract(run)
     return record
 
 
