@@ -101,6 +101,11 @@ The controller runs `verify` after return. Never invoke the deterministic fixtur
 
 ## Evidence and acceptance
 
+For an actual source-repository task, use the separate [documentation and PR
+recipe](../../docs/DOCUMENTATION_PR_WORKFLOW.md) and its packet-bound adapter.
+It reuses public.4 validation and does not change this demonstration's fixed
+synthetic-only authority, create an agent session or publish a PR.
+
 `controller/` retains issue export/normalized data, original scaffold, draft/controller/Git-locator hashes, authorization record, frozen Git identity, manifest and file/rationale baselines, started/completed command events, candidate patches and fresh verification receipts. `bundle/` contains existing public.4 context/result contracts and returned artifacts. Runtime logs include absolute paths; keep them local. Commit only public-safe synthetic summaries.
 
 A separate reviewer who did not implement the consolidation must inspect packet/scope, reproduce all acceptance checks, inspect actual changes/patch, check every claim and record VERIFIED, PARTIAL or FAIL separately. The implementer cannot give its own result H3. Do not merge because CI is green. Owner acceptance is a separate decision. Manual provider return, local Windows 10 execution and independent H3 remain acceptance requirements.

@@ -5,6 +5,12 @@ description: Use to package an approved task packet into a bounded handoff bundl
 
 # Hand off, return and resume
 
+For a source-repository documentation task, use the existing packet's bounded
+selection and [documentation workflow](../../../docs/DOCUMENTATION_PR_WORKFLOW.md).
+Supply the complete [return and rationale contract](../../../prototypes/issue_handoff/WORKER_CONTRACT.md)
+as a selected source before dispatch. A README link or Allowed Reads entry alone
+does not deliver a contract. The package commands below remain the frozen route.
+
 The handoff CLI copies only selected sources into a bundle with hashes, so the receiving assistant sees a fixed, checkable context. It never dispatches work, runs a model, authenticates approval or issues independent review. Transport is manual.
 
 All commands run from the vault parent with `vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py`, or from the vault root without the `vault/` prefix. Keep bundles outside the source vault.

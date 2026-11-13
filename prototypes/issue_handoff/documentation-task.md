@@ -3,7 +3,7 @@ type: agent_task_packet
 schema_version: "1.2"
 run_id: RUN-2026-11-13-002
 task_id: AEOS-DOC-PR-PILOT
-status: draft
+status: approved
 created: 2026-11-13
 updated: 2026-11-13
 project: AEOS
@@ -20,7 +20,7 @@ human_gates: [publication, owner-acceptance]
 controller: Local task controller
 ---
 
-# Draft documentation packet for the following workflow layer
+# Local documentation pilot packet
 
 ## 1. Project
 AEOS source checkout; public-safe documentation only. The local pilot is
