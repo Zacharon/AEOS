@@ -2,7 +2,7 @@
 
 AEOS coordinates project knowledge, bounded context, work, evidence and controlled knowledge updates through saved files and local commands. An operator and assistant follow the documented workflow; the preview does not install an autonomous execution service.
 
-This page describes the public setup package, not the creator's personal operating vault. File links below target the current candidate [public.2 package](../distribution/agentic-engineering-os-2026.10.09-public.2/README.md). Historical public.1 remains a separate, frozen revision.
+This page describes the public setup package, not the creator's personal operating vault. File links below target the current candidate [public.3 package](../distribution/agentic-engineering-os-2026.10.09-public.3/README.md). Historical public.1 and public.3 remain separate, frozen revisions.
 
 ## How the components connect
 
@@ -52,16 +52,16 @@ Paths are relative to the package's `vault/`, except package scripts and adapter
 
 | Component | What goes in → what comes out | How it is used / current status |
 |---|---|---|
-| [Router](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/00_SYSTEM/SESSION_START_ROUTER.md) | Named task or broad intent → minimum records to read | **Manual / assistant-invoked:** read `AGENTS.md`, then the router. It is Markdown guidance, not a routing process. |
-| [Queue](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/00_SYSTEM/GLOBAL_NEXT_ACTION_QUEUE.md) and [project records](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/01_PROJECTS/Sample/PROJECT_INDEX.md) | Priority, scope, state, locks and next actions → selected work and current facts | **Manual:** use the queue to choose among projects; for a named project, read its Index, State and Next Actions directly. No mandatory dashboard hop. |
+| [Router](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/00_SYSTEM/SESSION_START_ROUTER.md) | Named task or broad intent → minimum records to read | **Manual / assistant-invoked:** read `AGENTS.md`, then the router. It is Markdown guidance, not a routing process. |
+| [Queue](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/00_SYSTEM/GLOBAL_NEXT_ACTION_QUEUE.md) and [project records](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/01_PROJECTS/Sample/PROJECT_INDEX.md) | Priority, scope, state, locks and next actions → selected work and current facts | **Manual:** use the queue to choose among projects; for a named project, read its Index, State and Next Actions directly. No mandatory dashboard hop. |
 | Vault / knowledge notes | Source evidence and reviewed facts → selected context files | **Manual retrieval:** read relevant files and cite their provenance. The preview ships no Wiki search service, vector database or automatic ingestion from URLs. |
-| [Packet scaffolder](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/09_TOOLS/agent_runner_v1/scripts/build_task_packet.py) | Project records + goal → draft `task_packet.md` | **CLI:** `build_task_packet.py`. Operator fills allowed reads/writes, acceptance checks and actual authorization. A draft is not approval. |
-| [Handoff adapter](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py) | Packet + explicit `--read` selections → bounded copied brief, snapshots, manifest and result template | **CLI:** `build`, `check`, `validate-result`, `review`; `complete` also checks actual scoped changes and rationale. The bundle lives outside the source vault. |
-| [Assistant adapters](../distribution/agentic-engineering-os-2026.10.09-public.2/config/adapters.json) | Reviewed bundle → actual task result and evidence | **Manual transport:** hand the selected files to your assistant and bring its result back. Configuration describes transports; it does not authenticate providers, launch Codex/Astra or confer permissions. |
+| [Packet scaffolder](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/09_TOOLS/agent_runner_v1/scripts/build_task_packet.py) | Project records + goal → draft `task_packet.md` | **CLI:** `build_task_packet.py`. Operator fills allowed reads/writes, acceptance checks and actual authorization. A draft is not approval. |
+| [Handoff adapter](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py) | Packet + explicit `--read` selections → bounded copied brief, snapshots, manifest and result template | **CLI:** `build`, `check`, `validate-result`, `review`; `complete` also checks actual scoped changes and rationale. The bundle lives outside the source vault. |
+| [Assistant adapters](../distribution/agentic-engineering-os-2026.10.09-public.3/config/adapters.json) | Reviewed bundle → actual task result and evidence | **Manual transport:** hand the selected files to your assistant and bring its result back. Configuration describes transports; it does not authenticate providers, launch Codex/Astra or confer permissions. |
 | Verification / continuity | Source hashes, returned result and artifact hashes → candidate validity, current/stale/missing observations and next action | **CLI + human review:** `check` before handoff; `validate-result` and `review` after return. Independent review and owner gates are separate. Fresh sessions read saved files and rerun `review`. |
-| [Librarian](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/00_SYSTEM/AGENTIC_LIBRARIAN/README.md) | Source bytes + provenance + authored candidate → Bronze, pending Silver, then conditionally Gold | **CLI:** `ingest`, `propose`, `verify`, `inbox`, `apply`, `doctor`, `rollback`. Gold requires an exact owner decision, fresh verified evidence and a covered clean Git checkpoint. The demo stops at pending Silver. |
-| [Kernel ledger](../distribution/agentic-engineering-os-2026.10.09-public.2/vault/kernel/artifact_ledger.py) | Librarian events → local evidence records | **Invoked by Librarian:** records events; it is not an execution scheduler or a tamper-proof audit service. |
-| [Package checker / demo](../distribution/agentic-engineering-os-2026.10.09-public.2/scripts/demo.py) | Manifested package + synthetic source → demonstration result, saved commands and continuation files | **CLI:** explicit first-run action. Deterministic Python performs the example; no model, independent reviewer or owner approval is simulated. |
+| [Librarian](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/00_SYSTEM/AGENTIC_LIBRARIAN/README.md) | Source bytes + provenance + authored candidate → Bronze, pending Silver, then conditionally Gold | **CLI:** `ingest`, `propose`, `verify`, `inbox`, `apply`, `doctor`, `rollback`. Gold requires an exact owner decision, fresh verified evidence and a covered clean Git checkpoint. The demo stops at pending Silver. |
+| [Kernel ledger](../distribution/agentic-engineering-os-2026.10.09-public.3/vault/kernel/artifact_ledger.py) | Librarian events → local evidence records | **Invoked by Librarian:** records events; it is not an execution scheduler or a tamper-proof audit service. |
+| [Package checker / demo](../distribution/agentic-engineering-os-2026.10.09-public.3/scripts/demo.py) | Manifested package + synthetic source → demonstration result, saved commands and continuation files | **CLI:** explicit first-run action. Deterministic Python performs the example; no model, independent reviewer or owner approval is simulated. |
 
 ## Plan → Retrieve → Execute → Verify → Learn
 
@@ -74,27 +74,45 @@ flowchart LR
     L -. "next session reads saved records" .-> P
 ```
 
-To try the implemented flow, follow [FIRST_RUN.md](../distribution/agentic-engineering-os-2026.10.09-public.2/FIRST_RUN.md). After installing its prerequisites, from a fresh extraction:
+To try the implemented flow, follow [FIRST_RUN.md](../distribution/agentic-engineering-os-2026.10.09-public.3/FIRST_RUN.md). After installing its prerequisites, from a fresh extraction:
 
 ```powershell
-python -B scripts/check_package.py .
-python -B scripts/demo.py --output ../aeos-first-run
+$ErrorActionPreference = 'Stop'
+$aeosParent = Split-Path -Parent $PWD.Path
+$aeosEnvironment = [IO.Path]::GetFullPath((Join-Path $aeosParent 'aeos env'))
+$aeosOutput = [IO.Path]::GetFullPath((Join-Path $aeosParent 'aeos first run'))
+if ((Test-Path -LiteralPath $aeosEnvironment) -or (Test-Path -LiteralPath $aeosOutput)) {
+    throw 'Choose new sibling environment/output names; existing evidence is preserved.'
+}
+python -c "import platform,sys; sys.exit(0 if platform.python_implementation() == 'CPython' and sys.version_info[:3] == (3,14,5) else 'Use CPython 3.14.5')"
+if ($LASTEXITCODE -ne 0) { throw 'Python version check failed.' }
+python -m venv "$aeosEnvironment"
+if ($LASTEXITCODE -ne 0) { throw 'Environment creation failed.' }
+$aeosPython = Join-Path $aeosEnvironment 'Scripts/python.exe'
+& "$aeosPython" -m pip install -r requirements.txt
+if ($LASTEXITCODE -ne 0) { throw 'Prerequisite installation failed.' }
+& "$aeosPython" -B scripts/check_package.py .
+if ($LASTEXITCODE -ne 0) { throw 'Package integrity check failed.' }
+& "$aeosPython" -B scripts/demo.py --output "$aeosOutput"
+if ($LASTEXITCODE -ne 0) { throw 'Demo failed.' }
 ```
 
-Open `../aeos-first-run/START_HERE.md`. The demo ingests a synthetic source, verifies a pending Silver proposal, selects that evidence into a handoff, counts two checked items and saves a candidate result. It then demonstrates refusal of changed and missing sources and restores the synthetic fixture. From the output directory, a fresh process can recover the same candidate:
+Open `../aeos first run/START_HERE.md`. The demo ingests a synthetic source, verifies a pending Silver proposal, selects that evidence into a handoff, counts two checked items and saves a candidate result. It then demonstrates refusal of changed and missing sources and restores the synthetic fixture. From the output directory, a fresh process can recover the same candidate:
 
 ```powershell
-python -B vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py review --bundle handoff --vault-root vault
+$aeosParent = Split-Path -Parent $PWD.Path
+$aeosPython = Join-Path $aeosParent 'aeos env/Scripts/python.exe'
+& "$aeosPython" -B vault/09_TOOLS/agent_runner_v1/unified_handoff/handoff.py review --bundle handoff --vault-root vault
 ```
 
 For real work, scaffold a packet in your own new vault using the first-run instructions. Give only the approved packet and selected context to an assistant. Return `worker_result.json` and its artifacts, run the documented checks, obtain required independent review and perform only authorized writeback. Contradictory facts require operator reconciliation; a script does not decide which claim is true. Missing evidence stays unknown; stale hashes require inspection and a new authorized bundle, not edited hashes.
 
 ## Influences and limits
 
-**ICM** means Interpretable Context Methodology in the recorded [source credits](../distribution/agentic-engineering-os-2026.10.09-public.2/SOURCES.md). It informs layered files and selective context. It is not a separate runtime between retrieval and execution. Karpathy's **LLM Wiki** informs source-backed notes and compiled knowledge; the local Librarian implements the explicit Bronze/Silver/owner/Gold workflow. It does not install Karpathy's gist or a Wiki connector.
+**ICM** means Interpretable Context Methodology in the recorded [source credits](../distribution/agentic-engineering-os-2026.10.09-public.3/SOURCES.md). It informs layered files and selective context. It is not a separate runtime between retrieval and execution. Karpathy's **LLM Wiki** informs source-backed notes and compiled knowledge; the local Librarian implements the explicit Bronze/Silver/owner/Gold workflow. It does not install Karpathy's gist or a Wiki connector.
 
 The public preview includes a queue and project templates, but no Operator Dashboard application, MAPS view, general Resume/Restore engine, native sandbox, hosted service, automatic model dispatch or authenticated owner-approval service. Do not infer those features from the creator's personal OS or a conceptual diagram. Refer to the [security repair evidence](SECURITY-REPAIRS.md) for the current candidate's checks and remaining limits; historical acceptance and an archive's existence are not proof a future installation is safe.
 
 ## Designed companion and research
 
-Open the [offline HTML/SVG system preview](../site/architecture.html) or the [architecture SVG](diagrams/aeos-architecture.svg). The [ecosystem assessment](ECOSYSTEM.md) explains selective integration, sources and proposed measurements. These repository companions are separate from the frozen public.2 archive and do not add runtime integrations.
+Open the [offline HTML/SVG system preview](../site/architecture.html) or the [architecture SVG](diagrams/aeos-architecture.svg). The [ecosystem assessment](ECOSYSTEM.md) explains selective integration, sources and proposed measurements. These repository companions are separate from the public.3 archive and do not add runtime integrations.

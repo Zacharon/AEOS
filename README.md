@@ -6,9 +6,9 @@ This repository contains neutral templates, reusable tools and an authored synth
 
 ## Try it
 
-Download the [setup archive](site/downloads/agentic-engineering-os-2026.10.09-public.2.zip), or use the [unpacked package](distribution/agentic-engineering-os-2026.10.09-public.2/README.md). Follow its FIRST_RUN.md. The demo ingests a source, creates a pending knowledge proposal, prepares a handoff, checks a sample result and rejects stale or missing context. It makes no model calls and does not apply Gold knowledge.
+Download the [setup archive](site/downloads/agentic-engineering-os-2026.10.09-public.3.zip), or use the [unpacked package](distribution/agentic-engineering-os-2026.10.09-public.3/README.md). Follow its FIRST_RUN.md. The demo ingests a source, creates a pending knowledge proposal, prepares a handoff, checks a sample result and rejects stale or missing context. It makes no model calls and does not apply Gold knowledge.
 
-CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the package's documented requirements into a fresh virtual environment. Git is needed for the Librarian's approved apply/rollback path. Other platforms and provider handoffs are unverified.
+CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Follow the same explicit virtual-environment commands in the package and website guides; the sibling output is resolved to an absolute path. Git is needed for the Librarian's approved apply/rollback path. Other platforms and provider handoffs are unverified.
 
 ## Explore the system
 
@@ -20,7 +20,7 @@ CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the p
 - [First run](site/first-run.html)
 - [Capabilities and verification](site/verification.html)
 - [Source credits](site/sources.html)
-- [Public-safe verification receipt](site/verification-public.2.json)
+- [Public-safe verification receipt](site/verification-public.3.json)
 
 To view the site locally, run `python -m http.server 4396 --bind 127.0.0.1 --directory site` from this repository and open http://127.0.0.1:4396. Serve only site/, never a personal workspace. The HTML files also open locally.
 
