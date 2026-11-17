@@ -1,0 +1,108 @@
+[
+  {
+    "id": "h-exact-1",
+    "kind": "exact_id",
+    "text": "DOC-208",
+    "relevant": {
+      "doc-208": 2
+    },
+    "judgment_basis": "Exact document identifier; the neighboring identifier is a hard negative."
+  },
+  {
+    "id": "h-exact-2",
+    "kind": "exact_id",
+    "text": "DOC-208 latch transport checklist",
+    "relevant": {
+      "doc-208": 2
+    },
+    "judgment_basis": "Only the referenced assembly checklist is relevant."
+  },
+  {
+    "id": "h-syn-1",
+    "kind": "synonym",
+    "text": "Move my meeting to a later day",
+    "relevant": {
+      "agenda": 2
+    },
+    "judgment_basis": "Rescheduling an appointment answers the paraphrase; an audit cannot change dates."
+  },
+  {
+    "id": "h-syn-2",
+    "kind": "synonym",
+    "text": "Delay a scheduled gathering and revise its invitation",
+    "relevant": {
+      "agenda": 2
+    },
+    "judgment_basis": "Authored paraphrase of agenda postponement."
+  },
+  {
+    "id": "h-version-1",
+    "kind": "conflicting_version",
+    "text": "POL-9 current revision inspection interval",
+    "relevant": {
+      "pol-9-v3": 2
+    },
+    "judgment_basis": "Current revision three controls; obsolete revision two is nonrelevant."
+  },
+  {
+    "id": "h-version-2",
+    "kind": "conflicting_version",
+    "text": "Which POL-9 version replaces revision two?",
+    "relevant": {
+      "pol-9-v3": 2
+    },
+    "judgment_basis": "The replacement version is the requested evidence."
+  },
+  {
+    "id": "h-noise-1",
+    "kind": "distractor",
+    "text": "copper valve inspection procedure",
+    "relevant": {
+      "copper-valve": 2
+    },
+    "judgment_basis": "The market headline is a lexical hard negative."
+  },
+  {
+    "id": "h-noise-2",
+    "kind": "distractor",
+    "text": "isolate pipe test seal copper valve",
+    "relevant": {
+      "copper-valve": 2
+    },
+    "judgment_basis": "Physical valve service, not market commentary."
+  },
+  {
+    "id": "h-hop-1",
+    "kind": "multi_hop",
+    "text": "For the relay route which retention rule applies?",
+    "relevant": {
+      "relay-route": 1,
+      "elm-rule": 2
+    },
+    "judgment_basis": "Current route bridge and elm retention rule are both required."
+  },
+  {
+    "id": "h-hop-2",
+    "kind": "multi_hop",
+    "text": "relay channel storage copies and route",
+    "relevant": {
+      "relay-route": 1,
+      "elm-rule": 2
+    },
+    "judgment_basis": "Both sources are required; historic ash mapping is nonrelevant."
+  },
+  {
+    "id": "h-none-1",
+    "kind": "no_answer",
+    "text": "nebula harbor warranty checksum",
+    "relevant": {},
+    "judgment_basis": "Visitor information cannot answer warranty or checksum questions."
+  },
+  {
+    "id": "h-none-2",
+    "kind": "no_answer",
+    "text": "platypus tachyon pension",
+    "relevant": {},
+    "judgment_basis": "No authored document answers this question. Vector noise must not become evidence."
+  }
+]

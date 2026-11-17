@@ -1,0 +1,92 @@
+{
+  "fixtures_manifest_sha256": "cbffc1a4f238d002d6c19d6e62379fba1e29c3b4d3ac44fde1a4dc8424822289",
+  "policy_sha256": "154660411a3ff497e5249294b7b08ab28951e9885602ee30518e0b99f3ed2627",
+  "policy": {
+    "schema": 1,
+    "source_split": "development",
+    "query_ids": [
+      "d-exact-1",
+      "d-exact-2",
+      "d-syn-1",
+      "d-syn-2",
+      "d-version-1",
+      "d-version-2",
+      "d-noise-1",
+      "d-noise-2",
+      "d-hop-1",
+      "d-hop-2",
+      "d-none-1",
+      "d-none-2"
+    ],
+    "component_default": "bm25",
+    "selected_method": "bm25",
+    "is_fusion": false,
+    "rule": "global; minimum .02 nDCG@3 gain and zero component harm; no heldout routing",
+    "component_development_summary": {
+      "bm25": {
+        "answerable_n": 10,
+        "no_answer_n": 2,
+        "recall": 1.0,
+        "mrr": 0.95,
+        "ndcg": 0.911616621550243,
+        "complete": 1.0,
+        "no_answer_false_positive_rate": 0.5
+      },
+      "vector_fixture": {
+        "answerable_n": 10,
+        "no_answer_n": 2,
+        "recall": 1.0,
+        "mrr": 0.8,
+        "ndcg": 0.8008955476216804,
+        "complete": 1.0,
+        "no_answer_false_positive_rate": 1.0
+      }
+    },
+    "candidate_decisions": [
+      {
+        "candidate": "rrf",
+        "ndcg_gain_vs_component_default": -0.036907024642854225,
+        "hurt_n_vs_each_component": {
+          "bm25": 2,
+          "vector_fixture": 0
+        },
+        "multi_hop_safe": true,
+        "no_answer_safe": false,
+        "eligible": false
+      },
+      {
+        "candidate": "interpolation_0.3",
+        "ndcg_gain_vs_component_default": -0.07381404928570845,
+        "hurt_n_vs_each_component": {
+          "bm25": 2,
+          "vector_fixture": 1
+        },
+        "multi_hop_safe": true,
+        "no_answer_safe": false,
+        "eligible": false
+      },
+      {
+        "candidate": "interpolation_0.5",
+        "ndcg_gain_vs_component_default": -0.036907024642854225,
+        "hurt_n_vs_each_component": {
+          "bm25": 2,
+          "vector_fixture": 0
+        },
+        "multi_hop_safe": true,
+        "no_answer_safe": false,
+        "eligible": false
+      },
+      {
+        "candidate": "interpolation_0.7",
+        "ndcg_gain_vs_component_default": -0.07381404928570845,
+        "hurt_n_vs_each_component": {
+          "bm25": 3,
+          "vector_fixture": 0
+        },
+        "multi_hop_safe": true,
+        "no_answer_safe": false,
+        "eligible": false
+      }
+    ]
+  }
+}

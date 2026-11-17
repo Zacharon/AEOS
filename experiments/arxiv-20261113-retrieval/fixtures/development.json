@@ -1,0 +1,108 @@
+[
+  {
+    "id": "d-exact-1",
+    "kind": "exact_id",
+    "text": "REF-104",
+    "relevant": {
+      "ref-104": 2
+    },
+    "judgment_basis": "Exact document identifier; the neighboring identifier is a hard negative."
+  },
+  {
+    "id": "d-exact-2",
+    "kind": "exact_id",
+    "text": "REF-104 dial checklist",
+    "relevant": {
+      "ref-104": 2
+    },
+    "judgment_basis": "Only the referenced instrument checklist is relevant."
+  },
+  {
+    "id": "d-syn-1",
+    "kind": "synonym",
+    "text": "How can I keep a spare duplicate without a network?",
+    "relevant": {
+      "snapshot": 2
+    },
+    "judgment_basis": "Offline snapshot copies answer the paraphrase; an activity journal cannot restore."
+  },
+  {
+    "id": "d-syn-2",
+    "kind": "synonym",
+    "text": "Recover a missing file from a disconnected duplicate",
+    "relevant": {
+      "snapshot": 2
+    },
+    "judgment_basis": "Authored paraphrase of offline restoration."
+  },
+  {
+    "id": "d-version-1",
+    "kind": "conflicting_version",
+    "text": "POL-7 current revision retention limit",
+    "relevant": {
+      "pol-7-v2": 2
+    },
+    "judgment_basis": "Current revision two controls; obsolete revision one is explicitly nonrelevant."
+  },
+  {
+    "id": "d-version-2",
+    "kind": "conflicting_version",
+    "text": "Which POL-7 version replaces revision one?",
+    "relevant": {
+      "pol-7-v2": 2
+    },
+    "judgment_basis": "The replacement version is the requested evidence."
+  },
+  {
+    "id": "d-noise-1",
+    "kind": "distractor",
+    "text": "quartz sensor calibration procedure",
+    "relevant": {
+      "quartz-sensor": 2
+    },
+    "judgment_basis": "The kitchen headline is a lexical hard negative."
+  },
+  {
+    "id": "d-noise-2",
+    "kind": "distractor",
+    "text": "disconnect probe adjust offset quartz sensor",
+    "relevant": {
+      "quartz-sensor": 2
+    },
+    "judgment_basis": "Physical sensor service, not a recipe."
+  },
+  {
+    "id": "d-hop-1",
+    "kind": "multi_hop",
+    "text": "For the beacon route which retry rule applies?",
+    "relevant": {
+      "beacon-route": 1,
+      "cedar-rule": 2
+    },
+    "judgment_basis": "Both the current route bridge and cedar rule are required for a complete evidence set."
+  },
+  {
+    "id": "d-hop-2",
+    "kind": "multi_hop",
+    "text": "beacon channel delivery retry count and route",
+    "relevant": {
+      "beacon-route": 1,
+      "cedar-rule": 2
+    },
+    "judgment_basis": "Both source documents are required; old pine mapping is nonrelevant."
+  },
+  {
+    "id": "d-none-1",
+    "kind": "no_answer",
+    "text": "lunar harbor payroll checksum",
+    "relevant": {},
+    "judgment_basis": "No document supplies payroll or a checksum; a visitor guide is insufficient."
+  },
+  {
+    "id": "d-none-2",
+    "kind": "no_answer",
+    "text": "zebra hyperspace guarantee",
+    "relevant": {},
+    "judgment_basis": "No authored document answers this question. Nonzero vector noise is deliberate."
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "command": "python -B experiments/arxiv-20261113-retrieval/benchmark.py benchmark --output results.json",
+  "exit_code": 0,
+  "stdout": "Synthetic fixture diagnostic; neural retrieval NOT RUN\nDevelopment-only global selection: bm25\nHeldout (10 answerable, 2 no-answer):\nmethod                R@3     MRR@3   nDCG@3  harm/BM25 harm/vector\nlexical_overlap       1.0000  0.9500  0.9283          1           1\nbm25                  1.0000  0.9500  0.9275          0           1\nvector_fixture        1.0000  0.8500  0.8378          3           0\nrrf                   1.0000  0.9000  0.8639          2           1\ninterpolation_0.3     1.0000  0.9500  0.9116          1           0\ninterpolation_0.5     1.0000  0.9500  0.9116          1           0\ninterpolation_0.7     1.0000  0.9000  0.8747          2           0\nNo-answer false positives, candidate/context losses and measured latency are in JSON.\n",
+  "stderr": ""
+}

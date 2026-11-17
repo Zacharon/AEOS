@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_distribution.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_archive_symlink_refuses_before_effects (test_distribution.DistributionTests.test_archive_symlink_refuses_before_effects) ... ok\ntest_archive_traversal_absolute_ads_reserved_duplicates_refuse_before_effects (test_distribution.DistributionTests.test_archive_traversal_absolute_ads_reserved_duplicates_refuse_before_effects) ... ok\ntest_deterministic_build_matches_committed_candidate (test_distribution.DistributionTests.test_deterministic_build_matches_committed_candidate) ... ok\ntest_exact_archive_matches_all_unpacked_bytes (test_distribution.DistributionTests.test_exact_archive_matches_all_unpacked_bytes) ... ok\ntest_new_build_cannot_overwrite_candidate (test_distribution.DistributionTests.test_new_build_cannot_overwrite_candidate) ... ok\ntest_payload_tampering_refused (test_distribution.DistributionTests.test_payload_tampering_refused) ... ok\ntest_public_safe_links_and_payload (test_distribution.DistributionTests.test_public_safe_links_and_payload) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 10.127s\n\nOK\n"
+}

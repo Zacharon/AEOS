@@ -1,0 +1,6 @@
+{
+  "command": "python -B experiments/arxiv-20261113-retrieval/benchmark.py query h-version-1",
+  "exit_code": 0,
+  "stdout": "Query h-version-1: POL-9 current revision inspection interval\nlexical_overlap      pol-9-v3, pol-9-v2, pol-7-v2\nbm25                 pol-9-v3, pol-9-v2, pol-7-v2\nvector_fixture       pol-9-v2, pol-9-v3\nrrf                  pol-9-v2, pol-9-v3, pol-7-v2\ninterpolation_0.3    pol-9-v2, pol-9-v3, pol-7-v2\ninterpolation_0.5    pol-9-v2, pol-9-v3, pol-7-v2\ninterpolation_0.7    pol-9-v2, pol-9-v3, pol-7-v2\n",
+  "stderr": ""
+}

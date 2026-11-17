@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "check": "separate full benchmark processes, hash seeds 1 and 2; exact scores/ranks/metrics/policy equality",
+  "excluded": "measured timing fields only",
+  "fixtures_manifest_sha256": "cbffc1a4f238d002d6c19d6e62379fba1e29c3b4d3ac44fde1a4dc8424822289"
+}

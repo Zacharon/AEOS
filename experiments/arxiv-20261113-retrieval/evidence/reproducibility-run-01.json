@@ -1,0 +1,38 @@
+{
+  "status": "FAIL",
+  "check": "exact repeat equality excluding latency and code hashes",
+  "differences": [
+    {
+      "field": "/depths/1/development/queries/7/methods/bm25/ranking/0/score",
+      "first_run": 17.433414788270607,
+      "second_run": 17.433414788270603
+    },
+    {
+      "field": "/depths/1/development/queries/8/methods/bm25/ranking/0/score",
+      "first_run": 9.53872880338165,
+      "second_run": 9.538728803381652
+    },
+    {
+      "field": "/depths/1/heldout/queries/1/methods/bm25/ranking/0/score",
+      "first_run": 9.779025909086124,
+      "second_run": 9.779025909086123
+    },
+    {
+      "field": "/depths/3/development/queries/4/methods/bm25/ranking/1/score",
+      "first_run": 9.697325446489256,
+      "second_run": 9.697325446489254
+    },
+    {
+      "field": "/depths/3/development/queries/4/methods/interpolation_0.3/ranking/0/score",
+      "first_run": 0.7979428015641316,
+      "second_run": 0.7979428015641314
+    },
+    {
+      "field": "/depths/3/development/queries/4/methods/interpolation_0.5/ranking/0/score",
+      "first_run": 0.8556734296886654,
+      "second_run": 0.8556734296886653
+    }
+  ],
+  "diagnosis": "BM25 accumulated query terms from an unordered set; cross-process floating-point addition order changed raw scores at rounding precision. Rankings, metrics and policy are separately checked below.",
+  "remedy": "Sort unique query terms before summing; do not alter frozen fixtures, weights or selection rule."
+}

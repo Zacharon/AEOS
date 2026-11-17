@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ref-104",
+    "path": "docs/ref-104.md"
+  },
+  {
+    "id": "ref-140",
+    "path": "docs/ref-140.md"
+  },
+  {
+    "id": "snapshot",
+    "path": "docs/snapshot.md"
+  },
+  {
+    "id": "snapshot-log",
+    "path": "docs/snapshot-log.md"
+  },
+  {
+    "id": "pol-7-v2",
+    "path": "docs/pol-7-v2.md"
+  },
+  {
+    "id": "pol-7-v1",
+    "path": "docs/pol-7-v1.md"
+  },
+  {
+    "id": "quartz-sensor",
+    "path": "docs/quartz-sensor.md"
+  },
+  {
+    "id": "quartz-dessert",
+    "path": "docs/quartz-dessert.md"
+  },
+  {
+    "id": "beacon-route",
+    "path": "docs/beacon-route.md"
+  },
+  {
+    "id": "cedar-rule",
+    "path": "docs/cedar-rule.md"
+  },
+  {
+    "id": "beacon-old",
+    "path": "docs/beacon-old.md"
+  },
+  {
+    "id": "lunar-guide",
+    "path": "docs/lunar-guide.md"
+  },
+  {
+    "id": "doc-208",
+    "path": "docs/doc-208.md"
+  },
+  {
+    "id": "doc-280",
+    "path": "docs/doc-280.md"
+  },
+  {
+    "id": "agenda",
+    "path": "docs/agenda.md"
+  },
+  {
+    "id": "agenda-log",
+    "path": "docs/agenda-log.md"
+  },
+  {
+    "id": "pol-9-v3",
+    "path": "docs/pol-9-v3.md"
+  },
+  {
+    "id": "pol-9-v2",
+    "path": "docs/pol-9-v2.md"
+  },
+  {
+    "id": "copper-valve",
+    "path": "docs/copper-valve.md"
+  },
+  {
+    "id": "copper-market",
+    "path": "docs/copper-market.md"
+  },
+  {
+    "id": "relay-route",
+    "path": "docs/relay-route.md"
+  },
+  {
+    "id": "elm-rule",
+    "path": "docs/elm-rule.md"
+  },
+  {
+    "id": "relay-old",
+    "path": "docs/relay-old.md"
+  },
+  {
+    "id": "nebula-guide",
+    "path": "docs/nebula-guide.md"
+  }
+]

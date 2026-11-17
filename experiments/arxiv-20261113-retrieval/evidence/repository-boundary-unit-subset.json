@@ -1,0 +1,8 @@
+{
+  "command": "python -B -c <existing BoundaryScanTests: six pure scanner tests plus current repository scan>",
+  "selection": "import sys,unittest; sys.path.insert(0,'scripts'); import test_check_public_boundary as t; names=['test_each_marker_detected','test_named_secret_assignments','test_placeholders_and_neutral_text_pass','test_secret_bearing_names','test_archive_members_scanned','test_unreadable_archive_is_a_finding','test_current_repository_is_clean']; r=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite(t.BoundaryScanTests(n) for n in names)); raise SystemExit(not r.wasSuccessful())",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_each_marker_detected (test_check_public_boundary.BoundaryScanTests.test_each_marker_detected) ... ok\ntest_named_secret_assignments (test_check_public_boundary.BoundaryScanTests.test_named_secret_assignments) ... ok\ntest_placeholders_and_neutral_text_pass (test_check_public_boundary.BoundaryScanTests.test_placeholders_and_neutral_text_pass) ... ok\ntest_secret_bearing_names (test_check_public_boundary.BoundaryScanTests.test_secret_bearing_names) ... ok\ntest_archive_members_scanned (test_check_public_boundary.BoundaryScanTests.test_archive_members_scanned) ... ok\ntest_unreadable_archive_is_a_finding (test_check_public_boundary.BoundaryScanTests.test_unreadable_archive_is_a_finding) ... ok\ntest_current_repository_is_clean (test_check_public_boundary.BoundaryScanTests.test_current_repository_is_clean) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 3.130s\n\nOK\n",
+  "omitted": "commit/history and synthetic-repository mutation tests outside this bounded mechanism"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "experiments\\arxiv-20261113-retrieval",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_public_handoff_helpers_and_frozen_hashes (test_retrieval.AdapterTests.test_actual_public_handoff_helpers_and_frozen_hashes) ... ok\ntest_changed_fixture_is_refused_before_retrieval (test_retrieval.AdapterTests.test_changed_fixture_is_refused_before_retrieval) ... ok\ntest_duplicate_json_and_unexpected_authority_fields_refused (test_retrieval.AdapterTests.test_duplicate_json_and_unexpected_authority_fields_refused) ... ok\ntest_human_and_json_entrypoints_share_validation_and_rankings_after_restart (test_retrieval.AdapterTests.test_human_and_json_entrypoints_share_validation_and_rankings_after_restart) ... ok\ntest_multiterm_scores_are_identical_across_process_hash_seeds (test_retrieval.AdapterTests.test_multiterm_scores_are_identical_across_process_hash_seeds) ... ok\ntest_output_scope_and_existing_evidence_are_refused_before_execution (test_retrieval.AdapterTests.test_output_scope_and_existing_evidence_are_refused_before_execution) ... ok\ntest_selection_finishes_before_any_heldout_labels_are_parsed (test_retrieval.AdapterTests.test_selection_finishes_before_any_heldout_labels_are_parsed) ... ok\ntest_aggregate_gain_can_hide_query_harm (test_retrieval.RetrievalTests.test_aggregate_gain_can_hide_query_harm) ... ok\ntest_authored_graded_metrics_and_no_answer_are_not_conflated (test_retrieval.RetrievalTests.test_authored_graded_metrics_and_no_answer_are_not_conflated) ... ok\ntest_bm25_known_numeric_result_and_exact_identifier (test_retrieval.RetrievalTests.test_bm25_known_numeric_result_and_exact_identifier) ... ok\ntest_cosine_requires_real_supplied_vector_and_handles_nonunit_values (test_retrieval.RetrievalTests.test_cosine_requires_real_supplied_vector_and_handles_nonunit_values) ... ok\ntest_development_selection_refuses_test_or_empty_evidence (test_retrieval.RetrievalTests.test_development_selection_refuses_test_or_empty_evidence) ... ok\ntest_interpolation_calibrates_scales_and_empty_constant_lists (test_retrieval.RetrievalTests.test_interpolation_calibrates_scales_and_empty_constant_lists) ... ok\ntest_no_lexical_evidence_returns_empty (test_retrieval.RetrievalTests.test_no_lexical_evidence_returns_empty) ... ok\ntest_rrf_deduplicates_and_keeps_missing_component_candidates (test_retrieval.RetrievalTests.test_rrf_deduplicates_and_keeps_missing_component_candidates) ... ok\ntest_word_budget_cannot_silently_skip_an_oversized_first_document (test_retrieval.RetrievalTests.test_word_budget_cannot_silently_skip_an_oversized_first_document) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 3.713s\n\nOK\n"
+}

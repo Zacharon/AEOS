@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_setup_instructions.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_primary_readme_guide_matches_current_website_and_archive (test_setup_instructions.SetupInstructionsTests.test_primary_readme_guide_matches_current_website_and_archive) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n"
+}

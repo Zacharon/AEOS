@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_inline_images.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_actual_floorplan_images_and_full_scan_pass (test_inline_images.InlineImageTests.test_actual_floorplan_images_and_full_scan_pass) ... ok\ntest_complete_url_and_canonical_base64_required (test_inline_images.InlineImageTests.test_complete_url_and_canonical_base64_required) ... ok\ntest_invalid_or_unreviewed_payloads_refused_in_every_context (test_inline_images.InlineImageTests.test_invalid_or_unreviewed_payloads_refused_in_every_context) ... ok\ntest_reviewed_png_refused_in_other_contexts_and_files (test_inline_images.InlineImageTests.test_reviewed_png_refused_in_other_contexts_and_files) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 4.190s\n\nOK\n"
+}

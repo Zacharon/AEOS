@@ -1,0 +1,8 @@
+{
+  "command": "python -B experiments/arxiv-20261113-retrieval/benchmark.py benchmark --output results.json",
+  "expected_exit_code": 2,
+  "actual_exit_code": 2,
+  "stdout": "",
+  "stderr": "{\"status\": \"REFUSED\", \"error\": \"Existing output refused; preserve it and choose another basename\"}\n",
+  "existing_bytes_unchanged": true
+}

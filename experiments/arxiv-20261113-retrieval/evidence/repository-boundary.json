@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "scripts/check_public_boundary.py"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"files_scanned\": 273,\n  \"findings\": [],\n  \"limit\": \"Bounded marker/name scan of tracked files and ZIP members, not an exhaustive secret audit\"\n}\n",
+  "stderr": ""
+}
