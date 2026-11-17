@@ -73,7 +73,7 @@ Git subprocesses have no stdin or shell, a 60-second timeout, captured events, n
 
 ## Manual worker return
 
-Use `prepare` and authorized `handoff`, then omit `synthetic-worker`. Read generated `HANDOFF.md`, the bundle's full `execution_brief.md`, packet and four selected snapshots. Immediately before transport, run the public.4 checker:
+Use `prepare` and authorized `handoff`, then omit `synthetic-worker`. Read generated `HANDOFF.md`, the bundle's full `execution_brief.md`, packet and five selected snapshots, including the complete return/rationale contract. The adapter pins that contract before preparation and checks it again before worker execution and verification. Immediately before transport, run the public.4 checker:
 
 ```powershell
 $tools = Join-Path $repo 'distribution/agentic-engineering-os-2026.10.17-public.4/vault/09_TOOLS/agent_runner_v1/unified_handoff'
@@ -100,6 +100,11 @@ Return `bundle/worker_result.json` using the existing template, with `execution_
 The controller runs `verify` after return. Never invoke the deterministic fixture to repair or overwrite a partially executed manual task.
 
 ## Evidence and acceptance
+
+For an actual source-repository task, use the separate [documentation and PR
+recipe](../../docs/DOCUMENTATION_PR_WORKFLOW.md) and its packet-bound adapter.
+It reuses public.4 validation and does not change this demonstration's fixed
+synthetic-only authority, create an agent session or publish a PR.
 
 `controller/` retains issue export/normalized data, original scaffold, draft/controller/Git-locator hashes, authorization record, frozen Git identity, manifest and file/rationale baselines, started/completed command events, candidate patches and fresh verification receipts. `bundle/` contains existing public.4 context/result contracts and returned artifacts. Runtime logs include absolute paths; keep them local. Commit only public-safe synthetic summaries.
 

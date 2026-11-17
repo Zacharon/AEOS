@@ -28,6 +28,8 @@ Read the [bounded work loop](docs/HOW-AEOS-WORKS.md), [stack roles](docs/STACK.m
 
 ## Explore the system
 
+- [Documentation and PR workflow](docs/DOCUMENTATION_PR_WORKFLOW.md): bounded current context, complete worker returns, freshness checks and a local PR draft recipe in the source checkout.
+
 ![AEOS architecture: implemented file operations and manual handoffs](docs/diagrams/aeos-architecture.svg)
 
 - [Architecture and usage flow](docs/ARCHITECTURE.md) — real file contracts, commands and manual handoffs
