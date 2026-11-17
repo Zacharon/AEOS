@@ -1,0 +1,14 @@
+{
+  "capture_note": "Interpreter location is represented by a token; version and binary digest are observed.",
+  "flags": [
+    "-I",
+    "-B"
+  ],
+  "implementation": "CPython",
+  "interpreter_sha256": "3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+  "machine": "AMD64",
+  "os": "Windows",
+  "os_release": "10",
+  "os_version": "10.0.19045",
+  "python": "3.14.5"
+}

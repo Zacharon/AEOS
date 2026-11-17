@@ -1,0 +1,22 @@
+CASE mixed
+Command: <interpreter> -I -B check_count.py --input inputs/items.json --expected 2
+Command: <interpreter> -I -B count_items.py inputs/items.json
+Source stdout: {"count": 2}
+Source exit: 0
+PASS expected=2 actual=2
+Check exit: 0
+CASE none-active
+Command: <interpreter> -I -B check_count.py --input inputs/none-active.json --expected 0
+Command: <interpreter> -I -B count_items.py inputs/none-active.json
+Source stdout: {"count": 0}
+Source exit: 0
+PASS expected=0 actual=0
+Check exit: 0
+CASE empty
+Command: <interpreter> -I -B check_count.py --input inputs/empty.json --expected 0
+Command: <interpreter> -I -B count_items.py inputs/empty.json
+Source stdout: {"count": 0}
+Source exit: 0
+PASS expected=0 actual=0
+Check exit: 0
+Cases passed: 3/3

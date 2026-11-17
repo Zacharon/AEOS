@@ -1,0 +1,2 @@
+SYNTHETIC REQUIREMENT REQ-1 REVISION intent-2
+The sample summary must count only active supplied items.

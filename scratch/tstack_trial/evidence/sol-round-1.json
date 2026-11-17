@@ -1,0 +1,35 @@
+{
+  "schema": "tstack-sol-review/v1",
+  "round": 1,
+  "verdict": "APPROVE",
+  "model": "gpt-6.1-sol",
+  "effort": "medium",
+  "token_usage": "UNKNOWN",
+  "candidate_sha256": "8e4ee473850135fa80f0d477130532cc634730d9330b10ddbb8707a25ef1f7cf",
+  "diff_additions_before": 4,
+  "diff_deletions_before": 1,
+  "diff_additions_after": 4,
+  "diff_deletions_after": 1,
+  "findings": [],
+  "fixed_findings": [],
+  "declined_findings": [],
+  "native_catalog_discovery_confirmed": ["sol-loop", "full-stop"],
+  "instruction_application": "sol-loop read from installed file; full-stop not invoked",
+  "independently_checked": [
+    "candidate hash matches frozen review target",
+    "18 focused regressions pass",
+    "original and baseline files match frozen manifest",
+    "candidate differs only in compare.py",
+    "FileExistsError handler preserves exclusive creation"
+  ],
+  "saved_evidence_reviewed_not_rerun": [
+    "existing directory exits 2 without traceback and preserves bytes",
+    "existing file exits 2 without traceback and preserves bytes",
+    "new output succeeds"
+  ],
+  "source_edits_by_reviewer": false,
+  "external_actions_by_reviewer": false,
+  "pushed": false,
+  "pr_lifecycle": "NOT_RUN",
+  "h3_or_release_acceptance": "NOT_CLAIMED"
+}

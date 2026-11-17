@@ -1,0 +1,13 @@
+{
+  "action_outcome": "allowed_by_synthetic_input",
+  "evidence_outcome": "insufficient",
+  "execution_authenticity_verified": false,
+  "outcome": "insufficient",
+  "owner_acceptance_inferred": false,
+  "reasons": [
+    {
+      "code": "receipt.missing:environment,source_revision,specification_sha256",
+      "outcome": "insufficient"
+    }
+  ]
+}

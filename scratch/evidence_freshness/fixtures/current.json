@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "task_id": "TASK-SYNTHETIC-1",
+  "claim_id": "CLAIM-count",
+  "requirement_revision": "intent-1",
+  "requirement_ids": [
+    "REQ-1"
+  ],
+  "withdrawn_ids": [],
+  "source_revision": "snapshot-1",
+  "dependency_coverage": "complete",
+  "environment": {
+    "runtime": "synthetic-runtime-1",
+    "configuration": "config-1"
+  },
+  "check_id": "CHECK-count",
+  "command": "synthetic-count --check",
+  "specification": "inputs/specification-v1.txt",
+  "dependencies": {
+    "source": "inputs/source-v1.txt"
+  },
+  "policy": "exact-source-v1",
+  "action": "propose-local-handoff",
+  "authority": "allowed"
+}

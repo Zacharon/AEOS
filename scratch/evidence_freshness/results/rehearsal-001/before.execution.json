@@ -1,0 +1,24 @@
+{
+  "command": [
+    "<interpreter>",
+    "-I",
+    "-B",
+    "../../checker.py",
+    "--root",
+    ".",
+    "--receipt",
+    "receipt.json",
+    "--format",
+    "text",
+    "--current",
+    "current-before.json"
+  ],
+  "cwd": ".",
+  "elapsed_seconds": 0.5398614000005182,
+  "exit_code": 0,
+  "started_utc": "2026-11-02T04:48:05.698354+00:00",
+  "stderr": "before.stderr.txt",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "before.stdout.txt",
+  "stdout_sha256": "0310482f3e9ee80937efb9108a8ce43b8b50bf53130c744f4d1484f246a6e27b"
+}

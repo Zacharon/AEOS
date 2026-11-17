@@ -1,0 +1,24 @@
+{
+  "command": [
+    "<interpreter>",
+    "-I",
+    "-B",
+    "../../../checker.py",
+    "--root",
+    ".",
+    "--current",
+    "current.json",
+    "--format",
+    "text",
+    "--receipt",
+    "historical-receipt.json"
+  ],
+  "cwd_relative_to_recovery_directory": "replay",
+  "elapsed_seconds": 0.3121867000008933,
+  "exit_code": 1,
+  "started_utc": "2026-11-02T05:00:02.198467+00:00",
+  "stderr": "historical-assessment.stderr.txt",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "historical-assessment.stdout.txt",
+  "stdout_sha256": "3fa25bee1c94cb548c3a81a67c252db3f73ff06eebebcd5d960e45f9afb6aa8b"
+}

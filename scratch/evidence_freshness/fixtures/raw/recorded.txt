@@ -1,0 +1,3 @@
+AUTHORED SYNTHETIC OUTPUT, NOT AN ACTUAL COMMAND TRANSCRIPT
+sample count: 2
+recorded check: passed

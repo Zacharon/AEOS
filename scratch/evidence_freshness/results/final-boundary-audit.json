@@ -1,0 +1,43 @@
+{
+  "artifact_count_before_audit": 26,
+  "final_file_sha256": {
+    "README.md": "1b9207fc5c5c4f4dec5900fae5f33bb5b6925ab5f777d2f3718829040a293b6c",
+    "REPORT.md": "c753fb9b76c43840bbebd597714bf11097af4e52076c604226ff942cad5f672e",
+    "checker.py": "e95287196005e5eebf52c3a653538a8fefa73bd361e3dbea466d1d7f3de531e8",
+    "fixtures/cases.json": "5b952a3415e7c185f52f7005374db3fae93573ca8b2d1dd8cd8510e42feefb08",
+    "fixtures/current.json": "06fc7f9c05d28b9b7eadf1f418dd607510b1e75a5ecddae556c5a9723276e193",
+    "fixtures/expected.json": "bd98c7e94736adfc01c2009bd12571885dd474220e66ff42ced4bbffc2ccdb17",
+    "fixtures/inputs/reference-v1.txt": "1ef6bccc7e104c04bead9415ff96e4d16d7d2afe5257cc2bf75adc6a3686874c",
+    "fixtures/inputs/reference-v2.txt": "8507bb225905f7e26245cf5f66be63b65f2ff3166750cef922aa82fa27af1756",
+    "fixtures/inputs/source-v1.txt": "ee7aa544ae7a1eea592f8a10eeb3c62c909b56525e78a56afbcc911fa623b0ab",
+    "fixtures/inputs/source-v2.txt": "329704cbe2697cb9ccbd7243386fafc7514a299a8ef8bb6df52005bd5f769b9b",
+    "fixtures/inputs/specification-v1.txt": "bf61e1691e428e77145e047de95631c6a66f7061f26a5b47a36fce6d53b4ef7f",
+    "fixtures/inputs/specification-v2.txt": "a4eba85645d57c1e007c40aee375f3b42dd1e6358684a951dd3f795060fe78a7",
+    "fixtures/raw/altered.txt": "3167d308b9426e62cc97158b60210744c01c2b7796c3fbbba2067470bf29c659",
+    "fixtures/raw/recorded.txt": "f2b6fffbc9dbc6c2cd7cc8c63c7e8bf53279a32dd080b48eb8157a7416a6ae9d",
+    "fixtures/receipt.json": "889977f47ec407142a02a52d602c2957230f131d69c837c300fa0e26a705bb5b",
+    "pilot_log.csv": "28f4a517c26d936342546f61be5470cb82cee7d50fed2effc4cfeedcd5377b2e",
+    "results/run-001/fixtures.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/run-001/fixtures.stdout.txt": "e38f6408d3ac2a14daea4ea40b5cc39958f860f333d82fb649632f0cdac2963c",
+    "results/run-001/focused-tests.stderr.txt": "19bfda562dc40de49b697b7e1790726efe3b2f63b5d545948dc8d8b48b3283e1",
+    "results/run-001/focused-tests.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/run-001/repository-regressions.stderr.txt": "e869cd66a136521ff401144c8adbb25ac36b6fa275a468411ea4a22a08a8dc3d",
+    "results/run-001/repository-regressions.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/run-001/summary.json": "c15d398e547a6fe0d7c8cd85b5c048c08342e1b9c3f972b1e98a4e915c0fbc04",
+    "run_fixtures.py": "8c7f49ae066192a7d2fc14b01b3a7414c866207cc0ce45c77bef898249946646",
+    "test_freshness.py": "ce84b892b98e9d45c0b3c05e493dfd0b1ab015241e80af455efdde77de05e09a",
+    "verify.py": "688bb74e2b1de586162ca96845cb088cc242b964e6908800a7ebc9e3dba9b9b8"
+  },
+  "issues": [],
+  "tested_code_and_fixture_drift": [],
+  "scope": {
+    "original_file_count": 258,
+    "changed_preexisting": [],
+    "added_count_before_audit": 26,
+    "all_added_within_experiment": true
+  },
+  "status": "LOCAL_BOUNDARY_CHECK_PASSED",
+  "coverage": "Pre-existing tracked and visible untracked files compared byte-for-byte; new experiment artifacts scanned. This audit excludes its own bytes.",
+  "private_provenance": "Not copied into public project",
+  "date": "2026-11-01"
+}

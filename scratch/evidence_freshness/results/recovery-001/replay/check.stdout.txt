@@ -1,0 +1,4 @@
+Command: <interpreter> -I -B count_items.py inputs/items.json
+Source stdout: {"count": 3}
+Source exit: 0
+PASS expected=3 actual=3

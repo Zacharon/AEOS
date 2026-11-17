@@ -1,0 +1,32 @@
+{
+  "assumptions": [],
+  "authority_at_execution": "allowed",
+  "check_id": "CHECK-example-count",
+  "claim_id": "CLAIM-example-count",
+  "command": "<interpreter> -I -B check_count.py --expected 3",
+  "dependency_coverage": "complete",
+  "dependency_sha256": {
+    "check_count.py": "6787b5ed4e184c3ed441156e5dc04e0a92f8d3b929cd3db299b61659f8959d77",
+    "count_items.py": "74fa233d45445f31764ac66bf8a321160e9bcdc77b678f3328098f8cac770722",
+    "inputs/items.json": "ed8f09edebab15609429570b52c0dc20d9e5c3a38ddbfb97a9547dba3633768b"
+  },
+  "environment": {
+    "configuration": "isolated Python (-I -B); expected=3; cwd=replay-root",
+    "runtime": "CPython 3.14.5; Windows 10.0.19045; interpreter-sha256=3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd"
+  },
+  "execution_status": "completed",
+  "exit_code": 0,
+  "historical_status": "recorded",
+  "owner_acceptance": "pending",
+  "raw_output": "check.stdout.txt",
+  "raw_sha256": "9386e30b676d9914c9df3b1054d9c6522280b9d80a650f5ecbfd76e1f17cdef3",
+  "requirement_ids": [
+    "REQ-count"
+  ],
+  "requirement_revision": "intent-1",
+  "schema_version": 1,
+  "source_revision": "sha256:5b2d12fb127221e86ee5b59bc3d440678cabbedc049fa6f9f186b7bbc195e87f",
+  "specification_sha256": "35e556e922db04f02736ee6a18e5fb80965d0269a139fe10d02194c2a2ea20b7",
+  "task_id": "REPLAY-count-001",
+  "unrun_checks": []
+}

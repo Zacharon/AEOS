@@ -1,0 +1,2 @@
+SYNTHETIC REQUIREMENT REQ-1 REVISION intent-1
+The sample summary must count every supplied item.

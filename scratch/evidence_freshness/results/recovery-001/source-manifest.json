@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "check_count.py": "9ef8eb5d21ffbbeccbe5eb8fabe7f5abc4f7a70c408c29ad29845b92eae1c8dd",
+    "check_recovery.py": "04a8092f8eb241951677cbaa73bbd4fbda9751dd92749a52f09a68972df6c2fe",
+    "count_items.py": "1195692f6cba09eaeda369c326a2efece36158fc2139f27ca4510677b2a105a5",
+    "inputs/empty.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "inputs/items.json": "ed8f09edebab15609429570b52c0dc20d9e5c3a38ddbfb97a9547dba3633768b",
+    "inputs/none-active.json": "a2fcf731b2d6659b970340abdf389574425f66db3382faa72dc6a8a936b4428b"
+  },
+  "files": {
+    "check_count.py": "9ef8eb5d21ffbbeccbe5eb8fabe7f5abc4f7a70c408c29ad29845b92eae1c8dd",
+    "check_recovery.py": "04a8092f8eb241951677cbaa73bbd4fbda9751dd92749a52f09a68972df6c2fe",
+    "count_items.py": "1195692f6cba09eaeda369c326a2efece36158fc2139f27ca4510677b2a105a5"
+  },
+  "source_revision": "sha256:ce07f75de0ed04275472c9f148eec87361cefd9ad341683de83694c3588d43a7",
+  "specification_sha256": "3d84db923113630dfb6546ad801914a29058102838d31dbe54ff843c14bec3d3"
+}

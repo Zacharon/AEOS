@@ -1,0 +1,35 @@
+{
+  "assumptions": [],
+  "authority_at_execution": "allowed",
+  "check_id": "CHECK-active-count-suite",
+  "claim_id": "CLAIM-example-count",
+  "command": "<interpreter> -I -B check_recovery.py",
+  "dependency_coverage": "complete",
+  "dependency_sha256": {
+    "check_count.py": "9ef8eb5d21ffbbeccbe5eb8fabe7f5abc4f7a70c408c29ad29845b92eae1c8dd",
+    "check_recovery.py": "04a8092f8eb241951677cbaa73bbd4fbda9751dd92749a52f09a68972df6c2fe",
+    "count_items.py": "1195692f6cba09eaeda369c326a2efece36158fc2139f27ca4510677b2a105a5",
+    "inputs/empty.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "inputs/items.json": "ed8f09edebab15609429570b52c0dc20d9e5c3a38ddbfb97a9547dba3633768b",
+    "inputs/none-active.json": "a2fcf731b2d6659b970340abdf389574425f66db3382faa72dc6a8a936b4428b"
+  },
+  "environment": {
+    "configuration": "isolated Python (-I -B); mixed=2, none-active=0, empty=0; cwd=replay-root",
+    "runtime": "CPython 3.14.5; Windows 10.0.19045; interpreter-sha256=3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd"
+  },
+  "execution_status": "completed",
+  "exit_code": 0,
+  "historical_status": "recorded",
+  "owner_acceptance": "pending",
+  "raw_output": "suite.stdout.txt",
+  "raw_sha256": "dad7d0d27333d93b26e75864800b0645a381a863726fda319ac50fba7f8b1e0f",
+  "requirement_ids": [
+    "REQ-count"
+  ],
+  "requirement_revision": "intent-2",
+  "schema_version": 1,
+  "source_revision": "sha256:ce07f75de0ed04275472c9f148eec87361cefd9ad341683de83694c3588d43a7",
+  "specification_sha256": "3d84db923113630dfb6546ad801914a29058102838d31dbe54ff843c14bec3d3",
+  "task_id": "REPLAY-count-001",
+  "unrun_checks": []
+}

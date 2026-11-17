@@ -1,0 +1,4 @@
+ISOLATED SYNTHETIC REPLAY, REQUIREMENT REQ-count, REVISION intent-2
+Return only the number of items whose active field is true.
+The same provided example must return 2; sample-b is excluded.
+Passing this example establishes only this case, not general correctness.

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "task_id": "retained-manual-return-attempt",
+  "claim_id": "target-windows-controller-verification-completed",
+  "requirement_revision": "public-readme-at-88e8aea5",
+  "requirement_ids": ["manual-return-before-controller-verification"],
+  "source_revision": "88e8aea5ddea99aebcc1212bf5bd5aaac68e8931",
+  "dependency_coverage": "unknown",
+  "environment": {
+    "runtime": "CPython 3.14.5",
+    "configuration": "Windows 10 build 19045; prepared manual-assistant return"
+  },
+  "check_id": "controller-verification-after-manual-return",
+  "command": "python -B <source-checkout>/prototypes/issue_handoff/issue_handoff.py verify --run <retained-run>",
+  "withdrawn_ids": [],
+  "specification": "requirements.md",
+  "dependencies": {},
+  "policy": "exact-source-v1",
+  "action": "review-existing-evidence-only",
+  "authority": "allowed"
+}

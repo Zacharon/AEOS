@@ -1,0 +1,27 @@
+{
+  "action": "review-local-replay",
+  "authority": "allowed",
+  "check_id": "CHECK-example-count",
+  "claim_id": "CLAIM-example-count",
+  "command": "<interpreter> -I -B check_count.py --expected 3",
+  "dependencies": {
+    "check_count.py": "check_count.py",
+    "count_items.py": "count_items.py",
+    "inputs/items.json": "inputs/items.json"
+  },
+  "dependency_coverage": "complete",
+  "environment": {
+    "configuration": "isolated Python (-I -B); expected=3; cwd=replay-root",
+    "runtime": "CPython 3.14.5; Windows 10.0.19045; interpreter-sha256=3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd"
+  },
+  "policy": "exact-source-v1",
+  "requirement_ids": [
+    "REQ-count"
+  ],
+  "requirement_revision": "intent-2",
+  "schema_version": 1,
+  "source_revision": "sha256:5b2d12fb127221e86ee5b59bc3d440678cabbedc049fa6f9f186b7bbc195e87f",
+  "specification": "requirements-v2.txt",
+  "task_id": "REPLAY-count-001",
+  "withdrawn_ids": []
+}

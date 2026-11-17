@@ -1,0 +1,14 @@
+{
+  "01_unchanged": {"outcome": "eligible", "reason": "applicability_rules_satisfied_only", "rationale": "Identical active requirement, exact source, declared inputs, environment and intact recorded output; acceptance remains pending."},
+  "02_changed_requirement": {"outcome": "stale", "reason": "requirement_revision_changed", "rationale": "New required behavior supersedes the old revision even though the old code and output remain."},
+  "03_withdrawn_requirement": {"outcome": "stale", "reason": "requirement_withdrawn", "rationale": "The requirement no longer authorizes this completion claim; action authority is still allowed and must not be conflated with withdrawal."},
+  "04_modified_dependency": {"outcome": "stale", "reason": "dependency_changed:source", "rationale": "The declared source input changed while the producer kept the same source label."},
+  "05_stale_revision": {"outcome": "stale", "reason": "source_revision_changed", "rationale": "Exact revision policy forbids reuse at a new revision even with identical dependency bytes."},
+  "06_missing_raw_evidence": {"outcome": "insufficient", "reason": "raw_evidence:missing_file", "rationale": "A claimed successful execution without the referenced output does not support eligibility."},
+  "07_integrity_mismatch": {"outcome": "invalid", "reason": "raw_evidence_integrity_mismatch", "rationale": "Available output differs from the receipt digest; recorded evidence integrity fails."},
+  "08_context_only_change": {"outcome": "eligible", "reason": "applicability_rules_satisfied_only", "rationale": "Synthetic ground truth declares this reading note outside the source snapshot and check dependency set. Only that note changes; this does not infer real semantic independence."},
+  "09_true_dependency_change": {"outcome": "stale", "reason": "dependency_changed:reference", "rationale": "The same reference type is now explicitly a check input; its changed bytes invalidate the task evidence."},
+  "10_environment_change": {"outcome": "stale", "reason": "environment_changed", "rationale": "A relevant configuration change requires a fresh run, even though source bytes match."},
+  "11_unrun_check": {"outcome": "insufficient", "reason": "successful_execution_not_recorded", "rationale": "The prescribed check has not run and has no exit status or raw output; NOT RUN must survive review."},
+  "12_revoked_authority": {"outcome": "blocked", "reason": "current_authority_denied", "rationale": "The historical check remains applicable as evidence, but current authority denies the proposed action."}
+}

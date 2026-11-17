@@ -1,0 +1,92 @@
+{
+  "reviewed_source": "88e8aea5ddea99aebcc1212bf5bd5aaac68e8931",
+  "selected_claim": "target-windows-controller-verification-completed",
+  "ordinary_decision": "Known not run in the retained prepared manual attempt. Full target-machine implementation-suite execution is unknown.",
+  "checker": {
+    "action_outcome": "allowed_by_synthetic_input",
+    "evidence_outcome": "insufficient",
+    "execution_authenticity_verified": false,
+    "outcome": "insufficient",
+    "owner_acceptance_inferred": false,
+    "reasons": [
+      {
+        "code": "receipt.missing:environment,source_revision,specification_sha256",
+        "outcome": "insufficient"
+      }
+    ]
+  },
+  "checker_sha256": "e95287196005e5eebf52c3a653538a8fefa73bd361e3dbea466d1d7f3de531e8",
+  "commands": [
+    {
+      "working_directory": "scratch/evidence_freshness",
+      "argv": [
+        "<observed CPython 3.14.5 interpreter>",
+        "-I",
+        "-B",
+        "checker.py",
+        "--root",
+        "results/acceptance-review-001",
+        "--current",
+        "current.json",
+        "--receipt",
+        "receipt.partial.json",
+        "--format",
+        "text"
+      ],
+      "exit_code": 1,
+      "tool_wall_seconds": 0.5378008
+    },
+    {
+      "working_directory": "scratch/evidence_freshness",
+      "argv": [
+        "<observed CPython 3.14.5 interpreter>",
+        "-I",
+        "-B",
+        "checker.py",
+        "--root",
+        "results/acceptance-review-001",
+        "--current",
+        "current.json",
+        "--receipt",
+        "receipt.partial.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "tool_wall_seconds": 0.5232034
+    }
+  ],
+  "location_note": "Absolute interpreter and checkout locations omitted for public boundary; original tool calls retain them locally. No acceptance command executed.",
+  "audit_runtime": {
+    "os": "Windows 10 build 19045",
+    "python": "CPython 3.14.5"
+  },
+  "effort": {
+    "first_clock_utc": "2026-11-02T05:15:54Z",
+    "baseline_completed_utc": "2026-11-02T05:25:56Z",
+    "checker_completed_utc": "2026-11-02T05:27:18Z",
+    "source_reconstruction_and_baseline_wall_seconds": 602,
+    "receipt_preparation_and_checker_wall_seconds": 82,
+    "active_operator_preparation_minutes": null,
+    "active_reviewer_minutes": null,
+    "human_setup_minutes": null,
+    "maintenance_minutes": null,
+    "time_savings": null,
+    "limits": "Wall intervals include tool waits, reading, reasoning and writing; not active labor or controlled comparison. Reporting and preservation occur after these stages."
+  },
+  "packet_capture_attempts": [
+    {
+      "exit_code": 1,
+      "reason": "PowerShell native -c quoting caused a Python SyntaxError before any write."
+    },
+    {
+      "exit_code": 0,
+      "method": "Python script through stdin, exclusive file creation."
+    }
+  ],
+  "acceptance_commands_executed": [],
+  "worker_dispatched": false,
+  "h3_performed": false,
+  "owner_acceptance_inferred": false,
+  "incremental_receipt_value": "No additional gap found; format requires missing tested provenance and returns a less informative schema insufficiency. Ordinary table supplies next action."
+}

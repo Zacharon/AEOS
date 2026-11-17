@@ -1,0 +1,3 @@
+Outcome: insufficient
+- receipt.missing:environment,source_revision,specification_sha256
+Synthetic applicability only; no acceptance or execution permission is granted.

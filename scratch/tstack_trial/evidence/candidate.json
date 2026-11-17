@@ -1,0 +1,43 @@
+{
+  "schema": "tstack-local-pilot/v1",
+  "variant": "candidate",
+  "python": "3.14.5",
+  "acceptance_passed": true,
+  "checks": [
+    {
+      "check": "existing_directory",
+      "exit_code": 2,
+      "clear_error": true,
+      "traceback": false,
+      "bytes_preserved": true,
+      "command_seconds": 0.2369
+    },
+    {
+      "check": "existing_file",
+      "exit_code": 2,
+      "clear_error": true,
+      "traceback": false,
+      "bytes_preserved": true,
+      "command_seconds": 0.222
+    },
+    {
+      "check": "new_output",
+      "exit_code": 0,
+      "artifacts_present": true,
+      "command_seconds": 0.2212
+    },
+    {
+      "check": "focused_regressions",
+      "exit_code": 0,
+      "count_confirmed": true,
+      "command_seconds": 1.2734
+    }
+  ],
+  "originals_unchanged": true,
+  "baseline_unchanged": true,
+  "candidate_sha256": "8e4ee473850135fa80f0d477130532cc634730d9330b10ddbb8707a25ef1f7cf",
+  "model_usage": "UNKNOWN",
+  "model_elapsed_seconds": "UNKNOWN",
+  "human_attention_seconds": "UNKNOWN",
+  "pr_lifecycle": "NOT_RUN"
+}

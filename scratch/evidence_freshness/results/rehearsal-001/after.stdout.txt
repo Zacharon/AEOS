@@ -1,0 +1,4 @@
+Outcome: stale
+- requirement_revision_changed
+- specification_bytes_changed
+Synthetic applicability only; no acceptance or execution permission is granted.

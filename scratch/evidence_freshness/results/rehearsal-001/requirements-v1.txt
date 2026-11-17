@@ -1,0 +1,4 @@
+ISOLATED SYNTHETIC REPLAY, REQUIREMENT REQ-count, REVISION intent-1
+Return the number of all supplied items, including inactive items.
+The provided three-item example must return 3.
+Passing this example establishes only this case, not general correctness.

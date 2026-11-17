@@ -1,0 +1,30 @@
+{
+  "action": "review-local-replay",
+  "authority": "allowed",
+  "check_id": "CHECK-active-count-suite",
+  "claim_id": "CLAIM-example-count",
+  "command": "<interpreter> -I -B check_recovery.py",
+  "dependencies": {
+    "check_count.py": "check_count.py",
+    "check_recovery.py": "check_recovery.py",
+    "count_items.py": "count_items.py",
+    "inputs/empty.json": "inputs/empty.json",
+    "inputs/items.json": "inputs/items.json",
+    "inputs/none-active.json": "inputs/none-active.json"
+  },
+  "dependency_coverage": "complete",
+  "environment": {
+    "configuration": "isolated Python (-I -B); mixed=2, none-active=0, empty=0; cwd=replay-root",
+    "runtime": "CPython 3.14.5; Windows 10.0.19045; interpreter-sha256=3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd"
+  },
+  "policy": "exact-source-v1",
+  "requirement_ids": [
+    "REQ-count"
+  ],
+  "requirement_revision": "intent-2",
+  "schema_version": 1,
+  "source_revision": "sha256:ce07f75de0ed04275472c9f148eec87361cefd9ad341683de83694c3588d43a7",
+  "specification": "requirements-v2.txt",
+  "task_id": "REPLAY-count-001",
+  "withdrawn_ids": []
+}

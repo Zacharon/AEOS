@@ -1,0 +1,135 @@
+[
+  {
+    "id": "01_unchanged",
+    "current": {},
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "All relevant state is unchanged; owner acceptance stays pending."
+  },
+  {
+    "id": "02_changed_requirement",
+    "current": {
+      "requirement_revision": "intent-2",
+      "specification": "inputs/specification-v2.txt"
+    },
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "The required behavior changes; the old output stays intact."
+  },
+  {
+    "id": "03_withdrawn_requirement",
+    "current": {
+      "requirement_ids": [],
+      "withdrawn_ids": [
+        "REQ-1"
+      ]
+    },
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "REQ-1 is withdrawn, but tool authority has not been revoked."
+  },
+  {
+    "id": "04_modified_dependency",
+    "current": {
+      "dependencies": {
+        "source": "inputs/source-v2.txt"
+      }
+    },
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "Declared input bytes change even though the snapshot label is retained."
+  },
+  {
+    "id": "05_stale_revision",
+    "current": {
+      "source_revision": "snapshot-2"
+    },
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "New exact source revision, identical declared bytes."
+  },
+  {
+    "id": "06_missing_raw_evidence",
+    "current": {},
+    "receipt": {
+      "raw_output": "raw/absent.txt"
+    },
+    "context_reads": [],
+    "ground_truth": "The referenced raw output is absent."
+  },
+  {
+    "id": "07_integrity_mismatch",
+    "current": {},
+    "receipt": {
+      "raw_output": "raw/altered.txt"
+    },
+    "context_reads": [],
+    "ground_truth": "Recorded digest belongs to the earlier output."
+  },
+  {
+    "id": "08_context_only_change",
+    "current": {},
+    "receipt": {},
+    "context_reads": [
+      {
+        "at_read": "inputs/reference-v1.txt",
+        "now": "inputs/reference-v2.txt",
+        "relationship": "context_only"
+      }
+    ],
+    "ground_truth": "The reference is outside the source snapshot and is solely context. Synthetic ground truth guarantees complete dependency coverage; no semantic independence is inferred."
+  },
+  {
+    "id": "09_true_dependency_change",
+    "current": {
+      "dependencies": {
+        "source": "inputs/source-v1.txt",
+        "reference": "inputs/reference-v2.txt"
+      }
+    },
+    "receipt": {
+      "dependency_sha256": {
+        "source": "ee7aa544ae7a1eea592f8a10eeb3c62c909b56525e78a56afbcc911fa623b0ab",
+        "reference": "1ef6bccc7e104c04bead9415ff96e4d16d7d2afe5257cc2bf75adc6a3686874c"
+      }
+    },
+    "context_reads": [],
+    "ground_truth": "The reference is explicitly a check input; unlike case 08 it is a true declared dependency."
+  },
+  {
+    "id": "10_environment_change",
+    "current": {
+      "environment": {
+        "runtime": "synthetic-runtime-1",
+        "configuration": "config-2"
+      }
+    },
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "Relevant configuration changes."
+  },
+  {
+    "id": "11_unrun_check",
+    "current": {},
+    "receipt": {
+      "execution_status": "not_run",
+      "exit_code": null,
+      "raw_output": null,
+      "raw_sha256": null,
+      "unrun_checks": [
+        "CHECK-count"
+      ]
+    },
+    "context_reads": [],
+    "ground_truth": "Check is prescribed but explicitly NOT RUN."
+  },
+  {
+    "id": "12_revoked_authority",
+    "current": {
+      "authority": "denied"
+    },
+    "receipt": {},
+    "context_reads": [],
+    "ground_truth": "Historical recorded pass cannot restore current authorization."
+  }
+]

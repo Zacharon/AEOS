@@ -1,0 +1,245 @@
+{
+  "cases": [
+    {
+      "case_id": "01_unchanged",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "eligible",
+        "execution_authenticity_verified": false,
+        "outcome": "eligible",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "applicability_rules_satisfied_only",
+            "outcome": "eligible"
+          }
+        ]
+      },
+      "expected": "eligible",
+      "matched": true
+    },
+    {
+      "case_id": "02_changed_requirement",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "stale",
+        "execution_authenticity_verified": false,
+        "outcome": "stale",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "requirement_revision_changed",
+            "outcome": "stale"
+          },
+          {
+            "code": "specification_bytes_changed",
+            "outcome": "stale"
+          }
+        ]
+      },
+      "expected": "stale",
+      "matched": true
+    },
+    {
+      "case_id": "03_withdrawn_requirement",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "stale",
+        "execution_authenticity_verified": false,
+        "outcome": "stale",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "no_active_requirement_for_claim",
+            "outcome": "stale"
+          },
+          {
+            "code": "active_requirement_set_changed",
+            "outcome": "stale"
+          },
+          {
+            "code": "requirement_withdrawn",
+            "outcome": "stale"
+          }
+        ]
+      },
+      "expected": "stale",
+      "matched": true
+    },
+    {
+      "case_id": "04_modified_dependency",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "stale",
+        "execution_authenticity_verified": false,
+        "outcome": "stale",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "dependency_changed:source",
+            "outcome": "stale"
+          }
+        ]
+      },
+      "expected": "stale",
+      "matched": true
+    },
+    {
+      "case_id": "05_stale_revision",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "stale",
+        "execution_authenticity_verified": false,
+        "outcome": "stale",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "source_revision_changed",
+            "outcome": "stale"
+          }
+        ]
+      },
+      "expected": "stale",
+      "matched": true
+    },
+    {
+      "case_id": "06_missing_raw_evidence",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "insufficient",
+        "execution_authenticity_verified": false,
+        "outcome": "insufficient",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "raw_evidence:missing_file",
+            "outcome": "insufficient"
+          }
+        ]
+      },
+      "expected": "insufficient",
+      "matched": true
+    },
+    {
+      "case_id": "07_integrity_mismatch",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "invalid",
+        "execution_authenticity_verified": false,
+        "outcome": "invalid",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "raw_evidence_integrity_mismatch",
+            "outcome": "invalid"
+          }
+        ]
+      },
+      "expected": "invalid",
+      "matched": true
+    },
+    {
+      "case_id": "08_context_only_change",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "eligible",
+        "execution_authenticity_verified": false,
+        "outcome": "eligible",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "applicability_rules_satisfied_only",
+            "outcome": "eligible"
+          }
+        ]
+      },
+      "expected": "eligible",
+      "matched": true
+    },
+    {
+      "case_id": "09_true_dependency_change",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "stale",
+        "execution_authenticity_verified": false,
+        "outcome": "stale",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "dependency_changed:reference",
+            "outcome": "stale"
+          }
+        ]
+      },
+      "expected": "stale",
+      "matched": true
+    },
+    {
+      "case_id": "10_environment_change",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "stale",
+        "execution_authenticity_verified": false,
+        "outcome": "stale",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "environment_changed",
+            "outcome": "stale"
+          }
+        ]
+      },
+      "expected": "stale",
+      "matched": true
+    },
+    {
+      "case_id": "11_unrun_check",
+      "decision": {
+        "action_outcome": "allowed_by_synthetic_input",
+        "evidence_outcome": "insufficient",
+        "execution_authenticity_verified": false,
+        "outcome": "insufficient",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "successful_execution_not_recorded",
+            "outcome": "insufficient"
+          },
+          {
+            "code": "raw_evidence_not_recorded",
+            "outcome": "insufficient"
+          },
+          {
+            "code": "required_checks_not_run",
+            "outcome": "insufficient"
+          }
+        ]
+      },
+      "expected": "insufficient",
+      "matched": true
+    },
+    {
+      "case_id": "12_revoked_authority",
+      "decision": {
+        "action_outcome": "blocked",
+        "evidence_outcome": "eligible",
+        "execution_authenticity_verified": false,
+        "outcome": "blocked",
+        "owner_acceptance_inferred": false,
+        "reasons": [
+          {
+            "code": "current_authority_denied",
+            "outcome": "blocked"
+          }
+        ]
+      },
+      "expected": "blocked",
+      "matched": true
+    }
+  ],
+  "failed": 0,
+  "kind": "deterministic_synthetic_baseline",
+  "owner_acceptance": "pending",
+  "passed": 12,
+  "productivity_measured": false
+}

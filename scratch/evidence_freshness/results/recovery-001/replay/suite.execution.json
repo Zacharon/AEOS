@@ -1,0 +1,16 @@
+{
+  "command": [
+    "<interpreter>",
+    "-I",
+    "-B",
+    "check_recovery.py"
+  ],
+  "cwd_relative_to_recovery_directory": "replay",
+  "elapsed_seconds": 1.1303550000011455,
+  "exit_code": 0,
+  "started_utc": "2026-11-02T05:00:01.052884+00:00",
+  "stderr": "suite.stderr.txt",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "suite.stdout.txt",
+  "stdout_sha256": "dad7d0d27333d93b26e75864800b0645a381a863726fda319ac50fba7f8b1e0f"
+}

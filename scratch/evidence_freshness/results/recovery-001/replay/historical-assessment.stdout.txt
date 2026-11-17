@@ -1,0 +1,11 @@
+Outcome: stale
+- requirement_revision_changed
+- source_revision_changed
+- environment_changed
+- check_id_changed
+- command_changed
+- dependency_set_incomplete
+- dependency_changed:check_count.py
+- dependency_changed:count_items.py
+- specification_bytes_changed
+Synthetic applicability only; no acceptance or execution permission is granted.

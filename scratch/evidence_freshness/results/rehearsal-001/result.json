@@ -1,0 +1,36 @@
+{
+  "active_operator_minutes": null,
+  "active_reviewer_minutes": null,
+  "after_exit_code": 1,
+  "after_expected": "stale",
+  "before": "eligible",
+  "behavior_check_runs": 1,
+  "changed_current_fields": [
+    "requirement_revision",
+    "specification"
+  ],
+  "check_exit_code": 0,
+  "checker_sha256": "e95287196005e5eebf52c3a653538a8fefa73bd361e3dbea466d1d7f3de531e8",
+  "independent_H3": "NOT_RUN",
+  "measurement_scope": "Automated JSON assembly only; excludes design, reading, authoring, check execution and owner review.",
+  "owner_acceptance": "pending",
+  "preserved_file_sha256": {
+    "check.execution.json": "e5329495bd6300f221bddc0612854c8c93f0a1a2d15ce658a0a13dfc7e704ab3",
+    "check.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "check.stdout.txt": "9386e30b676d9914c9df3b1054d9c6522280b9d80a650f5ecbfd76e1f17cdef3",
+    "check_count.py": "6787b5ed4e184c3ed441156e5dc04e0a92f8d3b929cd3db299b61659f8959d77",
+    "count_items.py": "74fa233d45445f31764ac66bf8a321160e9bcdc77b678f3328098f8cac770722",
+    "current-before.json": "93e996bc23bf6a773ee48cfaf3a4739865ac372234b13e5b2994c58ca68e7c7d",
+    "inputs/items.json": "ed8f09edebab15609429570b52c0dc20d9e5c3a38ddbfb97a9547dba3633768b",
+    "receipt.json": "02ee0561f14df45b7c57161064ca1f844376097046f811008a8b445729f034f9",
+    "rehearse.py": "e4d2e6a5ff90bc5cc91aa0f78c768b75893076ceb3cdafbbe6b613acde6b8923",
+    "requirements-v1.txt": "35e556e922db04f02736ee6a18e5fb80965d0269a139fe10d02194c2a2ea20b7"
+  },
+  "preserved_receipt_raw_output_and_source": true,
+  "productivity_improvement": null,
+  "record_assembly_seconds": 0.003970799996750429,
+  "retries": 0,
+  "revised_behavior_check": "NOT_RUN",
+  "status": "LOCAL_REHEARSAL_PASSED",
+  "total_preparation_minutes": null
+}

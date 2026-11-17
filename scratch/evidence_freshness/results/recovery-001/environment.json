@@ -1,0 +1,11 @@
+{
+  "flags": [
+    "-I",
+    "-B"
+  ],
+  "implementation": "CPython",
+  "interpreter_sha256": "3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+  "os": "Windows",
+  "os_version": "10.0.19045",
+  "python": "3.14.5"
+}

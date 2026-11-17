@@ -1,0 +1,82 @@
+{
+  "schema": "failure-novelty/v1",
+  "scope_revision": "synthetic-r1",
+  "required_checks": [
+    "acceptance"
+  ],
+  "metric": "synthetic unresolved obligations",
+  "limits": {
+    "elapsed_seconds": 100,
+    "cost_units": 10
+  },
+  "rounds": [
+    {
+      "scope_revision": "synthetic-r1",
+      "usage": {
+        "elapsed_seconds": 10,
+        "cost_units": 1
+      },
+      "checks": {
+        "acceptance": {
+          "status": "failed",
+          "evidence": [
+            "synthetic:check-1"
+          ]
+        }
+      },
+      "failures": [
+        {
+          "check": "acceptance",
+          "category": "assertion",
+          "subject": "sample",
+          "expected": "valid",
+          "actual": "A",
+          "diagnostic": "temporary-token-1",
+          "observed_at": "synthetic-time-1"
+        }
+      ],
+      "progress": {
+        "remaining": 3,
+        "evidence": [
+          "synthetic:metric-1"
+        ]
+      },
+      "remaining_actions": [],
+      "blocker": null
+    },
+    {
+      "scope_revision": "synthetic-r1",
+      "usage": {
+        "elapsed_seconds": 20,
+        "cost_units": 2
+      },
+      "checks": {
+        "acceptance": {
+          "status": "failed",
+          "evidence": [
+            "synthetic:check-2"
+          ]
+        }
+      },
+      "failures": [
+        {
+          "check": "acceptance",
+          "category": "assertion",
+          "subject": "sample",
+          "expected": "valid",
+          "actual": "A",
+          "diagnostic": "temporary-token-2",
+          "observed_at": "synthetic-time-2"
+        }
+      ],
+      "progress": {
+        "remaining": 3,
+        "evidence": [
+          "synthetic:metric-2"
+        ]
+      },
+      "remaining_actions": [],
+      "blocker": null
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "checker_sha256": "e95287196005e5eebf52c3a653538a8fefa73bd361e3dbea466d1d7f3de531e8",
+  "corrected_checks": [
+    {
+      "case": "mixed",
+      "expected": 2
+    },
+    {
+      "case": "none-active",
+      "expected": 0
+    },
+    {
+      "case": "empty",
+      "expected": 0
+    }
+  ],
+  "historical_decision_output": "replay/historical-assessment.stdout.txt",
+  "historical_evidence_copies_intact": true,
+  "independent_H3": "NOT_RUN",
+  "original_behavior": {
+    "exit_code": 1,
+    "expected": 2,
+    "observed": 3
+  },
+  "owner_acceptance": "pending",
+  "preparation_minutes": null,
+  "productivity_improvement": null,
+  "real_handoff_started": false,
+  "replacement_covers": "All three cases executed by check_recovery.py, not just the mixed input",
+  "replacement_decision_output": "replay/replacement-assessment.stdout.txt",
+  "reviewer_minutes": null,
+  "source_inputs_unchanged_during_checks": true,
+  "status": "LOCAL_RECOVERY_PASSED",
+  "suite_evidence": "replay/suite.stdout.txt",
+  "suite_exit_code": 0
+}

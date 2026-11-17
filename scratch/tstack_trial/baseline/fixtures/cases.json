@@ -1,0 +1,24 @@
+{
+  "schema": "failure-novelty-fixtures/v1",
+  "frozen_policy": "failure-novelty/v1",
+  "development": [
+    {"id": "repeat", "failures": ["A", "A", "A"], "remaining": [3, 3, 3], "solvable_at": null},
+    {"id": "cycle", "failures": ["A", "B", "A"], "remaining": [3, 3, 3], "solvable_at": null},
+    {"id": "progress-under-same-error", "failures": ["A", "A", "PASS"], "remaining": [3, 2, 0], "solvable_at": 3},
+    {"id": "justified-alternative", "failures": ["A", "A", "PASS"], "remaining": [3, 3, 0], "actions_at": [2], "solvable_at": 3},
+    {"id": "novel-error-churn", "failures": ["A", "B", "C"], "remaining": [3, 3, 3], "solvable_at": null},
+    {"id": "unknown-progress", "failures": ["A", "A", "PASS"], "remaining": [null, null, 0], "solvable_at": 3},
+    {"id": "immediate-success", "failures": ["PASS"], "remaining": [0], "solvable_at": 1}
+  ],
+  "held_out": [
+    {"id": "volatile-diagnostics", "failures": ["D", "D", "D"], "remaining": [7, 7, 7], "solvable_at": null},
+    {"id": "other-cycle", "failures": ["E", "F", "E"], "remaining": [7, 7, 7], "solvable_at": null},
+    {"id": "slow-repair", "failures": ["D", "D", "PASS"], "remaining": [7, 6, 0], "solvable_at": 3},
+    {"id": "transient-with-reason", "failures": ["D", "D", "PASS"], "remaining": [7, 7, 0], "actions_at": [1, 2], "solvable_at": 3},
+    {"id": "missing-progress", "failures": ["D", "D", "PASS"], "remaining": [null, null, 0], "solvable_at": 3},
+    {"id": "unreliable-no-progress-report", "failures": ["D", "D", "PASS"], "remaining": [7, 7, 0], "solvable_at": 3},
+    {"id": "cost-limit", "failures": ["D", "E", "PASS"], "remaining": [7, 7, 0], "cost_limit": 2, "solvable_at": 3},
+    {"id": "time-limit", "failures": ["D", "E", "PASS"], "remaining": [7, 7, 0], "time_limit": 20, "solvable_at": 3},
+    {"id": "missing-authority", "failures": ["D"], "remaining": [7], "blocker_at": 1, "solvable_at": null}
+  ]
+}

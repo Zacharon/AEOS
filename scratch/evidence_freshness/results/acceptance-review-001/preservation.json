@@ -1,0 +1,41 @@
+{
+  "scope": "Regular file hashes; .git directory and protected configuration directories excluded, no links traversed. Git HEAD/status separately checked.",
+  "roots": {
+    "packet_host": {
+      "preexisting_files": 339,
+      "unchanged_preexisting": 339,
+      "changed_or_missing": [],
+      "added": [
+        "scratch/evidence_freshness/results/acceptance-review-001/checker.result.json",
+        "scratch/evidence_freshness/results/acceptance-review-001/checker.stdout.txt",
+        "scratch/evidence_freshness/results/acceptance-review-001/current.json",
+        "scratch/evidence_freshness/results/acceptance-review-001/EVIDENCE_TABLE.md",
+        "scratch/evidence_freshness/results/acceptance-review-001/receipt.partial.json",
+        "scratch/evidence_freshness/results/acceptance-review-001/REPORT.md",
+        "scratch/evidence_freshness/results/acceptance-review-001/REPRESENTATION.md",
+        "scratch/evidence_freshness/results/acceptance-review-001/requirements.md",
+        "scratch/evidence_freshness/results/acceptance-review-001/results.json"
+      ]
+    },
+    "reviewed_source": {
+      "preexisting_files": 272,
+      "unchanged_preexisting": 272,
+      "changed_or_missing": [],
+      "added": []
+    },
+    "retained_run": {
+      "preexisting_files": 66,
+      "unchanged_preexisting": 66,
+      "changed_or_missing": [],
+      "added": []
+    }
+  },
+  "packet_checks": {
+    "json_parse": "passed",
+    "private_path_marker_findings": [],
+    "relative_links": "passed",
+    "packet_files_before_audit_record": 9
+  },
+  "checker_sha256_after": "e95287196005e5eebf52c3a653538a8fefa73bd361e3dbea466d1d7f3de531e8",
+  "scan_limit": "Targeted marker and relative-link checks plus manual review, not a guarantee against every sensitive datum. Initial marker expression incorrectly matched https URLs; corrected to recognize drive-letter boundaries."
+}

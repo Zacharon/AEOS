@@ -1,0 +1,3 @@
+Outcome: eligible
+- applicability_rules_satisfied_only
+Synthetic applicability only; no acceptance or execution permission is granted.

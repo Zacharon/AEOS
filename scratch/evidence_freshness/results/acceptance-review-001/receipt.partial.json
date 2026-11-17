@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "task_id": "retained-manual-return-attempt",
+  "claim_id": "target-windows-controller-verification-completed",
+  "requirement_revision": "public-readme-at-88e8aea5",
+  "requirement_ids": ["manual-return-before-controller-verification"],
+  "dependency_coverage": "unknown",
+  "check_id": "controller-verification-after-manual-return",
+  "command": "python -B <source-checkout>/prototypes/issue_handoff/issue_handoff.py verify --run <retained-run>",
+  "dependency_sha256": {},
+  "execution_status": "not_run",
+  "exit_code": null,
+  "raw_output": null,
+  "raw_sha256": null,
+  "assumptions": ["The intended source and prepared environment are not a completed verification's tested source and environment."],
+  "unrun_checks": ["controller-verification-after-manual-return"],
+  "historical_status": "recorded",
+  "authority_at_execution": "unknown",
+  "owner_acceptance": "unknown"
+}

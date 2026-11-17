@@ -1,0 +1,17 @@
+test_authority_is_current_separate_and_not_owner_acceptance (test_freshness.FreshnessTests.test_authority_is_current_separate_and_not_owner_acceptance) ... ok
+test_consistent_forgery_demonstrates_authenticity_limit (test_freshness.FreshnessTests.test_consistent_forgery_demonstrates_authenticity_limit) ... ok
+test_deterministic_read_only_replay (test_freshness.FreshnessTests.test_deterministic_read_only_replay) ... ok
+test_duplicate_json_and_command_injection_are_not_executed (test_freshness.FreshnessTests.test_duplicate_json_and_command_injection_are_not_executed) ... ok
+test_failed_unrun_missing_or_tampered_output_never_passes (test_freshness.FreshnessTests.test_failed_unrun_missing_or_tampered_output_never_passes) ... ok
+test_human_and_agent_cli_use_same_decision_and_exit_status (test_freshness.FreshnessTests.test_human_and_agent_cli_use_same_decision_and_exit_status) ... ok
+test_malformed_missing_and_ambiguous_records_fail_closed (test_freshness.FreshnessTests.test_malformed_missing_and_ambiguous_records_fail_closed) ... ok
+test_path_escape_aliases_and_streams_refused_for_every_file_role (test_freshness.FreshnessTests.test_path_escape_aliases_and_streams_refused_for_every_file_role) ... ok
+test_real_filesystem_link_cannot_escape_fixture_root (test_freshness.FreshnessTests.test_real_filesystem_link_cannot_escape_fixture_root) ... ok
+test_relevant_change_invalidates_and_restore_recovers (test_freshness.FreshnessTests.test_relevant_change_invalidates_and_restore_recovers) ... ok
+test_twelve_authored_expectations_and_reasons (test_freshness.FreshnessTests.test_twelve_authored_expectations_and_reasons) ... ok
+test_unknown_coverage_and_incomplete_dependency_inventory (test_freshness.FreshnessTests.test_unknown_coverage_and_incomplete_dependency_inventory) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.288s
+
+OK

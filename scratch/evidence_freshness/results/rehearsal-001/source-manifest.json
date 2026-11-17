@@ -1,0 +1,8 @@
+{
+  "algorithm": "sha256 of sorted compact UTF-8 JSON filename-to-sha256 map",
+  "files": {
+    "check_count.py": "6787b5ed4e184c3ed441156e5dc04e0a92f8d3b929cd3db299b61659f8959d77",
+    "count_items.py": "74fa233d45445f31764ac66bf8a321160e9bcdc77b678f3328098f8cac770722"
+  },
+  "source_revision": "sha256:5b2d12fb127221e86ee5b59bc3d440678cabbedc049fa6f9f186b7bbc195e87f"
+}

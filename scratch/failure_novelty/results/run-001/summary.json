@@ -1,0 +1,854 @@
+{
+  "schema": "failure-novelty-comparison/v1",
+  "synthetic_only": true,
+  "splits": {
+    "development": {
+      "case_count": 7,
+      "unsolved_rounds_saved": 1,
+      "premature_abandonments_added": 0,
+      "baseline_rounds": 19,
+      "candidate_rounds": 18,
+      "cases": [
+        {
+          "id": "repeat",
+          "solvable_at": null,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "round_cap",
+            "resume_conditions": [
+              "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "stalled",
+            "resume_conditions": [
+              "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "stalled",
+              "resume_conditions": [
+                "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+              ]
+            }
+          ],
+          "saved_rounds": 1,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "cycle",
+          "solvable_at": null,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "round_cap",
+            "resume_conditions": [
+              "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "stalled",
+            "resume_conditions": [
+              "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "22a85c7ae397af4cc60e7210370b1d2a8504f4e2725d7a91d3e7d9d9826be469",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "stalled",
+              "resume_conditions": [
+                "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+              ]
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "progress-under-same-error",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "justified-alternative",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "novel-error-churn",
+          "solvable_at": null,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "0d88e41bd414d97dbf56e950bfb6236b5fc1cede709a87cbd0ab605d474ea5bc",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "round_cap",
+            "resume_conditions": [
+              "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "0d88e41bd414d97dbf56e950bfb6236b5fc1cede709a87cbd0ab605d474ea5bc",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "round_cap",
+            "resume_conditions": [
+              "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "22a85c7ae397af4cc60e7210370b1d2a8504f4e2725d7a91d3e7d9d9826be469",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "0d88e41bd414d97dbf56e950bfb6236b5fc1cede709a87cbd0ab605d474ea5bc",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "round_cap",
+              "resume_conditions": [
+                "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+              ]
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "unknown-progress",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "b4193af812a74ac517067e177b4b72a653e479a62e104478454355c9f4b677ab",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "immediate-success",
+          "solvable_at": 1,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 1,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 1,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        }
+      ]
+    },
+    "held_out": {
+      "case_count": 9,
+      "unsolved_rounds_saved": 1,
+      "premature_abandonments_added": 1,
+      "baseline_rounds": 23,
+      "candidate_rounds": 21,
+      "cases": [
+        {
+          "id": "volatile-diagnostics",
+          "solvable_at": null,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "round_cap",
+            "resume_conditions": [
+              "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "stalled",
+            "resume_conditions": [
+              "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "stalled",
+              "resume_conditions": [
+                "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+              ]
+            }
+          ],
+          "saved_rounds": 1,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "other-cycle",
+          "solvable_at": null,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "round_cap",
+            "resume_conditions": [
+              "Review the unresolved checks and obtain a new bounded task authorization; do not reset this trace to evade the cap."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "stalled",
+            "resume_conditions": [
+              "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "3657f93d8dfcf6a65eff92526ce8e904219d3cbca25e8a8d5e5351b52079151a",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "stalled",
+              "resume_conditions": [
+                "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+              ]
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "slow-repair",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "transient-with-reason",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "missing-progress",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 3,
+              "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "advisory_only": true,
+              "execution_state": "ready_for_review",
+              "reason": "checks_passed",
+              "resume_conditions": []
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "unreliable-no-progress-report",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 3,
+            "failure_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "advisory_only": true,
+            "execution_state": "ready_for_review",
+            "reason": "checks_passed",
+            "resume_conditions": []
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "stalled",
+            "resume_conditions": [
+              "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "stalled",
+              "resume_conditions": [
+                "Supply new evidence or a materially different justified action; recheck scope and remaining budgets before a new authorized attempt."
+              ]
+            }
+          ],
+          "saved_rounds": 1,
+          "premature_abandonment_added": true
+        },
+        {
+          "id": "cost-limit",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "budget_exhausted",
+            "resume_conditions": [
+              "Obtain a newly authorized budget and recheck current context before resuming."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "budget_exhausted",
+            "resume_conditions": [
+              "Obtain a newly authorized budget and recheck current context before resuming."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "budget_exhausted",
+              "resume_conditions": [
+                "Obtain a newly authorized budget and recheck current context before resuming."
+              ]
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "time-limit",
+          "solvable_at": 3,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "budget_exhausted",
+            "resume_conditions": [
+              "Obtain a newly authorized budget and recheck current context before resuming."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 2,
+            "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "budget_exhausted",
+            "resume_conditions": [
+              "Obtain a newly authorized budget and recheck current context before resuming."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "in_progress",
+              "reason": "bounded_next_attempt",
+              "resume_conditions": []
+            },
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 2,
+              "failure_signature": "52d9004a4bf3bd7b48a4daa4ec2f34a4e58b5e4ce21cabec6c7114c0b819b517",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "budget_exhausted",
+              "resume_conditions": [
+                "Obtain a newly authorized budget and recheck current context before resuming."
+              ]
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        },
+        {
+          "id": "missing-authority",
+          "solvable_at": null,
+          "baseline": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 1,
+            "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "missing_authority",
+            "resume_conditions": [
+              "Obtain exact owner authorization."
+            ]
+          },
+          "candidate": {
+            "schema": "failure-novelty/v1",
+            "rounds_observed": 1,
+            "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+            "advisory_only": true,
+            "execution_state": "blocked",
+            "reason": "missing_authority",
+            "resume_conditions": [
+              "Obtain exact owner authorization."
+            ]
+          },
+          "candidate_decisions": [
+            {
+              "schema": "failure-novelty/v1",
+              "rounds_observed": 1,
+              "failure_signature": "e636b82a1e2d94152a13bba9d85151afbc9e1d4243e3a0449725582fc24d4691",
+              "advisory_only": true,
+              "execution_state": "blocked",
+              "reason": "missing_authority",
+              "resume_conditions": [
+                "Obtain exact owner authorization."
+              ]
+            }
+          ],
+          "saved_rounds": 0,
+          "premature_abandonment_added": false
+        }
+      ]
+    }
+  },
+  "promotion": "REJECT",
+  "real_worker_trials": "NOT_RUN",
+  "installed_policy_change": false,
+  "sha256": {
+    "policy.py": "cad47fbbc4e6d837bcf5e47ab19c5dc26cc9f970d74b288c3daac0f0e79236c6",
+    "compare.py": "05eecb49b786843940fdd7582b5b526a58d39d4092f1018008eba401f30e6090",
+    "test_policy.py": "c7ceecff0cabdf6649d7d0de25f73b271f2892a27f3057f00be6351d681f345d",
+    "README.md": "47482991c9bbff1ce17635a9dc3c251caee50e8535387b986488be2dfe1483bc",
+    "fixtures/cases.json": "261b8782997fab68166d9a4f226a9d7ddf4b645319f4cc7150603f854dd892d4"
+  },
+  "python_version": "3.14.5"
+}
