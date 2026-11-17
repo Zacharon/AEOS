@@ -30,3 +30,16 @@ The package handoff CLI only accepts skills from `.codex/skills/<name>/SKILL.md`
 3. Keep the body short and imperative. Name real commands and files; mark anything manual as manual.
 4. Add a row to the table above.
 5. Keep it public-safe: neutral template material only, no personal vault content, private paths, account identifiers, credentials, pricing, licence or support terms.
+
+## Role cards
+
+Read-only, tool-neutral descriptions; these do not install executable agents.
+
+| Role | Purpose |
+|---|---|
+| [Vault router](agents/vault-router.md) | Select minimum authoritative context |
+| [Project state auditor](agents/project-state-auditor.md) | Challenge state and completion claims |
+| [Prompt architect](agents/prompt-architect.md) | Prepare a bounded execution prompt |
+| [H3 verifier](agents/h3-verifier.md) | Independently review evidence |
+
+The existing eight skills cover the generic work loop; these roles add no duplicate skill definitions. Blank authoring worksheets live in [templates](../templates/task-packet.md).
