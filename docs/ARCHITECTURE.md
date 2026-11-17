@@ -4,7 +4,25 @@ AEOS coordinates project knowledge, bounded context, work, evidence and controll
 
 This page describes the public setup package, not the creator's personal operating vault. File links below target the current candidate [public.2 package](../distribution/agentic-engineering-os-2026.10.09-public.2/README.md). Historical public.1 remains a separate, frozen revision.
 
-## How the components connect
+## Conceptual system overview
+
+![Owner-supplied conceptual AEOS overview: human, operating layer, vault, models, tools and harness](diagrams/agentic-engineering-os-concept.png)
+
+This owner-supplied illustration is a **conceptual overview**, not installation or
+integration evidence. It includes illustrative folder names, provider examples,
+dispatch, MCP/API connections and execution-environment ideas. The public preview
+does not install those providers, an automatic dispatcher or a native sandbox;
+assistant handoffs remain manual. General benefit labels are design goals, not
+measured performance claims. The personal-OS label describes a use case and does
+not include the creator's personal vault or context in this repository.
+
+The unchanged PNG includes AI-generation content credentials; it is an illustration,
+not a screenshot of running software. Use the component contracts and implemented
+flow below for current behavior. New features must satisfy the
+[human/agent feature standard](FEATURE_STANDARD.md); adopting it does not certify
+the existing preview. This documentation addition is outside frozen setup archives.
+
+## Implemented connections
 
 Solid arrows represent a file input/output or check implemented by a CLI. Dashed arrows represent an operator/assistant action. Neither style implies a background integration.
 

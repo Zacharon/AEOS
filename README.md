@@ -15,6 +15,8 @@ CPython 3.14.5 is required; Windows with CPython 3.14.5 is tested. Install the p
 ![AEOS architecture: implemented file operations and manual handoffs](docs/diagrams/aeos-architecture.svg)
 
 - [Architecture and usage flow](docs/ARCHITECTURE.md) — real file contracts, commands and manual handoffs
+- [Human/agent feature standard](docs/FEATURE_STANDARD.md) — required acceptance gates for future features; existing preview compliance is not asserted
+- [Owner-supplied conceptual overview](docs/ARCHITECTURE.md#conceptual-system-overview) — broad design illustration, distinct from implemented capabilities
 - [Designed system preview](site/architecture.html) — offline architecture and workflow diagrams
 - [Ecosystem analysis and benchmarks](docs/ECOSYSTEM.md) — inclusion decisions, sources and proposed experiments
 - [First run](site/first-run.html)
