@@ -1,0 +1,13 @@
+flowchart TD
+  I[Intent and instructions] --> R[Router]
+  R --> P[Project brain]
+  P --> C[Bounded context]
+  C --> T[Reviewed task packet]
+  T --> W[Attended worker]
+  W --> A[Artifacts and H1 H2 evidence]
+  A --> V[Independent H3 when required]
+  V --> B[Authorized controller writeback]
+  B --> O[Owner acceptance]
+  P -. selected sources .-> L[Knowledge proposal]
+  L --> D[Owner decision]
+  D --> G[Separately authorized Gold application]

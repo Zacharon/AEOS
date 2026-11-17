@@ -22,6 +22,10 @@ Requires Python 3.11+ (tested on 3.11.15 and 3.14.5 on Windows). Install the pac
 
 **Bronze** keeps raw source material and where it came from. An agent can collect it, but source text is evidence, not instructions. **Silver** is a proposed knowledge note drafted from Bronze with its source, diff and checks; it remains unapproved. The **owner decision** is a human accepting, editing or rejecting that exact proposal. **Gold** is the approved note applied to the project's trusted knowledge after the required fresh checks and Git checkpoint. Agents can prepare Bronze and Silver; only the owner can authorize Gold. The synthetic demo stops at pending Silver.
 
+## How AEOS works
+
+Read the [bounded work loop](docs/HOW-AEOS-WORKS.md), [stack roles](docs/STACK.md) and [independent verification](docs/VERIFICATION-H3.md). These companion docs explain the method; the existing architecture page identifies the implemented public subset.
+
 ## Explore the system
 
 ![AEOS architecture: implemented file operations and manual handoffs](docs/diagrams/aeos-architecture.svg)
