@@ -24,6 +24,8 @@ Requires Python 3.11+ (tested on 3.11.15 and 3.14.5 on Windows). Install the pac
 
 ## Explore the system
 
+- [Documentation and PR workflow](docs/DOCUMENTATION_PR_WORKFLOW.md): bounded current context, complete worker returns, freshness checks and a local PR draft recipe in the source checkout.
+
 ![AEOS architecture: implemented file operations and manual handoffs](docs/diagrams/aeos-architecture.svg)
 
 - [Architecture and usage flow](docs/ARCHITECTURE.md) — real file contracts, commands and manual handoffs
