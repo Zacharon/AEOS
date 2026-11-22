@@ -1,0 +1,16 @@
+{
+  "artifacts": [],
+  "changed_paths": [],
+  "checks": [],
+  "execution_state": "blocked",
+  "next_action": "REPLACE: one next executable action.",
+  "proposed_writeback": [],
+  "risks": [
+    "REPLACE: list remaining risks, gates, and limits."
+  ],
+  "run_id": "RUN-2026-10-08-901",
+  "schema_version": "1.0",
+  "summary": "REPLACE: work has not run; describe the observed result.",
+  "task_id": "TASK-SAMPLE-001",
+  "worker": "human"
+}

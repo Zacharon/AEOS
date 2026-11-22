@@ -1,0 +1,184 @@
+[
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\00_SYSTEM\\AGENTIC_LIBRARIAN\\librarian.py",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault",
+      "ingest",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\package\\examples\\source.md",
+      "--project",
+      "Sample",
+      "--source-reliability",
+      "internal_project_artifact",
+      "--source-author",
+      "Setup demonstration"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"source_id\": \"SRC-2026-000001\",\n  \"title\": \"source\",\n  \"source_type\": \"markdown\",\n  \"original_uri\": \"C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\package\\\\examples\\\\source.md\",\n  \"imported_at\": \"2026-11-18T13:35:34Z\",\n  \"captured_at\": \"2026-11-18T13:35:34Z\",\n  \"project\": \"Sample\",\n  \"content_sha256\": \"0cae16b8993b32bb36753bcb158b5408f932e952dc1c8f804112fd8bfdf9b1b6\",\n  \"source_author\": \"Setup demonstration\",\n  \"original_modified_at\": \"2026-11-18T13:33:56Z\",\n  \"ingestion_method\": \"librarian_cli_copy\",\n  \"originating_agent\": \"owner_request\",\n  \"source_reliability\": \"internal_project_artifact\",\n  \"supersedes\": null,\n  \"superseded_by\": null,\n  \"tags\": [],\n  \"stored_path\": \"00_SYSTEM/AGENTIC_LIBRARIAN/bronze/sources/SRC-2026-000001__source.md\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\00_SYSTEM\\AGENTIC_LIBRARIAN\\librarian.py",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault",
+      "propose",
+      "--project",
+      "Sample",
+      "--proposal-type",
+      "CREATE_KNOWLEDGE",
+      "--risk",
+      "low",
+      "--confidence",
+      "medium",
+      "--title",
+      "Sample source summary",
+      "--summary",
+      "Synthetic candidate remains pending owner review.",
+      "--target",
+      "04_RESEARCH/Sample_summary.md",
+      "--source-id",
+      "SRC-2026-000001",
+      "--proposed-file",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\package\\examples\\candidate.md"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"proposal_id\": \"PROP-2026-000001\",\n  \"status\": \"pending\",\n  \"proposal_path\": \"00_SYSTEM/AGENTIC_LIBRARIAN/silver/proposals/PROP-2026-000001.md\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\00_SYSTEM\\AGENTIC_LIBRARIAN\\librarian.py",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault",
+      "verify",
+      "PROP-2026-000001"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"proposal_id\": \"PROP-2026-000001\",\n  \"verification_status\": \"passed\",\n  \"target_sha256\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "build",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault",
+      "--packet",
+      "09_TOOLS/agent_runner_v1/runs/sample/task_packet.md",
+      "--executor",
+      "human",
+      "--output",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff",
+      "--read",
+      "01_PROJECTS/Sample/PROJECT_STATE.md",
+      "--read",
+      "00_SYSTEM/AGENTIC_LIBRARIAN/bronze/sources/SRC-2026-000001__source.md",
+      "--read",
+      "00_SYSTEM/AGENTIC_LIBRARIAN/silver/proposals/PROP-2026-000001.md",
+      "--read",
+      "00_SYSTEM/AGENTIC_LIBRARIAN/silver/payloads/PROP-2026-000001.md"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"candidate_built\",\n  \"bundle\": \"C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\aeos first run\\\\handoff\",\n  \"run_id\": \"RUN-2026-10-08-901\",\n  \"manifest_sha256\": \"4af5cd70ab4ee80970a6d682c52007ad853e4c784d21a613b2bc0a271ab0ed1b\",\n  \"dispatch_blockers\": [],\n  \"source_count_including_packet\": 5,\n  \"source_bytes\": 7746\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "check",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault",
+      "--bundle",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"integrity_and_live_sources_match\",\n  \"run_id\": \"RUN-2026-10-08-901\",\n  \"dispatch_blockers\": [],\n  \"limitation\": \"Integrity only; approval, live locks/external state, execution and H3 are not authenticated.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "validate-result",
+      "--bundle",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff",
+      "--result",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff\\worker_result.json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"candidate_result_valid\",\n  \"run_id\": \"RUN-2026-10-08-901\",\n  \"execution_state\": \"ready_for_review\",\n  \"verification_lifecycle\": \"needs-review\",\n  \"h3_verdict\": null,\n  \"limitation\": \"Worker selfclaims only. No execution proof, undeclared-change detection, live drift check, H3 verdict, approval or writeback was produced.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "review",
+      "--bundle",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"continuation_read\",\n  \"run_id\": \"RUN-2026-10-08-901\",\n  \"task_id\": \"TASK-SAMPLE-001\",\n  \"executor\": \"human\",\n  \"source_state\": \"current\",\n  \"source_count\": 5,\n  \"packet\": \"C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\aeos first run\\\\handoff\\\\task_packet.md\",\n  \"brief\": \"C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\aeos first run\\\\handoff\\\\execution_brief.md\",\n  \"verification_lifecycle\": \"needs-review\",\n  \"h3_verdict\": null,\n  \"authority\": \"Read-only observations; no dispatch, approval, H3 or writeback.\",\n  \"execution_state\": \"ready_for_review\",\n  \"result_state\": \"candidate_valid\",\n  \"summary\": \"Two checked sample items found in the captured source; Silver stays pending.\",\n  \"worker_proposed_next_action\": \"Review the remaining sample item and the pending Silver proposal; obtain separate owner approval before Gold application.\",\n  \"checks\": [\n    {\n      \"name\": \"Source count\",\n      \"command\": \"demo.py: count done rows in selected source snapshot\",\n      \"outcome\": \"passed\",\n      \"evidence\": \"artifacts/report.md\"\n    }\n  ],\n  \"artifacts\": [\n    {\n      \"path\": \"artifacts/report.md\",\n      \"sha256\": \"61c6e04ccbe057ff33c9edf58648b4f3d11b70134990ed2318dbcfe8142ca2e5\",\n      \"description\": \"Deterministic sample source count and provenance\"\n    }\n  ],\n  \"next_action\": \"Inspect the candidate evidence and independent H3 record, then perform only authorized canonical writeback.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "review",
+      "--bundle",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "{\"result\": \"rejected\", \"reason\": \"Live source drift: 01_PROJECTS/Sample/PROJECT_STATE.md; rebuild from the current approved packet\"}\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "review",
+      "--bundle",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "{\"result\": \"rejected\", \"reason\": \"File is missing: C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\aeos first run\\\\vault\\\\01_PROJECTS\\\\Sample\\\\PROJECT_STATE.md\"}\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos env\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault\\09_TOOLS\\agent_runner_v1\\unified_handoff\\handoff.py",
+      "review",
+      "--bundle",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\handoff",
+      "--vault-root",
+      "C:\\Users\\zacha\\.t3\\worktrees\\Agentic_Engineering_OS_Setup\\t3-8570c8f1-eebd1da93e8ce20c\\scratch\\factory-p010\\aeos first run\\vault"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"continuation_read\",\n  \"run_id\": \"RUN-2026-10-08-901\",\n  \"task_id\": \"TASK-SAMPLE-001\",\n  \"executor\": \"human\",\n  \"source_state\": \"current\",\n  \"source_count\": 5,\n  \"packet\": \"C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\aeos first run\\\\handoff\\\\task_packet.md\",\n  \"brief\": \"C:\\\\Users\\\\zacha\\\\.t3\\\\worktrees\\\\Agentic_Engineering_OS_Setup\\\\t3-8570c8f1-eebd1da93e8ce20c\\\\scratch\\\\factory-p010\\\\aeos first run\\\\handoff\\\\execution_brief.md\",\n  \"verification_lifecycle\": \"needs-review\",\n  \"h3_verdict\": null,\n  \"authority\": \"Read-only observations; no dispatch, approval, H3 or writeback.\",\n  \"execution_state\": \"ready_for_review\",\n  \"result_state\": \"candidate_valid\",\n  \"summary\": \"Two checked sample items found in the captured source; Silver stays pending.\",\n  \"worker_proposed_next_action\": \"Review the remaining sample item and the pending Silver proposal; obtain separate owner approval before Gold application.\",\n  \"checks\": [\n    {\n      \"name\": \"Source count\",\n      \"command\": \"demo.py: count done rows in selected source snapshot\",\n      \"outcome\": \"passed\",\n      \"evidence\": \"artifacts/report.md\"\n    }\n  ],\n  \"artifacts\": [\n    {\n      \"path\": \"artifacts/report.md\",\n      \"sha256\": \"61c6e04ccbe057ff33c9edf58648b4f3d11b70134990ed2318dbcfe8142ca2e5\",\n      \"description\": \"Deterministic sample source count and provenance\"\n    }\n  ],\n  \"next_action\": \"Inspect the candidate evidence and independent H3 record, then perform only authorized canonical writeback.\"\n}\n",
+    "stderr": ""
+  }
+]

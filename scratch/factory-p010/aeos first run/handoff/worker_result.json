@@ -1,0 +1,29 @@
+{
+  "artifacts": [
+    {
+      "path": "artifacts/report.md",
+      "sha256": "61c6e04ccbe057ff33c9edf58648b4f3d11b70134990ed2318dbcfe8142ca2e5",
+      "description": "Deterministic sample source count and provenance"
+    }
+  ],
+  "changed_paths": [],
+  "checks": [
+    {
+      "name": "Source count",
+      "command": "demo.py: count done rows in selected source snapshot",
+      "outcome": "passed",
+      "evidence": "artifacts/report.md"
+    }
+  ],
+  "execution_state": "ready_for_review",
+  "next_action": "Review the remaining sample item and the pending Silver proposal; obtain separate owner approval before Gold application.",
+  "proposed_writeback": [],
+  "risks": [
+    "Synthetic deterministic demonstration; no AI executor, independent H3, owner acceptance or Gold apply."
+  ],
+  "run_id": "RUN-2026-10-08-901",
+  "schema_version": "1.0",
+  "summary": "Two checked sample items found in the captured source; Silver stays pending.",
+  "task_id": "TASK-SAMPLE-001",
+  "worker": "human"
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agentic-librarian-proposal-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proposal_id", "status", "proposal_type", "project", "knowledge_type",
+    "risk", "computed_risk", "effective_risk", "confidence", "created_at",
+    "created_by", "target_path", "target_note", "target_sha256", "source_ids",
+    "evidence_classification", "contradiction_detected", "verification_status",
+    "owner_decision", "owner_decision_by", "owner_decision_at", "applied_at",
+    "supersedes", "proposed_content_path", "proposed_content_sha256", "title",
+    "summary", "project_path"
+  ],
+  "properties": {
+    "proposal_id": {"type": "string", "pattern": "^PROP-[0-9]{4}-[0-9]{6}$"},
+    "status": {"enum": ["pending", "approved", "rejected", "needs_revision", "deferred", "applied", "rolled_back"]},
+    "proposal_type": {
+      "enum": [
+        "CREATE_KNOWLEDGE", "UPDATE_KNOWLEDGE", "CORRECT_KNOWLEDGE",
+        "SUPERSEDE_KNOWLEDGE", "ADD_RELATIONSHIP", "REMOVE_DEPRECATE_RELATIONSHIP",
+        "RECORD_DECISION", "UPDATE_PROJECT_STATE", "RESOLVE_CONTRADICTION",
+        "MERGE_DUPLICATES", "ARCHIVE_STALE_KNOWLEDGE"
+      ]
+    },
+    "project": {"type": "string", "minLength": 1},
+    "project_path": {"type": ["string", "null"]},
+    "knowledge_type": {"enum": ["durable_knowledge", "operational_state", "ephemeral_information"]},
+    "risk": {"enum": ["low", "medium", "high"]},
+    "computed_risk": {"enum": ["low", "medium", "high"]},
+    "effective_risk": {"enum": ["low", "medium", "high"]},
+    "confidence": {"enum": ["low", "medium", "high"]},
+    "created_at": {"$ref": "#/$defs/timestamp"},
+    "created_by": {"type": "string", "minLength": 1},
+    "target_path": {"type": "string", "minLength": 1},
+    "target_note": {"type": "string", "minLength": 1},
+    "target_sha256": {"anyOf": [{"$ref": "#/$defs/hash"}, {"type": "null"}]},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^SRC-[0-9]{4}-[0-9]{6}$"}},
+    "evidence_classification": {"enum": ["DIRECT_SOURCE_FACT", "OWNER_STATEMENT", "DETERMINISTIC_RESULT", "AGENT_INFERENCE", "SPECULATION"]},
+    "contradiction_detected": {"type": "boolean"},
+    "verification_status": {"enum": ["pending", "passed", "failed", "stale_target"]},
+    "verified_at": {"$ref": "#/$defs/timestamp"},
+    "review_body_sha256": {"$ref": "#/$defs/hash"},
+    "verification_fingerprint": {"$ref": "#/$defs/hash"},
+    "owner_decision": {"enum": ["pending", "approved", "rejected", "needs_revision", "deferred"]},
+    "owner_decision_by": {"type": ["string", "null"]},
+    "owner_decision_at": {"anyOf": [{"$ref": "#/$defs/timestamp"}, {"type": "null"}]},
+    "owner_notes": {"type": ["string", "null"]},
+    "applied_at": {"anyOf": [{"$ref": "#/$defs/timestamp"}, {"type": "null"}]},
+    "applied_sha256": {"$ref": "#/$defs/hash"},
+    "checkpoint_head": {"type": "string", "minLength": 7},
+    "backup_path": {"type": ["string", "null"]},
+    "rolled_back_at": {"$ref": "#/$defs/timestamp"},
+    "rollback_checkpoint_head": {"type": "string", "minLength": 7},
+    "restored_sha256": {"anyOf": [{"$ref": "#/$defs/hash"}, {"type": "null"}]},
+    "archived_at": {"$ref": "#/$defs/timestamp"},
+    "supersedes": {"type": ["string", "null"]},
+    "proposed_content_path": {"type": "string", "minLength": 1},
+    "proposed_content_sha256": {"$ref": "#/$defs/hash"},
+    "diff_path": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "timestamp": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?Z$"},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

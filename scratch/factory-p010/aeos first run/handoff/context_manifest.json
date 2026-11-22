@@ -1,0 +1,59 @@
+{
+  "authority": "candidate_only; canonical_packet_and_live_controls",
+  "created_utc": "2026-11-18T13:35:37.828407+00:00",
+  "dispatch_blockers": [],
+  "executor": "human",
+  "generated": [
+    {
+      "bytes": 3490,
+      "path": "execution_brief.md",
+      "sha256": "53fc3ebc0e5606efe39ec42e96b49164550ff336a3722e64eb20849ba70ad4e9"
+    },
+    {
+      "bytes": 439,
+      "path": "worker_result.template.json",
+      "sha256": "7af0b898842414429051e6689dae47284366fece139733a071762df8385e23e1"
+    }
+  ],
+  "packet_worker_tool": "Human",
+  "run_id": "RUN-2026-10-08-901",
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "bytes": 2964,
+      "kind": "packet",
+      "sha256": "f6ba92021f4fc14d095dde2b7e2a10480558cf0b81392c52ecb13f1f78f17a40",
+      "snapshot": "task_packet.md",
+      "source": "09_TOOLS/agent_runner_v1/runs/sample/task_packet.md"
+    },
+    {
+      "bytes": 398,
+      "kind": "context",
+      "sha256": "237ab1fc9461f773c6fca32fad82cc3696711c62d66f7047fbd9d024a026197e",
+      "snapshot": "context/01_PROJECT_STATE.md",
+      "source": "01_PROJECTS/Sample/PROJECT_STATE.md"
+    },
+    {
+      "bytes": 287,
+      "kind": "context",
+      "sha256": "0cae16b8993b32bb36753bcb158b5408f932e952dc1c8f804112fd8bfdf9b1b6",
+      "snapshot": "context/02_SRC-2026-000001__source.md",
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/bronze/sources/SRC-2026-000001__source.md"
+    },
+    {
+      "bytes": 3876,
+      "kind": "context",
+      "sha256": "61afd67e6f94f0ae6d2330b4c9d9d043bed01ab77b236fe2ac57be6f3412889b",
+      "snapshot": "context/03_PROP-2026-000001.md",
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/silver/proposals/PROP-2026-000001.md"
+    },
+    {
+      "bytes": 221,
+      "kind": "context",
+      "sha256": "cd0d6f0413085d53a1e5bb617eab0ae60a07c3317ee4b5d69659eb65b6ac9720",
+      "snapshot": "context/04_PROP-2026-000001.md",
+      "source": "00_SYSTEM/AGENTIC_LIBRARIAN/silver/payloads/PROP-2026-000001.md"
+    }
+  ],
+  "task_id": "TASK-SAMPLE-001"
+}
